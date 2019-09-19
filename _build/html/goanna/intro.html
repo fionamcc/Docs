@@ -1,0 +1,309 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Intro to GOanna &mdash; AgBase 1.0 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
+        <link rel="next" title="Using GOanna on CyVerse" href="using_goanna_in_cyverse_DE.html"/>
+        <link rel="prev" title="Welcome to AgBase’s documentation!" href="../index.html"/> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> AgBase
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                1.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <p class="caption"><span class="caption-text">Agbase Home</span></p>
+<ul class="simple">
+</ul>
+<p class="caption"><span class="caption-text">GOanna</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Intro to GOanna</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#where-to-find-goanna"><strong>Where to Find GOanna</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Docker Hub</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">CyVerse Discovery Environment</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">AgBase</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#inputs"><strong>Inputs</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#determining-blast-parameters"><strong>Determining BLAST Parameters</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outputs"><strong>Outputs</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using_goanna_in_cyverse_DE.html"><strong>Using GOanna on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_goanna_cmd.html"><strong>Running GOanna on the Command Line</strong></a></li>
+</ul>
+<p class="caption"><span class="caption-text">InterProScan</span></p>
+<ul class="simple">
+</ul>
+<p class="caption"><span class="caption-text">Combine GAFs</span></p>
+<ul class="simple">
+</ul>
+<p class="caption"><span class="caption-text">KOBAS</span></p>
+<ul class="simple">
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../index.html">AgBase</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+ 
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../index.html">Docs</a> &raquo;</li>
+      
+    <li><strong>Intro to GOanna</strong></li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../_sources/goanna/intro.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="intro-to-goanna">
+<h1><strong>Intro to GOanna</strong><a class="headerlink" href="#intro-to-goanna" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li>GOanna performs a BLAST search, allows you to filter based on BLAST match parameters and transfers Gene Ontology (GO) functional annotations from the BLAST matches to your input genes.</li>
+<li>GOanna accepts a protein FASTA file as input.</li>
+<li>Blast databases are created by AgBase based upon proteins that have GO available and subsetted by phyla. We recommend selecting the database most closely related to the sequence used as input.</li>
+<li>We strongly recommend selecting only GO annotations based on experimental evidence codes. This will ensure the best quality annotations for your data.</li>
+<li>The remaining parameters are standard Blast parameters. More information on determining the best Blast parameters for your specific data set can be found in the next section.</li>
+</ul>
+<div class="section" id="where-to-find-goanna">
+<h2><strong>Where to Find GOanna</strong><a class="headerlink" href="#where-to-find-goanna" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id1">
+<h3><a class="reference external" href="https://hub.docker.com/r/agbase/goanna">Docker Hub</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id2">
+<h3><a class="reference external" href="INSERTLINKHERE">CyVerse Discovery Environment</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id3">
+<h3><a class="reference external" href="https://agbase.arizona.edu/cgi-bin/tools/GOanna.cgi">AgBase</a><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+<div class="section" id="inputs">
+<h2><strong>Inputs</strong><a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li>GOanna accepts a FASTA file of protein sequences. Nucleotide sequences must be translated first.</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">If you do not have a preferred method of translating your sequences <strong>TransDecoder</strong>  is available in the CyVerse Discovery Environment <strong>INSERT LINK HERE</strong> and as a <a class="reference external" href="https://quay.io/repository/biocontainers/transdecoder?tab=tags">Docker container</a> at quay.io.</p>
+</div>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">This tool uses stand alone BLAST and interprets FASTA deflines accordingly. NCBI ‘bar’-delimited deflines can be interpreted correctly using the ‘parse-deflines’ option. If the ‘parse-deflines’ option is not checked then Blast will interpret the ID to be everything before the first space.</p>
+</div>
+<ol class="arabic simple" start="2">
+<li>AgBase provides Blast databases for each of the following phylogentic sets:</li>
+</ol>
+<ul class="simple">
+<li>arthropod</li>
+<li>bacteria</li>
+<li>bird</li>
+<li>crustacean</li>
+<li>fish</li>
+<li>fungi</li>
+<li>human</li>
+<li>insecta</li>
+<li>invertebrates</li>
+<li>mammals</li>
+<li>nematode</li>
+<li>plants</li>
+<li>rodents</li>
+<li>uniprot_sprot</li>
+<li>uniprot_trembl</li>
+</ul>
+<ol class="arabic simple" start="3">
+<li>Output file basename. This will be the prefix of all your output files.</li>
+</ol>
+</div>
+<div class="section" id="determining-blast-parameters">
+<h2><strong>Determining BLAST Parameters</strong><a class="headerlink" href="#determining-blast-parameters" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.</li>
+<li>We recommend making a subset of 100 randomly selected sequences from your larger data set and using this as the input for GOanna to test for parameters that give good alignment.</li>
+</ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">The <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=c7e10a48-f5e6-4db8-8169-825cf62bd09d&amp;system-id=de">Split FASTA file</a> app, available in the CyVerse Discovery Environment can be used to make a test file.</p>
+</div>
+<ul class="simple">
+<li>To test for good parameters use the same database you will use and set relaxed parameters.</li>
+<li>Once you have run your subsetted file, use the html file to view alignments, select good alignments and note the parameters for these.</li>
+</ul>
+</div>
+<div class="section" id="outputs">
+<h2><strong>Outputs</strong><a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
+<p>GOanna generates 4 output files. Three of these are different formats of the BLASTp output and the final file is a gene association file (GAF) that contains to Gene Ontology (GO) annotations.</p>
+<ol class="arabic simple">
+<li>&lt;basename&gt;.asn</li>
+<li>&lt;basename&gt;.html</li>
+<li>&lt;basename&gt;.tsv</li>
+<li>&lt;basename&gt;_goanna_gaf.tsv</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="using_goanna_in_cyverse_DE.html" class="btn btn-neutral float-right" title="Using GOanna on CyVerse" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral" title="Welcome to AgBase’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2019, Fiona M. McCarthy.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>

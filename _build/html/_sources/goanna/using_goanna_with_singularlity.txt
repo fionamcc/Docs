@@ -1,0 +1,179 @@
+
+
+Basics about GOanna
+GOanna performs a BLAST search, allows you to filter based on BLAST match parameters and transfers Gene Ontology (GO) functional annotations from the BLAST matches to your input genes.
+GOanna accepts a protein FASTA file as input.
+Blast databases are created by AgBase based upon proteins that have GO available and subsetted by phyla. We recommend selecting the database most closely related to the sequence used as input (e.g., arthropod, nematode, crustacean) or the broader invertebrate option.
+We strongly recommend selecting only GO annotations based on experimental evidence codes. This will ensure the best quality annotations for your data.
+The remaining parameters are standard Blast parameters. More information on determining the best Blast parameters for your specific data set can be found in the next section.
+This tool uses stand alone BLAST and interprets FASTA deflines accordingly. NCBI ‘bar’-delimited deflines can be interpreted correctly using the ‘parse-deflines’ option. If the ‘parse-deflines’ option is not used then Blast will interpret the ID to be everything before the first space.
+
+Determining BLAST Parameters to Use
+BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis. 
+We recommend making a subset of 100 randomly selected sequence from your larger data set and using this as the input for GOanna to test for parameters that give good alignment. 
+To test for good parameters use the same database you will use and set relaxed parameters.
+Once you have run your subsetted file, use the html file to view alignments, select good alignments and note the parameters for these.
+
+Understanding Your Results
+If all goes well, you should get 4 output files
+<basename>.asn: This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.
+<basename>.html: This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters. 
+<basename>.tsv: This is the tab-delimited BLAST output that can be opened and sorted in Excel to determine BLAST parameter values. The file contains the following columns: 
+Query ID, query length, query start, query end, subject ID, subject length, subject start, subject end, e-value, percent ID, query coverage, percent positive ID, gap openings, total gaps, bitscore and raw score. 
+For more information on the BLAST output parameters see the NCBI BLAST documentation.
+<basename>_goanna_gaf.tsv: This is the standard tab-separated GO annotation file format that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment. More information on the gaf file format can be found here: http://geneontology.org/docs/go-annotation-file-gaf-format-2.1/
+If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. Contact us.
+
+Getting the databases
+To run the tool you need some public data. 
+
+Note: You only need to download the databases you plan to use BUT they must be in the appropriately named directories AND you must have at least one database file in each directory (agbase_database and go_info).
+
+agbase_database: 
+download the species file(s) you need--’exponly’ recommended.
+
+go_info: there are two databases (‘exponly’ is recommended) 
+gene_association.goa_uniprot
+gene_association_exponly.goa_uniprot 
+
+Smaller files (< 2GB) can be downloaded from the CyVerse Data Commons with wget.
+
+The directories are best downloaded with iCommands. 
+More information on file transfer to/from CyVerse.
+
+Once iCommands is setup (see link above). You can use ‘iget’ to download the data
+
+1) agbase_database: species subset to run BLAST against  (this command will download the entire directory).
+
+iget /iplant/home/shared/iplantcollaborative/protein_blast_dbs/agbase_database
+
+
+2) go_info:Uniprot GO annotations (this command will download the entire directory)
+
+iget /iplant/home/shared/iplantcollaborative/protein_blast_dbs/go_info
+
+
+Side Notes About Container Technologies
+GOanna is available as a Docker container. 
+A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
+There are two major containerization technologies: Docker and Singularity. Docker containers can be run with either technology.
+Docker
+To use Docker it must be installed on the computer you wish to use. 
+To run Docker you must have ‘root’ permissions (or use sudo). Docker will run all containers as ‘root’. This makes Docker incompatible with HPC systems (see Singularity). 
+Docker can be run on your local computer, a server, a cloud virtual machine (such as CyVerse Atmosphere) etc. NOTE: Docker can be installed quickly on an Atmosphere instance by typing ‘ezd’.
+For more information on installing Docker on other systems see this tutorial:  Installing Docker on your machine
+
+Singularity
+Singularity does not require ‘root’ permissions. It runs all containers as the user that is logged into the host machine.
+HPC systems are likely to have Singularity installed and are unlikely to object if asked to install it (no guarantees). 
+
+Getting GOanna
+The GOanna tool is available as a Docker container on Docker Hub here: https://cloud.docker.com/u/amcooksey/repository/docker/amcooksey/goanna 
+
+The container can be pulled with one of the following commands: 
+
+If using Docker (you must have root permissions or use sudo for all commands). 
+
+sudo docker pull amcooksey/goanna:latest
+
+If using Singularity:
+
+singularity pull docker://amcooksey/goanna:latest
+
+
+Running GOanna
+There are 3 directories built into this container:
+/agbase_database
+/go_info
+/work-dir
+
+Particularly when using Singularity, it is important to mount local host directories into these directories within the container.
+
+Docker
+
+To run the docker container and get the help/usage statement from GOanna:
+
+sudo docker run --rm -v $(pwd):/work-dir amcooksey/goanna:latest -h
+
+--rm --removes container after analysis
+-v --mounts local directory to container directory
+	<abs path of local dir> : <container dir>
+
+To run with data:
+
+There are three required parameters: 
+-a BLAST database basename (acceptable options are listed in the help/usage)
+-c peptide FASTA file to BLAST
+-o output file basename
+
+sudo docker run \
+--rm \
+-v /home/amcooksey/i5k/agbase_database:/agbase_database \
+-v /home/amcooksey/i5k/go_info:/go_info \
+-v $(pwd):/work-dir \
+amcooksey/goanna:latest \
+-a invertebrates \
+-c AROS_10.faa \
+-o AROS_10_invert_exponly \
+-p \
+-g 70 \
+-s 900 \
+-d RefSeq \
+-u Amanda \
+-x 37344 \
+-t 8
+
+Singularity (version 3)
+
+Singularity can be run on VMs and local computers but here we will assume you are using an HPC.
+These commands will need to be added to submission script appropriate for your HPC. I have access to a ‘PBSpro’ system so that is what I will use here. Other types include SGE, LSF, SLURM...
+
+Example PBS script:
+
+#!/bin/bash
+#PBS -N goanna
+#PBS -W group_list=fionamcc
+#PBS -l select=1:ncpus=28:mem=168gb
+#PBS -q standard
+#PBS -l walltime=6:0:0
+#PBS -l cput=168:0:0
+
+
+module load singularity
+cd /rsgrps/shaneburgess/amanda/i5k/GOanna
+singularity pull docker://amcooksey/goanna:latest \
+singularity run \
+-B /rsgrps/shaneburgess/amanda/i5k/goanna:/work-dir \
+-B /rsgrps/shaneburgess/amanda/i5k/agbase_database:/agbase_database \
+-B /rsgrps/shaneburgess/amanda/i5k/go_info:/go_info \
+goanna_latest.sif \
+-h
+
+To run with data:
+
+There are three required parameters (and many optional ones): 
+-a BLAST database basename (acceptable options are listed in the help/usage)
+-c peptide FASTA file to BLAST
+-o output file basename
+
+Singularity Bind Mount
+-B --mounts local directory to container directory
+	<abs path of local dir> : <container dir>
+
+singularity run \
+-B /rsgrps/shaneburgess/amanda/i5k/goanna:/work-dir \
+-B /rsgrps/shaneburgess/amanda/i5k/agbase_database:/agbase_database \
+-B /rsgrps/shaneburgess/amanda/i5k/go_info:/go_info \
+ goanna_latest.sif \
+-a invertebrates \
+-c AROS_10.faa \
+-o AROS_10_invert_exponly \
+-p \   
+-f 3 \
+-g 70 \
+-s 900 \
+-d RefSeq \
+-u Amanda \
+-x 37344 \
+-t 28
+

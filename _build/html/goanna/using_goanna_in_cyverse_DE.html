@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>testing &mdash; AgBase 1.0 documentation</title>
+  <title>Using GOanna on CyVerse &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -31,7 +31,8 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="prev" title="Welcome to AgBase’s documentation!" href="../index.html"/> 
+        <link rel="next" title="&lt;no title&gt;" href="using_goanna_with_docker.html"/>
+        <link rel="prev" title="Intro to GOanna" href="intro.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -85,7 +86,26 @@
 </ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>testing</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>Intro to GOanna</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Using GOanna on CyVerse</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-goanna-in-the-discovery-environment"><strong>Accessing GOanna in the Discovery Environment</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-goanna-app"><strong>Using the GOanna App</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input"><strong>Input</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#parameters"><strong>Parameters</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#output"><strong>Output</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#determining-blast-parameters-to-use"><strong>Determining BLAST Parameters to Use</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
+</ul>
+</li>
+</ul>
+<p class="caption"><span class="caption-text">InterProScan</span></p>
+<ul class="simple">
+</ul>
+<p class="caption"><span class="caption-text">Combine GAFs</span></p>
+<ul class="simple">
+</ul>
+<p class="caption"><span class="caption-text">KOBAS</span></p>
+<ul class="simple">
 </ul>
 
             
@@ -116,7 +136,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li><strong>testing</strong></li>
+    <li><strong>Using GOanna on CyVerse</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -130,8 +150,101 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="testing">
-<h1><strong>testing</strong><a class="headerlink" href="#testing" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="using-goanna-on-cyverse">
+<h1><strong>Using GOanna on CyVerse</strong><a class="headerlink" href="#using-goanna-on-cyverse" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="accessing-goanna-in-the-discovery-environment">
+<h2><strong>Accessing GOanna in the Discovery Environment</strong><a class="headerlink" href="#accessing-goanna-in-the-discovery-environment" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="user.cyverse.org">Create an account on CyVerse</a> (free)</li>
+<li>Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.</li>
+<li>If you are new to the Discovery Environment (DE) the user guide can be found <a class="reference external" href="https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/">here</a>.</li>
+<li>Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.</li>
+<li>To access the GOanna app click on the ‘Apps’ button at the left side of the DE.</li>
+<li>Open the ‘Shared with me’ folder in the left-hand pane of the ‘apps’ window. The contents of the folder will appear in the main pane of the window. The GOanna app is called ‘GOanna 1.0’; click on the name to open the app.</li>
+</ol>
+</div>
+<div class="section" id="using-the-goanna-app">
+<h2><strong>Using the GOanna App</strong><a class="headerlink" href="#using-the-goanna-app" title="Permalink to this headline">¶</a></h2>
+<p><strong>Analysis Name:GOanna_1.0_analysis1:</strong>
+This menu is used to name the job you will run so that you can find it later.
+Analysis Name: The default name is &#8220;GOanna_1.0_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
+<p><strong>Comments:</strong>
+(Optional) You can add additional information in the comments section to distinguish your analyses further.</p>
+<p><strong>Select output folder:</strong>
+This is where your results will be placed. The default (recommended) is your &#8216;analyses&#8217; folder.</p>
+<p><strong>Retain Inputs:</strong>
+Enabling this flag will copy all the input files into the analysis result folder.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
+</div>
+</div>
+<div class="section" id="input">
+<h2><strong>Input</strong><a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h2>
+<p>This menu is used to select the Blast database and your input file.</p>
+<p><strong>Blast database basename:</strong> Blast databases are created by AgBase based upon proteins that have GO available and subsetted by phyla. We recommend selecting the database most closely related to the sequence used as input.</p>
+<p><strong>Peptide FASTA file:</strong> Use the Browse button on the right hand side to navigate to your Data folder and select your protein sequence file.</p>
+</div>
+<div class="section" id="parameters">
+<h2><strong>Parameters</strong><a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>Use this menu to select your Blast parameters.</p>
+<p><strong>Transfer GO with experimental evidence only:</strong> We strongly recommend selecting the “yes” option from the dropdown menu so that only GO annotations based experimental evidence codes will be transferred . This will ensure the best quality annotations for your data.</p>
+<p>The remaining parameters are standard Blast parameters, and their defaults can be seen by hovering your cursor over the blue i. More information on determining the best Blast parameters for your specific data set can be found in the next section.</p>
+<p><strong>Parse query and subject bar delimited sequence identifiers:</strong> This option should be selected if you are using a protein fasta file from NCBI. These fasta files have headers with pipes that will not format correctly otherwise.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This tool uses stand alone BLAST and interprets FASTA deflines accordingly. NCBI ‘bar’-delimited deflines can be interpreted correctly using the ‘parse-deflines’ option. If the ‘parse-deflines’ option is not checked then Blast will interpret the ID to be everything before the first space.</p>
+</div>
+</div>
+<div class="section" id="output">
+<h2><strong>Output</strong><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>This menu is used to format your GO annotation results into a standard gene association file format.</p>
+<p><strong>Output File basename:</strong> This will be the prefix for your output files. A good name choice is to use fasta file name.</p>
+<p><strong>Database of query ID:</strong> Use the database that sequences were obtained from (Genbank), or a recognizable project name if these sequences are not in a database (e.g., i5k project or Smith Lab).The default is &#8216;user_input_db&#8217;.</p>
+<p><strong>&#8216;Assigned by&#8217; field of your GAF output file:</strong> Enter your name. This field is used to track who made the annotations. The default is &#8216;user&#8217;.</p>
+<p><strong>Taxon ID of the peptides you are blasting:</strong> Enter the NCBI taxon number for your species. This can be found by searching for your species name (common or scientific) in the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/taxonomy">NCBI taxon database</a>. The default is &#8220;0000&#8221;.</p>
+</div>
+<div class="section" id="determining-blast-parameters-to-use">
+<h2><strong>Determining BLAST Parameters to Use</strong><a class="headerlink" href="#determining-blast-parameters-to-use" title="Permalink to this headline">¶</a></h2>
+<p>BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">Make a subset of 100 randomly selected sequences from your larger dataset and use this as the input for GOanna to test for parameters that give good alignments. The <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=c7e10a48-f5e6-4db8-8169-825cf62bd09d&amp;system-id=de">Split FASTA file</a> app in the CyVerse Discovery Environment can be used to make a subsetted file.</p>
+</div>
+<ol class="arabic simple">
+<li>To test for good parameters use GOanna (either in CyVerse or online at AgBase) by selecting the same database you will use and setting relaxed parameters (e.g.,  in the CyVerse instance of GOanna, use defaults).</li>
+<li>Once you have run your subsetted file, use the html file to view alignments, select good alignments and note the parameters for these.</li>
+</ol>
+</div>
+<div class="section" id="understanding-your-results">
+<h2><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h2>
+<p>If all goes well, you should get 4 output files and a ‘logs’ folder.</p>
+<p><strong>&lt;basename&gt;.asn:</strong> This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.</p>
+<p><strong>&lt;basename&gt;.html:</strong> This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters.</p>
+<p><strong>&lt;basename&gt;.tsv:</strong> This is the tab-delimited BLAST output that can be opened and sorted in Excel to determine BLAST parameter values. The file contains the following columns:</p>
+<ul class="simple">
+<li>query ID</li>
+<li>query length</li>
+<li>query start</li>
+<li>query end</li>
+<li>subject ID</li>
+<li>subject length</li>
+<li>subject start</li>
+<li>subject end</li>
+<li>e-value</li>
+<li>percent ID</li>
+<li>query coverage</li>
+<li>percent positive ID</li>
+<li>gap openings</li>
+<li>total gaps</li>
+<li>bitscore</li>
+<li>raw score</li>
+</ul>
+<p>For more information on the BLAST output parameters see the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_.">NCBI BLAST documentation</a>.</p>
+<p><strong>&lt;basename&gt;_goanna_gaf.tsv:</strong> This is the standard tab-separated <a class="reference external" href="http://geneontology.org/docs/go-annotation-file-gaf-format-2.1">GO annotation file format</a>  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment.</p>
+<p>If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. Check the &#8216;condor_stderr&#8217; file in the analysis output &#8216;logs&#8217; folder.</p>
+<p>If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
+</div>
 </div>
 
 
@@ -141,8 +254,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
+        <a href="using_goanna_with_docker.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to AgBase’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+        <a href="intro.html" class="btn btn-neutral" title="Intro to GOanna" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

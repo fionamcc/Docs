@@ -22,22 +22,16 @@ Contents:
    :caption: GOanna
 
    goanna/intro
-   goanna/inputs
-   goanna/outputs
    goanna/using_goanna_in_cyverse_DE
-   goanna/using_goanna_with_docker
-   goanna/using_goanna_with_singularity
+   goanna/using_goanna_cmd
 
 .. toctree::
    :maxdepth: 1
    :caption: InterProScan
 
    interproscan/intro
-   interproscan/inputs
-   interproscan/outputs
    interproscan/using_iprs_in_cyverse_DE
-   interproscan/using_iprs_with_docker
-   interproscan/using_iprs_with_singularity
+   interproscan/using_iprs_cmd
 
 .. toctree::
    :maxdepth: 1
@@ -50,18 +44,6 @@ Contents:
    :caption: KOBAS
 
    kobas/intro
-   kobas/inputs
-   kobas/outputs
    kobas/using_kobas_in_cyverse_DE
-   kobas/using_kobas_with_docker
-   kobas/using_kobas_with_singularity
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   kobas/using_kobas_cmd
 

@@ -3,9 +3,9 @@
 
 - GOanna performs a BLAST search, allows you to filter based on BLAST match parameters and transfers Gene Ontology (GO) functional annotations from the BLAST matches to your input genes.	
 - GOanna accepts a protein FASTA file as input.
-- BLAST databases are created by AgBase based upon proteins that have GO available and subsetted by phyla. We recommend selecting the database most closely related to the sequence used as input.
+- Blast databases are created by AgBase based upon proteins that have GO available and subsetted by phyla. We recommend selecting the database most closely related to the sequence used as input.
 - We strongly recommend selecting only GO annotations based on experimental evidence codes. This will ensure the best quality annotations for your data.
-- The remaining parameters are standard BLAST parameters. More information on determining the best BLAST parameters for your specific data set can be found in the section below.
+- The remaining parameters are standard Blast parameters. More information on determining the best Blast parameters for your specific data set can be found in the next section.
 
 
 **Where to Find GOanna** 
@@ -32,10 +32,10 @@
 
 .. IMPORTANT::
 
-    This tool uses stand alone BLAST and interprets FASTA deflines accordingly. NCBI ‘bar’-delimited deflines can be interpreted correctly using the ‘parse-deflines’ option. If the ‘parse-deflines’ option is not checked then BLAST will interpret the ID to be everything before the first space.
+    This tool uses stand alone BLAST and interprets FASTA deflines accordingly. NCBI ‘bar’-delimited deflines can be interpreted correctly using the ‘parse-deflines’ option. If the ‘parse-deflines’ option is not checked then Blast will interpret the ID to be everything before the first space.
 
 
-2. AgBase provides BLAST databases for each of the following phylogentic sets: 
+2. AgBase provides Blast databases for each of the following phylogentic sets: 
 
 - arthropod
 - bacteria

@@ -14,21 +14,36 @@ Contents:
 
 .. toctree::
    :maxdepth: 1
+   :caption: Functional Annotation Workflow
+   func_annot_workflow/workflow.rst
+
+.. toctree::
+   :maxdepth: 1
    :caption: GOanna
 
    goanna/intro
-   goanna/inputs
-   goanna/outputs
    goanna/using_goanna_in_cyverse_DE
-   goanna/using_goanna_with_docker
-   goanna/using_goanna_with singularity 
+   goanna/using_goanna_cmd
 
+.. toctree::
+   :maxdepth: 1
+   :caption: InterProScan
 
+   interproscan/intro
+   interproscan/using_iprs_in_cyverse_DE
+   interproscan/using_iprs_cmd
 
-Indices and tables
-==================
+.. toctree::
+   :maxdepth: 1
+   :caption: Combine GAFs
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   combine_gafs/combine_gafs
+
+.. toctree::
+   :maxdepth: 1
+   :caption: KOBAS
+
+   kobas/intro
+   kobas/using_kobas_in_cyverse_DE
+   kobas/using_kobas_cmd
 
