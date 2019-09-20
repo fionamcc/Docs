@@ -10,7 +10,7 @@
 3. If you are new to the Discovery Environment (DE) the user guide can be found `here <https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/>`_.
 
 4. Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.
-5. To access the GOanna app click on the ‘Apps’ button at the left side of the DE. 
+5. To access the `GOanna 2.0 <https://de.cyverse.org/de/?type=apps&app-id=354731ae-71ab-11e9-b82a-008cfa5ae621&system-id=de>`_ app click on the ‘Apps’ button at the left side of the DE. 
 6. Search for 'GOanna" in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The GOanna app is called ‘GOanna 2.0’; click on the name to open the app.
 
 |find_goanna|
