@@ -45,19 +45,19 @@ Docker containers can be run with either technology.
 **Getting the GOanna container**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The GOanna tool is available as a Docker container on Docker Hub: 
-`GOanna container <https://hub.docker.com/r/amcooksey/goanna>`_ 
+`GOanna container <https://hub.docker.com/r/agbase/goanna>`_ 
 
 The container can be pulled with this command: 
 
 .. code-block:: bash
 
-    docker pull amcooksey/goanna:latest
+    docker pull agbase/goanna:2.0
 
 .. admonition:: Remember
 
     You must have root permissions or use sudo, like so:
 
-    sudo docker pull amcooksey/goanna:latest
+    sudo docker pull agbase/goanna:2.0
 
 
 **Getting the Help and Usage Statement**
@@ -65,24 +65,24 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    sudo docker run --rm -v $(pwd):/work-dir amcooksey/goanna:latest -h
+    sudo docker run --rm -v $(pwd):/work-dir agbase/goanna:2.0 -h
 
 .. code-block:: none
 
     Options:
-    -a Blast database basename ('arthropod', 'bacteria', 'bird', 'crustacean', 'fish', 'fungi', 'human', 'insecta',
+    -a BLAST database basename ('arthropod', 'bacteria', 'bird', 'crustacean', 'fish', 'fungi', 'human', 'insecta',
        'invertebrates', 'mammals', 'nematode', 'plants', 'rodents' 'uniprot_sprot', 'uniprot_trembl', 'vertebrates'
         or 'viruses')
     -c peptide fasta filename
-    -o Blast output file basename
+    -o output file basename
     [-b transfer GO with experimental evidence only ('yes' or 'no'). Default = 'yes'.]
     [-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
         to preserve the space, use quotes around your entry. Default: 'user_input_db']
     [-e Expect value (E) for saving hits. Default is 10.]
     [-f Number of aligned sequences to keep. Default: 3]
-    [-g Blast percent identity above which match should be kept. Default: keep all matches.]
+    [-g BLAST percent identity above which match should be kept. Default: keep all matches.]
     [-h help]
-    [-m Blast percent positive identity above which match should be kept. Default: keep all matches.]
+    [-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
     [-s bitscore above which match should be kept. Default: keep all matches.]
     [-k Maximum number of gap openings allowed for match to be kept.Default: 100]
     [-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
@@ -91,7 +91,7 @@ The container can be pulled with this command:
     [-u 'Assigned by' field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
         either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. "firstname lastname")
         Default: 'user']
-    [-x Taxon ID of the peptides you are blasting. Default: 'taxon:0000']
+    [-x Taxon ID of the query species. Default: 'taxon:0000']
     [-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
 
 **Running GOanna with Data**
@@ -122,7 +122,7 @@ GOanna has three required parameters:
     -v /home/amcooksey/i5k/agbase_database:/agbase_database \
     -v /home/amcooksey/i5k/go_info:/go_info \
     -v $(pwd):/work-dir \
-    amcooksey/goanna:latest \
+    agbase/goanna:2.0 \
     -a invertebrates \
     -c AROS_10.faa \
     -o AROS_10_invert_exponly \
@@ -146,7 +146,7 @@ GOanna has three required parameters:
 
 **-v $(pwd):/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
 
-**amcooksey/goanna:2.0:** the name of the Docker image to use
+**agbase/goanna:2.0:** the name of the Docker image to use
 
 .. tip::
 
@@ -225,13 +225,13 @@ If you see more files in your output folder there may have been an error in the 
 **Getting the GOanna container**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The GOanna tool is available as a Docker container on Docker Hub: 
-`GOanna container <https://hub.docker.com/r/amcooksey/goanna>`_ 
+`GOanna container <https://hub.docker.com/r/agbase/goanna>`_ 
 
 The container can be pulled with this command: 
 
 .. code-block:: bash
 
-    singularity pull docker://amcooksey/goanna:2.0
+    singularity pull docker://agbase/goanna:2.0
 
 
 
@@ -253,29 +253,29 @@ The container can be pulled with this command:
     
     cd /rsgrps/shaneburgess/amanda/i5k/GOanna
     
-    singularity pull docker://amcooksey/goanna:2.0
+    singularity pull docker://agbase/goanna:2.0
     
     singularity run \
-    goanna_latest.sif \
+    goanna_2.0.sif \
     -h
 
 
 .. code-block:: none
 
     Options:
-    -a Blast database basename ('arthropod', 'bacteria', 'bird', 'crustacean', 'fish', 'fungi', 'human', 'insecta',
+    -a BLAST database basename ('arthropod', 'bacteria', 'bird', 'crustacean', 'fish', 'fungi', 'human', 'insecta',
        'invertebrates', 'mammals', 'nematode', 'plants', 'rodents' 'uniprot_sprot', 'uniprot_trembl', 'vertebrates'
         or 'viruses')
     -c peptide fasta filename
-    -o Blast output file basename
+    -o BLAST output file basename
     [-b transfer GO with experimental evidence only ('yes' or 'no'). Default = 'yes'.]
     [-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
         to preserve the space, use quotes around your entry. Default: 'user_input_db']
     [-e Expect value (E) for saving hits. Default is 10.]
     [-f Number of aligned sequences to keep. Default: 3]
-    [-g Blast percent identity above which match should be kept. Default: keep all matches.]
+    [-g BLAST percent identity above which match should be kept. Default: keep all matches.]
     [-h help]
-    [-m Blast percent positive identity above which match should be kept. Default: keep all matches.]
+    [-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
     [-s bitscore above which match should be kept. Default: keep all matches.]
     [-k Maximum number of gap openings allowed for match to be kept.Default: 100]
     [-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
@@ -284,7 +284,7 @@ The container can be pulled with this command:
     [-u 'Assigned by' field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
         either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. "firstname lastname")
         Default: 'user']
-    [-x Taxon ID of the peptides you are blasting. Default: 'taxon:0000']
+    [-x Taxon ID of the query species. Default: 'taxon:0000']
     [-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
     
 **Running GOanna with Data**
@@ -323,7 +323,7 @@ GOanna has three required parameters:
     
     cd /rsgrps/shaneburgess/amanda/i5k/GOanna
     
-    singularity pull docker://amcooksey/goanna:2.0
+    singularity pull docker://agbase/goanna:2.0
     
     singularity run \
     -B /rsgrps/shaneburgess/amanda/i5k/agbase_database:/agbase_database \

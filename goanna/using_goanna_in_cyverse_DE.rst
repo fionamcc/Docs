@@ -11,14 +11,22 @@
 
 4. Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.
 5. To access the GOanna app click on the ‘Apps’ button at the left side of the DE. 
-6. Open the ‘Shared with me’ folder in the left-hand pane of the ‘apps’ window. The contents of the folder will appear in the main pane of the window. The GOanna app is called ‘GOanna 1.0’; click on the name to open the app.
+6. Search for 'GOanna" in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The GOanna app is called ‘GOanna 2.0’; click on the name to open the app.
+
+|find_goanna|
+
+.. admonition:: Find Apps Easily with 'Communities'
+
+    The GOanna 2.0 app belongs to the 'i5k' and 'AgBase' communties. You can join either of these communities and they will appear in the left-hand pane of your 'Apps' window (see above). 
+
+    To join a community click on the person icon in the top-right corner of the Discovery Environment window and select 'Communities'. In the 'Communities' window choose 'all communities' from the drop-down list. A list of communities will appear in the main pane of this window. Select the one you wish to join by clicking on it and then clicking on the 'join' button.
 
 **Using the GOanna App**
 ------------------------
 
-**Analysis Name:GOanna_1.0_analysis1:**
+**Analysis Name:GOanna_2.0_analysis1:**
 This menu is used to name the job you will run so that you can find it later.
-Analysis Name: The default name is "GOanna_1.0_analysis1". We recommend changing the 'analysis1' portion of this to reflect the data you are running.
+Analysis Name: The default name is "GOanna_2.0_analysis1". We recommend changing the 'analysis1' portion of this to reflect the data you are running.
 
 **Comments:**
 (Optional) You can add additional information in the comments section to distinguish your analyses further.
@@ -119,3 +127,5 @@ If you see more files in your output folder there may have been an error in the 
 
 If that doesn't clarify the problem contact us at agbase@email.arizona.edu or support@cyverse.org.
 
+.. |find_goanna| image:: ../img/find_goanna.png
+  :width: 700
