@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; AgBase 1.0 documentation</title>
+  <title>Intro to InterProScan &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="inputs.html"/>
-        <link rel="prev" title="&lt;no title&gt;" href="../goanna/using_goanna_with_docker.html"/> 
+        <link rel="next" title="&lt;no title&gt;" href="using_iprs_in_cyverse_DE.html"/>
+        <link rel="prev" title="Running GOanna on the Command Line" href="../goanna/using_goanna_cmd.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,13 +84,27 @@
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
 <ul class="simple">
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../workflow/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
+</ul>
+<p class="caption"><span class="caption-text">TransDecoder</span></p>
+<ul class="simple">
+</ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro to GOanna</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>testing</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>Using GOanna on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>Running GOanna on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">InterProScan</span></p>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Intro to InterProScan</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#basic-functions-of-this-tool"><strong>Basic functions of this tool</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-the-interproscan-data"><strong>Getting the InterProScan Data</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
 <ul class="simple">
@@ -127,7 +141,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>&lt;no title&gt;</li>
+    <li><strong>Intro to InterProScan</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -141,7 +155,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="intro-to-interproscan">
+<h1><strong>Intro to InterProScan</strong><a class="headerlink" href="#intro-to-interproscan" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="http://www.ebi.ac.uk/interpro/">InterPro</a> is a database which integrates together predictive information about proteins&#8217; function from a number of partner resources, giving an overview of the families that a protein belongs to and the domains and sites it contains.</p>
+<div class="section" id="basic-functions-of-this-tool">
+<h2><strong>Basic functions of this tool</strong><a class="headerlink" href="#basic-functions-of-this-tool" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>removes special characters from FASTA sequences</li>
+<li>splits FASTA into groups of 1000 sequences</li>
+<li>runs InterProScan with user-specified options on each of the 1000-sequence files in parallel</li>
+<li>re-combines output files from all groups of 1000</li>
+<li>parses the XML output from InterProScan to generate a gene association file (GAF) (and several other files)</li>
+</ul>
+<div class="section" id="getting-the-interproscan-data">
+<h3><strong>Getting the InterProScan Data</strong><a class="headerlink" href="#getting-the-interproscan-data" title="Permalink to this headline">¶</a></h3>
+<p>Partner data are available from the InterProScan FTP site. These data are available as two separate downloads and can be obtained following these instructions:</p>
+<p><strong>1. Partner Data excluding Panther</strong></p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz
+wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz.md5
+md5sum -c interproscan-data-5.36-75.0.tar.gz.md
+tar -pxvzf interproscan-data-5.36-75.0.tar.gz
+</pre></div>
+</div>
+<div class="admonition-tar-options admonition">
+<p class="first admonition-title">tar options</p>
+<ul class="last simple">
+<li>p = preserve the file permissions</li>
+<li>x = extract files from an archive</li>
+<li>v = verbosely list the files processed</li>
+<li>z = filter the archive through gzip</li>
+<li>f = use archive file</li>
+</ul>
+</div>
+<p><strong>2. Getting the Panther data</strong></p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>cd interproscan-5.36-75.0/data
+wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/data/panther-data-14.1.tar.gz
+wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/data/panther-data-14.1.tar.gz.md5
+md5sum -c panther-data-14.1.tar.gz.md5
+tar -pxvzf panther-data-14.1.tar.gz
+</pre></div>
+</div>
+<p>These data will be unarchived into this directory structure. They will need to be mounted to the container at run time.</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>&lt;current_working_directory&gt;/interproscan-5.36-75.0/data
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
 
            </div>
           </div>
@@ -149,10 +210,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="inputs.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="using_iprs_in_cyverse_DE.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../goanna/using_goanna_with_docker.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../goanna/using_goanna_cmd.html" class="btn btn-neutral" title="Running GOanna on the Command Line" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

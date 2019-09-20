@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; AgBase 1.0 documentation</title>
+  <title>Functional Annotation Workflow &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="outputs.html"/>
-        <link rel="prev" title="&lt;no title&gt;" href="intro.html"/> 
+        <link rel="next" title="Intro to GOanna" href="../goanna/intro.html"/>
+        <link rel="prev" title="&lt;no title&gt;" href="../agbase/intro.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,13 +84,21 @@
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
 <ul class="simple">
 </ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Functional Annotation Workflow</strong></a></li>
+</ul>
+<p class="caption"><span class="caption-text">TransDecoder</span></p>
+<ul class="simple">
+</ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro to GOanna</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>testing</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>Using GOanna on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>Running GOanna on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">InterProScan</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../interproscan/intro.html"><strong>Intro to InterProScan</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
 <ul class="simple">
@@ -127,11 +135,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>&lt;no title&gt;</li>
+    <li><strong>Functional Annotation Workflow</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/interproscan/inputs.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/workflow/workflow.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -141,7 +149,25 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="functional-annotation-workflow">
+<h1><strong>Functional Annotation Workflow</strong><a class="headerlink" href="#functional-annotation-workflow" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/i5k_workflow_diagram.png"><img alt="workflow" src="../_images/i5k_workflow_diagram.png" style="width: 700px;" /></a></p>
+<p>This functional annotation workflow imploys three annotation tools:</p>
+<ol class="arabic simple">
+<li>GOanna: performs a BLAST search and transfers gene ontology (GO) annotations from BLAST matches to the query gene products.</li>
+<li>InterProScan: InterPro is a database which integrates together predictive information about proteins&#8217; function from a number of partner resources, giving an overview of the families that a protein belongs to and the domains and sites it contains. InterProScan can also provide GO and pathway annotations.</li>
+<li>KOBAS: uses BLAST to annotate the input with KEGG Orthology terms and KEGG pathways</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Each of these tools accepts a peptide FASTA file. For those users with nucloetide sequences some documentation has been provided for using TransDecoder (although other tools are also acceptable).</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As both GOanna and InterProScan provide GO annotations, their outputs are provided in GAF format. The &#8216;combine GAFs&#8217; tool can then be used to make a single GAF of GO annotations, if desired.</p>
+</div>
+</div>
+
 
            </div>
           </div>
@@ -149,10 +175,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="outputs.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../goanna/intro.html" class="btn btn-neutral float-right" title="Intro to GOanna" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="intro.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../agbase/intro.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

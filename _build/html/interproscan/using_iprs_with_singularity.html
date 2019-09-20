@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; AgBase 1.0 documentation</title>
+  <title>Running the container with Singularity (HPC) &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -30,9 +30,7 @@
   
 
   
-    <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="../combine_gafs/combine_gafs.html"/>
-        <link rel="prev" title="&lt;no title&gt;" href="using_iprs_with_docker.html"/> 
+    <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -84,13 +82,21 @@
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
 <ul class="simple">
 </ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../workflow/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
+</ul>
+<p class="caption"><span class="caption-text">TransDecoder</span></p>
+<ul class="simple">
+</ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro to GOanna</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>testing</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>Using GOanna on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>Running GOanna on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">InterProScan</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>Intro to InterProScan</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
 <ul class="simple">
@@ -127,7 +133,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>&lt;no title&gt;</li>
+    <li><strong>Running the container with Singularity (HPC)</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -141,20 +147,163 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="running-the-container-with-singularity-hpc">
+<h1><strong>Running the container with Singularity (HPC)</strong><a class="headerlink" href="#running-the-container-with-singularity-hpc" title="Permalink to this headline">¶</a></h1>
+<div class="admonition-about-singularity admonition">
+<p class="first admonition-title">About Singularity</p>
+<ul class="last simple">
+<li>does not require ‘root’ permissions</li>
+<li>runs all containers as the user that is logged into the host machine</li>
+<li>HPC systems are likely to have Singularity installed and are unlikely to object if asked to install it (no guarantees).</li>
+<li>can be run on any machine where is is installed</li>
+<li>more information about <a class="reference external" href="https://singularity.lbl.gov/docs-installation">installing Singularity</a></li>
+<li>This tool was tested using Singularity 3.0. Users with Singularity 2.x will need to modify the commands accordingly.</li>
+</ul>
+</div>
+<div class="admonition-hpc-job-schedulers admonition">
+<p class="first admonition-title">HPC Job Schedulers</p>
+<p class="last">Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.</p>
+</div>
+</div>
+<div class="section" id="getting-the-interproscan-container">
+<h1><strong>Getting the InterProScan Container</strong><a class="headerlink" href="#getting-the-interproscan-container" title="Permalink to this headline">¶</a></h1>
+<p>The InterProScan tool is available as a Docker container on Docker Hub:
+<a class="reference external" href="INSERTLINKHERE">InterProScan container</a></p>
+<p>The container can be pulled with this command:</p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>singularity pull INSERT LINK HERE
+</pre></div>
+</div>
+</div>
+<div class="section" id="getting-the-help-and-usage-statement">
+<h1><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="example-pbs-script">
+<h2><strong>Example PBS script:</strong><a class="headerlink" href="#example-pbs-script" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -N 10000j100</span>
+<span class="c1">#PBS -q standard</span>
+<span class="c1">#PBS -l select=1:ncpus=28:mem=168gb</span>
+<span class="c1">#PBS -W group_list=fionamcc</span>
+<span class="c1">#PBS -l walltime=6:0:0</span>
+<span class="c1">#PBS -l cput=168:0:0</span>
+
+module load singularity
+
+<span class="nb">cd</span> /rsgrps/shaneburgess/amanda/i5k/interproscan
+
+singularity pull docker://amcooksey/iprs_wrapper:latest
+
+singularity run <span class="se">\</span>
+iprs_wrapper_latest.sif <span class="se">\</span>
+-h
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>**INSERT HELP STATEMENT HERE**
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="running-interproscan-with-data">
+<h1><strong>Running InterProScan with Data</strong><a class="headerlink" href="#running-interproscan-with-data" title="Permalink to this headline">¶</a></h1>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>There are #### directories built into this container. These directories should be used to mount data.</p>
+<ul class="last simple">
+<li></li>
+<li></li>
+<li></li>
+</ul>
+</div>
+<div class="section" id="id1">
+<h2><strong>Example PBS Script</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -N 10000j100</span>
+<span class="c1">#PBS -q standard</span>
+<span class="c1">#PBS -l select=1:ncpus=28:mem=168gb</span>
+<span class="c1">#PBS -W group_list=fionamcc</span>
+<span class="c1">#PBS -l walltime=6:0:0</span>
+<span class="c1">#PBS -l cput=168:0:0</span>
+
+module load singularity
+
+<span class="nb">cd</span> /rsgrps/shaneburgess/amanda/i5k/interproscan
+
+singularity pull docker://amcooksey/iprs_wrapper:latest
+
+singularity run <span class="se">\</span>
+-B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data <span class="se">\</span>
+-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data <span class="se">\</span>
+iprs_wrapper_latest.sif <span class="se">\</span>
+-i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta <span class="se">\</span>
+-d outdir_10000 <span class="se">\</span>
+-f tsv,json,xml,html,gff3,svg <span class="se">\</span>
+-g <span class="se">\</span>
+-p <span class="se">\</span>
+-n Amanda <span class="se">\</span>
+-x <span class="m">109069</span> <span class="se">\</span>
+-D AgBase
+</pre></div>
+</div>
+</div>
+<div class="section" id="breakdown-of-command">
+<h2><strong>Breakdown of Command</strong><a class="headerlink" href="#breakdown-of-command" title="Permalink to this headline">¶</a></h2>
+<p><strong>singularity run:</strong> tells Singularity to run</p>
+<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data:</strong> mounts my working directory on the host machine into the /data directory in the container the syntax for this is &lt;aboslute path on host machine&gt;:&lt;aboslute path in container&gt;</p>
+<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data:</strong> mounts he InterProScan data directory that was downloaded from the FTP site into the InterProScan data directory in the container</p>
+<p><strong>iprs_wrapper_latest.sif:</strong> name of the image to use</p>
+<p><a href="#id2"><span class="problematic" id="id3">**</span></a>INSERT OTHER CMD BREAKDOWN LINES FOR IPRS
+.. tip:</p>
+<div class="highlight-default"><div class="highlight"><pre><span></span><span class="n">All</span> <span class="n">the</span> <span class="n">options</span> <span class="n">supplied</span> <span class="n">after</span> <span class="n">the</span> <span class="n">image</span> <span class="n">name</span> <span class="n">are</span> <span class="n">options</span> <span class="k">for</span> <span class="n">this</span> <span class="n">tool</span>
+</pre></div>
+</div>
+<p><strong>-i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta:</strong> input FASTA file</p>
+<p><strong>-d outdir_10000:</strong> output directory name</p>
+<p><strong>-f tsv,json,xml,html,gff3,svg:</strong> desired output file formats</p>
+<p><strong>-g:</strong> tells the tool to perform GO annotation</p>
+<p><strong>-p:</strong> tells tool to perform pathway annoation</p>
+<p><strong>-n Amanda:</strong> name of biocurator to include in column 15 of GAF output file</p>
+<p><strong>-x 109069:</strong> taxon ID of query species to be used in column 13 of GAF output file</p>
+<p><strong>-D AgBase:</strong> database of query accession to be used in column 1 of GAF output file</p>
+</div>
+</div>
+<div class="section" id="understanding-your-results">
+<h1><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats">
+<h2><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats" title="Permalink to this headline">¶</a></h2>
+<p><strong>Default</strong>
+- &lt;basename&gt;.gff3
+- &lt;basename&gt;.tsv
+- &lt;basename&gt;.xml
+<strong>Optional</strong>
+- &lt;basename&gt;.json
+- &lt;basename&gt;.html.tar.gz
+- &lt;basename&gt;.svg.tar.gz</p>
+</div>
+<div class="section" id="parser-outputs">
+<h2><strong>Parser Outputs</strong><a class="headerlink" href="#parser-outputs" title="Permalink to this headline">¶</a></h2>
+<p><strong>&lt;basename&gt;_gaf.txt:</strong>
+-This table follows the formatting of a gene association file (gaf) and can be used in GO enrichment analyses.</p>
+<p><strong>&lt;basename&gt;_acc_go_counts.txt:</strong>
+-This table includes input accessions, the number of GO IDs assigned to each accession and GO ID names. GO IDs are split into BP (Biological Process), MF (Molecular Function) and CC (Cellular Component).</p>
+<p><strong>&lt;basename&gt;_go_counts.txt:</strong>
+-This table counts the numbers of sequences assigned to each GO ID so that the user can quickly identify all genes assigned to a particular function.</p>
+<p><strong>&lt;basename&gt;_acc_interpro_counts.txt:</strong>
+-This table includes input accessions, number of InterPro IDs for each accession, InterPro IDs assigned to each sequence and the InterPro ID name.</p>
+<p><strong>&lt;basename&gt;_interpro_counts.txt:</strong>
+-This table counts the numbers of sequences assigned to each InterPro ID so that the user can quickly identify all genes with a particular motif.</p>
+<p><strong>&lt;basename&gt;_acc_pathway_counts.txt:</strong>
+-This table includes input accessions, number of pathway IDs for the accession and the pathway names. Multiple values are separated by a semi-colon.</p>
+<p><strong>&lt;basename&gt;_pathway_counts.txt:</strong>
+-This table counts the numbers of sequences assigned to each Pathway ID so that the user can quickly identify all genes assigned to a pathway.</p>
+<p><strong>&lt;basename&gt;.err:</strong>
+-This file will list any sequences that were not able to be analyzed by InterProScan. Examples of sequences that will cause an error are sequences with a large run of Xs.</p>
+<p>If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">Contact us</a>.</p>
+</div>
+</div>
+
 
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../combine_gafs/combine_gafs.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="using_iprs_with_docker.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>

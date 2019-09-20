@@ -12,10 +12,18 @@ Contents:
    :maxdepth: 1
    :caption: Agbase Home
 
+   agbase/intro
+
 .. toctree::
    :maxdepth: 1
-   :caption: Functional Annotation Workflow
-   func_annot_workflow/workflow.rst
+   
+   workflow/workflow
+
+.. toctree::
+   :maxdepth: 1
+   :caption: TransDecoder
+
+   transdecoder/usage
 
 .. toctree::
    :maxdepth: 1

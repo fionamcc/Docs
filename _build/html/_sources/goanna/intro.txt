@@ -13,11 +13,11 @@
 `Docker Hub <https://hub.docker.com/r/agbase/goanna>`_
 ----------------------------------------------------------
 
-`CyVerse Discovery Environment <INSERT LINK HERE>`_
----------------------------------------------------
+`CyVerse Discovery Environment <https://de.cyverse.org/de/?type=apps&app-id=354731ae-71ab-11e9-b82a-008cfa5ae621&system-id=de>`_
+-----------------------------------------------------------------------------------------------------------------------------------
 
 `AgBase <https://agbase.arizona.edu/cgi-bin/tools/GOanna.cgi>`_
-----------------------------------------------------------------
+-----------------------------------------------------------------
 
 
 **Inputs**
