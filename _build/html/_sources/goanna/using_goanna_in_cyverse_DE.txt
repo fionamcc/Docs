@@ -1,5 +1,5 @@
 ===========================
-**Using GOanna on CyVerse**
+**GOanna on CyVerse**
 ===========================
 
 **Accessing GOanna in the Discovery Environment**

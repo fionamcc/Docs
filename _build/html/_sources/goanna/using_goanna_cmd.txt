@@ -1,5 +1,5 @@
 ======================================
-**Running GOanna on the Command Line**
+**GOanna on the Command Line**
 ======================================
 
 

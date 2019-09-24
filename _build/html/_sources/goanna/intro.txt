@@ -1,5 +1,5 @@
-**Intro to GOanna**
-===========================
+**Intro**
+==========
 
 - GOanna performs a BLAST search, allows you to filter based on BLAST match parameters and transfers Gene Ontology (GO) functional annotations from the BLAST matches to your input genes.	
 - GOanna accepts a protein FASTA file as input.

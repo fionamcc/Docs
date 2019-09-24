@@ -1,5 +1,5 @@
 ============================================
-**Running InterProScan on the Command Line**
+**InterProScan on the Command Line**
 ============================================
 
 **Getting the InterProScan Data** 
