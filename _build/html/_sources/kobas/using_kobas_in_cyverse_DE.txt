@@ -37,7 +37,7 @@ The KOBAS apps are called:
         4. Select the one you wish to join by clicking on it and then clicking on the 'join' button.
     
 
-**Using the KOBAS annotate 3.0.3 App**
+**KOBAS annotate 3.0.3**
 --------------------------------------
 
 **Analysis Name:KOBAS_annotate_3.0.3_analysis_1:**
@@ -141,7 +141,7 @@ The second section follows a dashed line and looks like this:
                                 Hemostasis	Reactome	R-DME-109582
                     	        Factors involved in megakaryocyte development and platelet production	Reactome	R-DME-98323
 
-**Using the KOBAS identify 3.0.3 App**
+**KOBAS identify 3.0.3**
 --------------------------------------
 
 **Analysis Name:KOBAS_identify_3.0.3_analysis_1:**
@@ -212,7 +212,7 @@ If all goes well, you should get the following:
     Signaling by NOTCH2	Reactome	R-DME-1980145	3	8	2.00259649553e-05	0.000275357018136	lcl|NW_020311285.1_prot_XP_012256118.1_28|lcl|NW_020311285.1_prot_XP_012256117.1_27|lcl|NW_020311285.1_prot_XP_012256119.1_26	http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=R-DME-1980145
 
 
-**Using the KOBAS annotate and identify 3.0.3 App**
+**KOBAS annotate and identify 3.0.3**
 ---------------------------------------------------
 
 This app runs both the annotate and identify analysis together as a convenience for user who wish to run both steps. 

@@ -100,21 +100,42 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>Intro</strong></a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>InterProScan on the Command Line</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#getting-the-interproscan-data"><strong>Getting the InterProScan Data</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#container-technologies"><strong>Container Technologies</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-goanna-using-docker"><strong>Running GOanna using Docker</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-the-interproscan-data"><strong>Getting the InterProScan Data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#container-technologies"><strong>Container Technologies</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-interproscan-using-docker"><strong>Running InterProScan using Docker</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#getting-the-interproscan-container"><strong>Getting the InterProScan Container</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-goanna-with-data"><strong>Running GOanna with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-command"><strong>Example Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-command"><strong>Breakdown of Command</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-the-interproscan-container"><strong>Getting the InterProScan Container</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-goanna-with-data"><strong>Running GOanna with Data</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-the-container-with-singularity-hpc"><strong>Running the container with Singularity (HPC)</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id1"><strong>Getting the InterProScan Data</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2"><strong>Getting the InterProScan Container</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4"><strong>Getting the Help and Usage Statement</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#running-interproscan-with-data"><strong>Running InterProScan with Data</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5"><strong>Understanding Your Results</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats"><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parser-outputs"><strong>Parser Outputs</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-interproscan-with-singularity-hpc"><strong>Running InterProScan with Singularity (HPC)</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Getting the InterProScan Data</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><strong>Getting the InterProScan Container</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><strong>Getting the Help and Usage Statement</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-pbs-script"><strong>Example PBS script:</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#running-interproscan-with-data"><strong>Running InterProScan with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><strong>Example PBS Script</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Breakdown of Command</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><strong>Understanding Your Results</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id8"><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9"><strong>Parser Outputs</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -203,15 +224,16 @@ tar -pxvzf panther-data-14.1.tar.gz
 <div class="highlight-none"><div class="highlight"><pre><span></span>&lt;current_working_directory&gt;/interproscan-5.36-75.0/data
 </pre></div>
 </div>
+</div>
 <div class="section" id="container-technologies">
-<h3><strong>Container Technologies</strong><a class="headerlink" href="#container-technologies" title="Permalink to this headline">¶</a></h3>
+<h2><strong>Container Technologies</strong><a class="headerlink" href="#container-technologies" title="Permalink to this headline">¶</a></h2>
 <p>GOanna is provided as a Docker container.</p>
 <p>A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.</p>
 <p>There are two major containerization technologies: <strong>Docker</strong> and <strong>Singularity</strong>.</p>
 <p>Docker containers can be run with either technology.</p>
 </div>
-<div class="section" id="running-goanna-using-docker">
-<h3><strong>Running GOanna using Docker</strong><a class="headerlink" href="#running-goanna-using-docker" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="running-interproscan-using-docker">
+<h2><strong>Running InterProScan using Docker</strong><a class="headerlink" href="#running-interproscan-using-docker" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-about-docker admonition">
 <p class="first admonition-title">About Docker</p>
 <ul class="last simple">
@@ -226,10 +248,8 @@ tar -pxvzf panther-data-14.1.tar.gz
 <p class="first admonition-title">Important</p>
 <p class="last">We have included this basic documentation for running InterProScan with Docker. However, InterProScan requires quite a lot of compute resources and may need to be run on an HPC system. If you need to use HPC see &#8216;Singularity&#8217; below.</p>
 </div>
-</div>
-</div>
 <div class="section" id="getting-the-interproscan-container">
-<h2><strong>Getting the InterProScan Container</strong><a class="headerlink" href="#getting-the-interproscan-container" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Getting the InterProScan Container</strong><a class="headerlink" href="#getting-the-interproscan-container" title="Permalink to this headline">¶</a></h3>
 <p>The InterProScan tool is available as a Docker container on Docker Hub:
 <a class="reference external" href="https://hub.docker.com/r/agbase/interproscan">InterProScan container</a></p>
 <p>The container can be pulled with this command:</p>
@@ -243,7 +263,7 @@ tar -pxvzf panther-data-14.1.tar.gz
 </div>
 </div>
 <div class="section" id="getting-the-help-and-usage-statement">
-<h2><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h3>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work-dir agbase/interproscan:5.36-75.0_0 -h
 </pre></div>
 </div>
@@ -350,7 +370,7 @@ OPTIONS FOR XML PARSER OUTPUTS
 </div>
 </div>
 <div class="section" id="running-goanna-with-data">
-<h2><strong>Running GOanna with Data</strong><a class="headerlink" href="#running-goanna-with-data" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Running GOanna with Data</strong><a class="headerlink" href="#running-goanna-with-data" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>There are one directory built into this container. This directory should be used to mount your working directory.</p>
@@ -358,6 +378,8 @@ OPTIONS FOR XML PARSER OUTPUTS
 <li>/data</li>
 </ul>
 </div>
+<div class="section" id="example-command">
+<h4><strong>Example Command</strong><a class="headerlink" href="#example-command" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-none"><div class="highlight"><pre><span></span>sudo docker run \
 -v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
 -v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data \
@@ -372,6 +394,9 @@ agbase/interproscan:5.36-75.0-0 \
 -D AgBase
 </pre></div>
 </div>
+</div>
+<div class="section" id="breakdown-of-command">
+<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#breakdown-of-command" title="Permalink to this headline">¶</a></h4>
 <p><strong>sudo docker run:</strong> tells docker to run</p>
 <p><strong>&#8211;rm:</strong> removes container when analysis finishes (image will remain for furture analyses)</p>
 <p><strong>-v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data:</strong> mount my working directory on the host machine into the /data directory in the container. The syntax for this is &lt;absolute path on host machine&gt;:&lt;absolute path in container&gt;</p>
@@ -390,8 +415,11 @@ agbase/interproscan:5.36-75.0-0 \
 <p><strong>-x 109069:</strong> taxon ID of query species to be used in column 13 of GAF output file</p>
 <p><strong>-D AgBase:</strong> database of query accession to be used in column 1 of GAF output file</p>
 </div>
+</div>
 <div class="section" id="understanding-your-results">
-<h2><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats">
+<h4><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats" title="Permalink to this headline">¶</a></h4>
 <p><strong>Default</strong>
 - &lt;basename&gt;.gff3
 - &lt;basename&gt;.tsv
@@ -400,6 +428,9 @@ agbase/interproscan:5.36-75.0-0 \
 - &lt;basename&gt;.json
 - &lt;basename&gt;.html.tar.gz
 - &lt;basename&gt;.svg.tar.gz</p>
+</div>
+<div class="section" id="parser-outputs">
+<h4><strong>Parser Outputs</strong><a class="headerlink" href="#parser-outputs" title="Permalink to this headline">¶</a></h4>
 <p><strong>&lt;basename&gt;_gaf.txt:</strong>
 -This table follows the formatting of a gene association file (gaf) and can be used in GO enrichment analyses.</p>
 <p><strong>&lt;basename&gt;_acc_go_counts.txt:</strong>
@@ -418,8 +449,10 @@ agbase/interproscan:5.36-75.0-0 \
 -This file will list any sequences that were not able to be analyzed by InterProScan. Examples of sequences that will cause an error are sequences with a large run of Xs.</p>
 <p>If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">Contact us</a>.</p>
 </div>
-<div class="section" id="running-the-container-with-singularity-hpc">
-<h2><strong>Running the container with Singularity (HPC)</strong><a class="headerlink" href="#running-the-container-with-singularity-hpc" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+<div class="section" id="running-interproscan-with-singularity-hpc">
+<h2><strong>Running InterProScan with Singularity (HPC)</strong><a class="headerlink" href="#running-interproscan-with-singularity-hpc" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-about-singularity admonition">
 <p class="first admonition-title">About Singularity</p>
 <ul class="last simple">
@@ -435,9 +468,8 @@ agbase/interproscan:5.36-75.0-0 \
 <p class="first admonition-title">HPC Job Schedulers</p>
 <p class="last">Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.</p>
 </div>
-</div>
 <div class="section" id="id1">
-<h2><strong>Getting the InterProScan Data</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Getting the InterProScan Data</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>Partner data are available from the InterProScan FTP site. These data are available as two separate downloads and can be obtained following these instructions:</p>
 <p><strong>1. Partner Data excluding Panther</strong></p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz
@@ -470,7 +502,7 @@ tar -pxvzf panther-data-14.1.tar.gz
 </div>
 </div>
 <div class="section" id="id2">
-<h2><strong>Getting the InterProScan Container</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Getting the InterProScan Container</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
 <p>The InterProScan tool is available as a Docker container on Docker Hub:
 <a class="reference external" href="https://hub.docker.com/r/agbase/interproscan">InterProScan container</a></p>
 <p>The container can be pulled with this command:</p>
@@ -479,7 +511,9 @@ tar -pxvzf panther-data-14.1.tar.gz
 </div>
 </div>
 <div class="section" id="id4">
-<h2><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="example-pbs-script">
+<h4><strong>Example PBS script:</strong><a class="headerlink" href="#example-pbs-script" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N 10000j100</span>
 <span class="c1">#PBS -q standard</span>
@@ -503,8 +537,9 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 </pre></div>
 </div>
 </div>
+</div>
 <div class="section" id="running-interproscan-with-data">
-<h2><strong>Running InterProScan with Data</strong><a class="headerlink" href="#running-interproscan-with-data" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Running InterProScan with Data</strong><a class="headerlink" href="#running-interproscan-with-data" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>There is one directory built into this container. This directory should be used to mount your working directory.</p>
@@ -512,6 +547,8 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 <li>/data</li>
 </ul>
 </div>
+<div class="section" id="id5">
+<h4><strong>Example PBS Script</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N 10000j100</span>
 <span class="c1">#PBS -q standard</span>
@@ -540,6 +577,9 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 -D AgBase
 </pre></div>
 </div>
+</div>
+<div class="section" id="id6">
+<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data:</strong> mounts my working directory on the host machine into the /data directory in the container the syntax for this is &lt;aboslute path on host machine&gt;:&lt;aboslute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data:</strong> mounts he InterProScan data directory that was downloaded from the FTP site into the InterProScan data directory in the container</p>
@@ -557,8 +597,11 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 <p><strong>-x 109069:</strong> taxon ID of query species to be used in column 13 of GAF output file</p>
 <p><strong>-D AgBase:</strong> database of query accession to be used in column 1 of GAF output file</p>
 </div>
-<div class="section" id="id5">
-<h2><strong>Understanding Your Results</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="id7">
+<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id8">
+<h4><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p><strong>Default</strong>
 - &lt;basename&gt;.gff3
 - &lt;basename&gt;.tsv
@@ -567,6 +610,9 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 - &lt;basename&gt;.json
 - &lt;basename&gt;.html.tar.gz
 - &lt;basename&gt;.svg.tar.gz</p>
+</div>
+<div class="section" id="id9">
+<h4><strong>Parser Outputs</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p><strong>&lt;basename&gt;_gaf.txt:</strong>
 -This table follows the formatting of a gene association file (gaf) and can be used in GO enrichment analyses.</p>
 <p><strong>&lt;basename&gt;_acc_go_counts.txt:</strong>
@@ -584,6 +630,8 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 <p><strong>&lt;basename&gt;.err:</strong>
 -This file will list any sequences that were not able to be analyzed by InterProScan. Examples of sequences that will cause an error are sequences with a large run of Xs.</p>
 <p>If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">Contact us</a>.</p>
+</div>
+</div>
 </div>
 </div>
 

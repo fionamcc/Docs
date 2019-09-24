@@ -3,7 +3,8 @@
 ============================================
 
 **Getting the InterProScan Data** 
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------
+
 Partner data are available from the InterProScan FTP site. These data are available as two separate downloads and can be obtained following these instructions:
 
 **1. Partner Data excluding Panther**
@@ -51,7 +52,7 @@ There are two major containerization technologies: **Docker** and **Singularity*
 
 Docker containers can be run with either technology.
 
-**Running GOanna using Docker**
+**Running InterProScan using Docker**
 -------------------------------
 
 .. admonition:: About Docker
@@ -304,8 +305,8 @@ The container can be pulled with this command:
 If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. `Contact us <agbase@email.arizona.edu>`_.
 
 
-**Running the container with Singularity (HPC)**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Running InterProScan with Singularity (HPC)**
+------------------------------------------------
 .. admonition:: About Singularity
 
     - does not require ‘root’ permissions
