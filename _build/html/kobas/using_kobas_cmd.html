@@ -132,6 +132,15 @@
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#running-kobas-identify-using-singularity"><strong>Running KOBAS Identify using Singularity</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id5"><strong>Getting the Help and Usage Statement</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#running-kobas-identify-with-data"><strong>Running KOBAS Identify with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-identify-process"><strong>Example PBS Script for Identify Process</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Breakdown of Command</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#annotate"><strong>Annotate</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#identifyresults"><strong>Identify</strong></a></li>
@@ -543,6 +552,137 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 <p><strong>-t:</strong> input file type; in this case, protein FASTA.</p>
 <p><strong>-o AROS1000:</strong> name of output file</p>
 <p>For information on output files see <a class="reference internal" href="#annotateresults">annotateresults</a></p>
+</div>
+</div>
+</div>
+<div class="section" id="running-kobas-identify-using-singularity">
+<h2><strong>Running KOBAS Identify using Singularity</strong><a class="headerlink" href="#running-kobas-identify-using-singularity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id5">
+<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p><strong>Example PBS script:</strong></p>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -N kobas</span>
+<span class="c1">#PBS -W group_list=fionamcc</span>
+<span class="c1">#PBS -l select=1:ncpus=28:mem=168gb</span>
+<span class="c1">#PBS -q standard</span>
+<span class="c1">#PBS -l walltime=6:0:0</span>
+<span class="c1">#PBS -l cput=168:0:0</span>
+
+module load singularity
+
+<span class="nb">cd</span> /rsgrps/shaneburgess/amanda/i5k/kobas
+
+singularity pull docker://agbase/kobas:3.0.3_0
+
+singularity run <span class="se">\</span>
+kobas_3.0.3_0.sif <span class="se">\</span>
+-h
+</pre></div>
+</div>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Options:
+[-h prints this help statement]
+
+[-a runs KOBAS annotate]
+KOBAS annotate options:
+    -i INFILE can be FASTA or one-per-lineidentifiers. See -t intype for details.
+    -s SPECIES 3 or 4 letter species abbreviation (can be found here: ftp://ftp.cbi.pku.edu.cn/pub/KOBAS_3.0_DOWNLOAD/species_abbr.txt or here: https://www.kegg.jp/kegg/catalog/org_list.html)
+    -o OUTPUT file (Default is stdout.)
+    -t INTYPE (fasta:pro, fasta:nuc, blastout:xml, blastout:tab, id:ncbigi, id:uniprot, id:ensembl, id:ncbigene), default fasta:pro
+    [-l LIST available species, or list available databases for a specific species]
+    [-e EVALUE expect threshold for BLAST, default 1e-5]
+    [-r RANK rank cutoff for valid hits from BLAST result, default is 5]
+    [-C COVERAGE subject coverage cutoff for BLAST, default 0]
+    [-z ORTHOLOG whether only use orthologs for cross-species annotation or not, default NO (if only using orthologs, please provide the species abbreviation of your input)]
+    [-k KOBAS HOME The path to kobas_home, which is the parent directory of sqlite3/ and seq_pep/. This is the absolute path in the container.]
+    [-v BLAST HOME The path to blast_home, which is the parent directory of blastx and blastp. This is the absolute path in the container.]
+    [-y BLASTDB The path to seq_pep/. This is the absolute path in the container.]
+    [-q KOBASDB The path to sqlite3/, This is the absolute path in the container.]
+    [-p BLASTP The path to blastp. This is the absolute path in the container.]
+    [-x BLASTX The path to blastx. This is the absolute path in the container.]
+    [-T number of THREADS to use in BLAST search. Default = 8]
+
+[-g runs KOBAS identify]
+    KOBAS identify options:
+    -f FGFILE foreground file, the output of annotate
+    -b BGFILE background file, species abbreviation, see this list for species codes: https://www.kegg.jp/kegg/catalog/org_list.html
+    -o OUTPUT file (Default is stdout.)
+    [-d DB databases for selection, 1-letter abbreviation separated by &quot;/&quot;: K for KEGG PATHWAY, n for PID, b for BioCarta, R for Reactome, B for BioCyc, p for PANTHER,
+           o for OMIM, k for KEGG DISEASE, f for FunDO, g for GAD, N for NHGRI GWAS Catalog and G for Gene Ontology, default K/n/b/R/B/p/o/k/f/g/N/]
+    [-m METHOD choose statistical test method: b for binomial test, c for chi-square test, h for hypergeometric test / Fisher&#39;s exact test, and x for frequency list,
+           default hypergeometric test / Fisher&#39;s exact test
+    [-n FDR choose false discovery rate (FDR) correction method: BH for Benjamini and Hochberg, BY for Benjamini and Yekutieli, QVALUE, and None, default BH
+    [-c CUTOFF terms with less than cutoff number of genes are not used for statistical tests, default 5]
+    [-k KOBAS HOME The path to kobas_home, which is the parent directory of sqlite3/ and seq_pep/. This is the absolute path in the container.]
+    [-v BLAST HOME The path to blast_home, which is the parent directory of blastx and blastp. This is the absolute path in the container.]
+    [-y BLASTDB The path to seq_pep/. This is the absolute path in the container.]
+    [-q KOBASDB The path to sqlite3/. This is the absolute path in the container.]
+    [-p BLASTP The path to blastp. This is the absolute path in the container.]
+    [-x BLASTX The path to blastx. This is the absolute path in the container.]
+
+[-j runs both KOBAS annotate and identify]
+</pre></div>
+</div>
+</div>
+<div class="section" id="running-kobas-identify-with-data">
+<h3><strong>Running KOBAS Identify with Data</strong><a class="headerlink" href="#running-kobas-identify-with-data" title="Permalink to this headline">¶</a></h3>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p>There are 3 directories built into this container. These directories should be used to mount data.</p>
+<ul class="last simple">
+<li>/seq_pep</li>
+<li>/sqlite3</li>
+<li>/work-dir</li>
+</ul>
+</div>
+<div class="section" id="example-pbs-script-for-identify-process">
+<h4><strong>Example PBS Script for Identify Process</strong><a class="headerlink" href="#example-pbs-script-for-identify-process" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -N kobas</span>
+<span class="c1">#PBS -W group_list=fionamcc</span>
+<span class="c1">#PBS -l select=1:ncpus=28:mem=168gb</span>
+<span class="c1">#PBS -q standard</span>
+<span class="c1">#PBS -l walltime=6:0:0</span>
+<span class="c1">#PBS -l cput=168:0:0</span>
+
+module load singularity
+
+<span class="nb">cd</span> /rsgrps/shaneburgess/amanda/i5k/kobas
+
+singularity pull docker://agbase/kobas:3.0.3_0
+
+singularity run <span class="se">\</span>
+-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep <span class="se">\</span>
+-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3 <span class="se">\</span>
+-B /rsgrps/shaneburgess/amanda/i5k/kobas:/work-dir <span class="se">\</span>
+kobas_3.0.3_0.sif <span class="se">\</span>
+-g
+-f AROS1000 <span class="se">\</span>
+-b dme <span class="se">\</span>
+-o ident_out
+</pre></div>
+</div>
+</div>
+<div class="section" id="id6">
+<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<p><strong>singularity run:</strong> tells Singularity to run</p>
+<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
+<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
+<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/kobas:/work-dir:</strong> mounts my current working directory on the host machine to &#8216;/work-dir&#8217; in the container</p>
+<p><strong>kobas_3.0.3_0.sif:</strong> the name of the Singularity image to use</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">All the options supplied after the image name are KOBAS options</p>
+</div>
+<p><strong>-g:</strong> Tells KOBAS to runt he &#8216;identify&#8217; process.</p>
+<p><strong>-f AROS1000:</strong> output file from &#8216;annotate&#8217;</p>
+<p><strong>-b dme:</strong> background; enter the species for the species of the sequences in your input file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you don&#8217;t know the code for your species it can be found here: <a class="reference external" href="https://www.kegg.jp/kegg/catalog/org_list.html">https://www.kegg.jp/kegg/catalog/org_list.html</a></p>
+<p class="last">If your species of interest is not available then you should choose the code for the closest-related species available</p>
+</div>
+<p><strong>-o ident_out:</strong> name of output file</p>
+<p>For information on output see <a class="reference internal" href="#identifyresults">identifyresults</a></p>
 </div>
 </div>
 </div>
