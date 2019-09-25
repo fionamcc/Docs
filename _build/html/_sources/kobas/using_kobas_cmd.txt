@@ -151,8 +151,8 @@ KOBAS can also run both task with a single command (-j).
     -t fasta:pro
     -o AROS1000
 
-**Breakdown of Command**
-""""""""""""""""""""""""
+**Breakdown of Annotate Command**
+"""""""""""""""""""""""""""""""""
 
 **sudo docker run:** tells docker to run
 
@@ -186,7 +186,58 @@ KOBAS can also run both task with a single command (-j).
 
 **-o AROS1000:** name of output file
 
-For information on output files see `Understanding Your Results`_
+For information on output files see `annotateresults`_
+
+**Identify Example Command**
+""""""""""""""""""""""""""""
+
+.. code-block:: none
+
+    sudo docker run \
+    --rm \
+    -v /home/amcooksey/i5k/seq_pep:/seq_pep \
+    -v /home/amcooksey/i5k/sqlite3:/sqlite3 \
+    -v $(pwd):/work-dir \
+    agbase/kobas:3.0.3_0 \
+    -g \
+    -f AROS1000 \
+    -b dme \
+    -o ident_out
+
+**Breakdown of Identify Command**
+"""""""""""""""""""""""""""""""""
+
+**sudo docker run:** tells docker to run
+
+**--rm:** removes the container when the analysis has finished. The image will remain for future use.
+
+**-v /home/amcooksey/i5k/seq_pep:/seq_pep:** tells docker to mount the 'seq_pep' directory I downloaded to the host machine to the '/seq_pep' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
+
+**-v /home/amcooksey/i5k/sqlite3:/sqlite3:** mounts 'sqlite3' directory on host machine into 'go_info' directory inside the container
+
+**-v $(pwd):/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
+
+**agbase/kobas:3.0.3_0:** the name of the Docker image to use
+
+.. tip::
+
+    All the options supplied after the image name are KOBAS options
+
+**-g:** Tells KOBAS to runt he 'identify' process.
+
+**-f AROS1000:** output file from KOBAS annotate
+
+**-b dme:** background; enter the species code for the species of the sequences in your input file. 
+
+.. NOTE:: 
+
+    If you don't know the code for your species it can be found here: https://www.kegg.jp/kegg/catalog/org_list.html
+
+    If your species of interest is not available then you should choose the code for the closest-related species available
+
+**-o ident_out:** name of output file
+
+For information of outputs see `identifyresults`_
 
 **Running KOBAS Annotate using Singularity**
 ------------------------------------
@@ -370,11 +421,11 @@ For information on output files see `annotateresults`_
 **Understanding Your Results**
 -------------------------------
 
-
-**Annotate**
-------------
 .. _annotateresults:
 
+
+**Annotate**
+^^^^^^^^^^^^
 
 If all goes well, you should get the following:
 
@@ -423,8 +474,10 @@ The second section follows a dashed line and looks like this:
                                 Hemostasis	Reactome	R-DME-109582
                     	        Factors involved in megakaryocyte development and platelet production	Reactome	R-DME-98323
 
+.. _identifyresults:
+
 **Identify**
-""""""""""""
+^^^^^^^^^^^^
 
 If all goes well, you should get the following:
 

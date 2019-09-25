@@ -115,7 +115,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-kobas-with-data"><strong>Running KOBAS with Data</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#annotate-example-command"><strong>Annotate Example Command</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-command"><strong>Breakdown of Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-annotate-command"><strong>Breakdown of Annotate Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#identify-example-command"><strong>Identify Example Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-identify-command"><strong>Breakdown of Identify Command</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -125,13 +127,16 @@
 <li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4"><strong>Running KOBAS with Data</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-annotate-process"><strong>Example PBS Script for Annotate Process</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5"><strong>Breakdown of Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-command"><strong>Breakdown of Command</strong></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#annotate"><strong>Annotate</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#annotate"><strong>Annotate</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#identifyresults"><strong>Identify</strong></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -320,8 +325,8 @@ agbase/kobas:3.0.3_0 \
 </pre></div>
 </div>
 </div>
-<div class="section" id="breakdown-of-command">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#breakdown-of-command" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="breakdown-of-annotate-command">
+<h4><strong>Breakdown of Annotate Command</strong><a class="headerlink" href="#breakdown-of-annotate-command" title="Permalink to this headline">¶</a></h4>
 <p><strong>sudo docker run:</strong> tells docker to run</p>
 <p><strong>&#8211;rm:</strong> removes the container when the analysis has finished. The image will remain for future use.</p>
 <p><strong>-v /home/amcooksey/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
@@ -342,7 +347,45 @@ agbase/kobas:3.0.3_0 \
 </div>
 <p><strong>-t:</strong> input file type; in this case, protein FASTA.</p>
 <p><strong>-o AROS1000:</strong> name of output file</p>
-<p>For information on output files see <a class="reference internal" href="#understanding-your-results">Understanding Your Results</a></p>
+<p>For information on output files see <a class="reference internal" href="#annotateresults">annotateresults</a></p>
+</div>
+<div class="section" id="identify-example-command">
+<h4><strong>Identify Example Command</strong><a class="headerlink" href="#identify-example-command" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-none"><div class="highlight"><pre><span></span>sudo docker run \
+--rm \
+-v /home/amcooksey/i5k/seq_pep:/seq_pep \
+-v /home/amcooksey/i5k/sqlite3:/sqlite3 \
+-v $(pwd):/work-dir \
+agbase/kobas:3.0.3_0 \
+-g \
+-f AROS1000 \
+-b dme \
+-o ident_out
+</pre></div>
+</div>
+</div>
+<div class="section" id="breakdown-of-identify-command">
+<h4><strong>Breakdown of Identify Command</strong><a class="headerlink" href="#breakdown-of-identify-command" title="Permalink to this headline">¶</a></h4>
+<p><strong>sudo docker run:</strong> tells docker to run</p>
+<p><strong>&#8211;rm:</strong> removes the container when the analysis has finished. The image will remain for future use.</p>
+<p><strong>-v /home/amcooksey/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
+<p><strong>-v /home/amcooksey/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
+<p><strong>-v $(pwd):/work-dir:</strong> mounts my current working directory on the host machine to &#8216;/work-dir&#8217; in the container</p>
+<p><strong>agbase/kobas:3.0.3_0:</strong> the name of the Docker image to use</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">All the options supplied after the image name are KOBAS options</p>
+</div>
+<p><strong>-g:</strong> Tells KOBAS to runt he &#8216;identify&#8217; process.</p>
+<p><strong>-f AROS1000:</strong> output file from KOBAS annotate</p>
+<p><strong>-b dme:</strong> background; enter the species code for the species of the sequences in your input file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you don&#8217;t know the code for your species it can be found here: <a class="reference external" href="https://www.kegg.jp/kegg/catalog/org_list.html">https://www.kegg.jp/kegg/catalog/org_list.html</a></p>
+<p class="last">If your species of interest is not available then you should choose the code for the closest-related species available</p>
+</div>
+<p><strong>-o ident_out:</strong> name of output file</p>
+<p>For information of outputs see <a class="reference internal" href="#identifyresults">identifyresults</a></p>
 </div>
 </div>
 </div>
@@ -478,8 +521,8 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id5">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="breakdown-of-command">
+<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#breakdown-of-command" title="Permalink to this headline">¶</a></h4>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
@@ -505,10 +548,9 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 </div>
 <div class="section" id="understanding-your-results">
 <h2><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h2>
-</div>
 <div class="section" id="annotate">
-<h2><strong>Annotate</strong><a class="headerlink" href="#annotate" title="Permalink to this headline">¶</a></h2>
-<p id="annotateresults">If all goes well, you should get the following:</p>
+<span id="annotateresults"></span><h3><strong>Annotate</strong><a class="headerlink" href="#annotate" title="Permalink to this headline">¶</a></h3>
+<p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>seq_pep folder:</strong> This folder contains the BLAST database files used in your analysis.</li>
 <li><strong>sqlite3 folder:</strong> This folder contains the annotation database files used in your analysis</li>
@@ -551,6 +593,9 @@ Pathway:                    Endocytosis     KEGG PATHWAY    dme04144
                             Factors involved in megakaryocyte development and platelet production   Reactome        R-DME-98323
 </pre></div>
 </div>
+</div>
+<div class="section" id="identifyresults">
+<span id="identify"></span><h3><strong>Identify</strong><a class="headerlink" href="#identifyresults" title="Permalink to this headline">¶</a></h3>
 <p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>sqlite3 folder:</strong> This folder contains the annotation database files used in your analysis</li>
@@ -567,6 +612,7 @@ Signaling by NOTCH2 Reactome        R-DME-1980145   3       8       2.0025964955
 </pre></div>
 </div>
 <p><a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">Contact us</a>.</p>
+</div>
 </div>
 </div>
 

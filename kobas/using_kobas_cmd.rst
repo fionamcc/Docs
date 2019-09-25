@@ -151,8 +151,8 @@ KOBAS can also run both task with a single command (-j).
     -t fasta:pro
     -o AROS1000
 
-**Breakdown of Command**
-""""""""""""""""""""""""
+**Breakdown of Annotate Command**
+"""""""""""""""""""""""""""""""""
 
 **sudo docker run:** tells docker to run
 
@@ -187,6 +187,57 @@ KOBAS can also run both task with a single command (-j).
 **-o AROS1000:** name of output file
 
 For information on output files see `annotateresults`_
+
+**Identify Example Command**
+""""""""""""""""""""""""""""
+
+.. code-block:: none
+
+    sudo docker run \
+    --rm \
+    -v /home/amcooksey/i5k/seq_pep:/seq_pep \
+    -v /home/amcooksey/i5k/sqlite3:/sqlite3 \
+    -v $(pwd):/work-dir \
+    agbase/kobas:3.0.3_0 \
+    -g \
+    -f AROS1000 \
+    -b dme \
+    -o ident_out
+
+**Breakdown of Identify Command**
+"""""""""""""""""""""""""""""""""
+
+**sudo docker run:** tells docker to run
+
+**--rm:** removes the container when the analysis has finished. The image will remain for future use.
+
+**-v /home/amcooksey/i5k/seq_pep:/seq_pep:** tells docker to mount the 'seq_pep' directory I downloaded to the host machine to the '/seq_pep' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
+
+**-v /home/amcooksey/i5k/sqlite3:/sqlite3:** mounts 'sqlite3' directory on host machine into 'go_info' directory inside the container
+
+**-v $(pwd):/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
+
+**agbase/kobas:3.0.3_0:** the name of the Docker image to use
+
+.. tip::
+
+    All the options supplied after the image name are KOBAS options
+
+**-g:** Tells KOBAS to runt he 'identify' process.
+
+**-f AROS1000:** output file from KOBAS annotate
+
+**-b dme:** background; enter the species code for the species of the sequences in your input file. 
+
+.. NOTE:: 
+
+    If you don't know the code for your species it can be found here: https://www.kegg.jp/kegg/catalog/org_list.html
+
+    If your species of interest is not available then you should choose the code for the closest-related species available
+
+**-o ident_out:** name of output file
+
+For information of outputs see `identifyresults`_
 
 **Running KOBAS Annotate using Singularity**
 ------------------------------------
@@ -366,15 +417,163 @@ The container can be pulled with this command:
 
 For information on output files see `annotateresults`_
 
+**Running KOBAS Identify using Singularity**
+------------------------------------
+
+
+
+**Getting the Help and Usage Statement**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Example PBS script:**
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #PBS -N kobas
+    #PBS -W group_list=fionamcc
+    #PBS -l select=1:ncpus=28:mem=168gb
+    #PBS -q standard
+    #PBS -l walltime=6:0:0
+    #PBS -l cput=168:0:0
+    
+    module load singularity
+    
+    cd /rsgrps/shaneburgess/amanda/i5k/kobas
+    
+    singularity pull docker://agbase/kobas:3.0.3_0
+    
+    singularity run \
+    kobas_3.0.3_0.sif \
+    -h
+
+
+.. code-block:: none
+
+    
+    Options:
+    [-h prints this help statement]
+
+    [-a runs KOBAS annotate]
+    KOBAS annotate options:
+        -i INFILE can be FASTA or one-per-lineidentifiers. See -t intype for details.
+        -s SPECIES 3 or 4 letter species abbreviation (can be found here: ftp://ftp.cbi.pku.edu.cn/pub/KOBAS_3.0_DOWNLOAD/species_abbr.txt or here: https://www.kegg.jp/kegg/catalog/org_list.html)
+        -o OUTPUT file (Default is stdout.)
+        -t INTYPE (fasta:pro, fasta:nuc, blastout:xml, blastout:tab, id:ncbigi, id:uniprot, id:ensembl, id:ncbigene), default fasta:pro
+        [-l LIST available species, or list available databases for a specific species]
+        [-e EVALUE expect threshold for BLAST, default 1e-5]
+        [-r RANK rank cutoff for valid hits from BLAST result, default is 5]
+        [-C COVERAGE subject coverage cutoff for BLAST, default 0]
+        [-z ORTHOLOG whether only use orthologs for cross-species annotation or not, default NO (if only using orthologs, please provide the species abbreviation of your input)]
+        [-k KOBAS HOME The path to kobas_home, which is the parent directory of sqlite3/ and seq_pep/. This is the absolute path in the container.]
+        [-v BLAST HOME The path to blast_home, which is the parent directory of blastx and blastp. This is the absolute path in the container.]
+        [-y BLASTDB The path to seq_pep/. This is the absolute path in the container.]
+        [-q KOBASDB The path to sqlite3/, This is the absolute path in the container.]
+        [-p BLASTP The path to blastp. This is the absolute path in the container.]
+        [-x BLASTX The path to blastx. This is the absolute path in the container.]
+        [-T number of THREADS to use in BLAST search. Default = 8]
+
+    [-g runs KOBAS identify]
+        KOBAS identify options:
+        -f FGFILE foreground file, the output of annotate
+        -b BGFILE background file, species abbreviation, see this list for species codes: https://www.kegg.jp/kegg/catalog/org_list.html
+        -o OUTPUT file (Default is stdout.)
+        [-d DB databases for selection, 1-letter abbreviation separated by "/": K for KEGG PATHWAY, n for PID, b for BioCarta, R for Reactome, B for BioCyc, p for PANTHER,
+               o for OMIM, k for KEGG DISEASE, f for FunDO, g for GAD, N for NHGRI GWAS Catalog and G for Gene Ontology, default K/n/b/R/B/p/o/k/f/g/N/]
+        [-m METHOD choose statistical test method: b for binomial test, c for chi-square test, h for hypergeometric test / Fisher's exact test, and x for frequency list,
+               default hypergeometric test / Fisher's exact test
+        [-n FDR choose false discovery rate (FDR) correction method: BH for Benjamini and Hochberg, BY for Benjamini and Yekutieli, QVALUE, and None, default BH
+        [-c CUTOFF terms with less than cutoff number of genes are not used for statistical tests, default 5]
+        [-k KOBAS HOME The path to kobas_home, which is the parent directory of sqlite3/ and seq_pep/. This is the absolute path in the container.]
+        [-v BLAST HOME The path to blast_home, which is the parent directory of blastx and blastp. This is the absolute path in the container.]
+        [-y BLASTDB The path to seq_pep/. This is the absolute path in the container.]
+        [-q KOBASDB The path to sqlite3/. This is the absolute path in the container.]
+        [-p BLASTP The path to blastp. This is the absolute path in the container.]
+        [-x BLASTX The path to blastx. This is the absolute path in the container.]
+
+    [-j runs both KOBAS annotate and identify]
+    
+**Running KOBAS with Data**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. tip::
+
+    There are 3 directories built into this container. These directories should be used to mount data.
+    
+    - /seq_pep
+    - /sqlite3
+    - /work-dir
+    
+
+**Example PBS Script for Annotate Process**
+"""""""""""""""""""""""""""""""""""""""""""
+
+.. code-block:: bash
+
+    #!/bin/bash
+    #PBS -N kobas
+    #PBS -W group_list=fionamcc
+    #PBS -l select=1:ncpus=28:mem=168gb
+    #PBS -q standard
+    #PBS -l walltime=6:0:0
+    #PBS -l cput=168:0:0
+    
+    module load singularity
+    
+    cd /rsgrps/shaneburgess/amanda/i5k/kobas
+    
+    singularity pull docker://agbase/kobas:3.0.3_0
+    
+    singularity run \
+    -B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep \
+    -B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3 \
+    -B /rsgrps/shaneburgess/amanda/i5k/kobas:/work-dir \
+    kobas_3.0.3_0.sif \
+    -g 
+    -f AROS1000 \
+    -b dme \
+    -o ident_out
+
+
+**Breakdown of Command**
+""""""""""""""""""""""""
+
+**singularity run:** tells Singularity to run
+
+**-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:** tells docker to mount the 'seq_pep' directory I downloaded to the host machine to the '/seq_pep' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
+
+**-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:** mounts 'sqlite3' directory on host machine into 'go_info' directory inside the container
+
+**-B /rsgrps/shaneburgess/amanda/i5k/kobas:/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
+
+**kobas_3.0.3_0.sif:** the name of the Singularity image to use
+
+.. tip::
+
+    All the options supplied after the image name are KOBAS options
+
+**-g:** Tells KOBAS to runt he 'identify' process.
+
+**-f AROS1000:** output file from 'annotate'
+
+**-b dme:** background; enter the species for the species of the sequences in your input file. 
+
+.. NOTE:: 
+
+    If you don't know the code for your species it can be found here: https://www.kegg.jp/kegg/catalog/org_list.html
+
+    If your species of interest is not available then you should choose the code for the closest-related species available
+
+**-o ident_out:** name of output file 
+
 
 **Understanding Your Results**
 -------------------------------
 
-.. _annotateresults:
+.. _identifyresults:
 
 
 **Annotate**
-------------
+^^^^^^^^^^^^
 
 If all goes well, you should get the following:
 
@@ -423,8 +622,10 @@ The second section follows a dashed line and looks like this:
                                 Hemostasis	Reactome	R-DME-109582
                     	        Factors involved in megakaryocyte development and platelet production	Reactome	R-DME-98323
 
+.. _identifyresults:
+
 **Identify**
-""""""""""""
+^^^^^^^^^^^^
 
 If all goes well, you should get the following:
 
