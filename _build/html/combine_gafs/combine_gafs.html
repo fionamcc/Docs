@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; AgBase 1.0 documentation</title>
+  <title>Combining Gene Association Files &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Intro to KOBAS" href="../kobas/intro.html"/>
-        <link rel="prev" title="Running InterProScan on the Command Line" href="../interproscan/using_iprs_cmd.html"/> 
+        <link rel="next" title="Intro" href="../kobas/intro.html"/>
+        <link rel="prev" title="InterProScan on the Command Line" href="../interproscan/using_iprs_cmd.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -92,22 +92,32 @@
 </ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro to GOanna</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>Using GOanna on CyVerse</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>Running GOanna on the Command Line</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>GOanna on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>GOanna on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">InterProScan</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../interproscan/intro.html"><strong>Intro to InterProScan</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../interproscan/using_iprs_cmd.html"><strong>Running InterProScan on the Command Line</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interproscan/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interproscan/using_iprs_cmd.html"><strong>InterProScan on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Combining Gene Association Files</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#combining-gafs-on-cyverse">Combining GAFs on CyVerse</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#combining-gafs-on-the-command-line">Combining GAFs on the Command Line</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-docker">Combine GAFs using Docker</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-singularity">Combine GAFs using Singularity</a></li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 <p class="caption"><span class="caption-text">KOBAS</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../kobas/intro.html"><strong>Intro to KOBAS</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_in_cyverse_DE.html"><strong>Using KOBAS on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_in_cyverse_DE.html"><strong>KOBAS on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_cmd.html"><strong>KOBAS on the Command Line</strong></a></li>
 </ul>
 
             
@@ -138,7 +148,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>&lt;no title&gt;</li>
+    <li>Combining Gene Association Files</li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -152,7 +162,32 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="combining-gene-association-files">
+<h1>Combining Gene Association Files<a class="headerlink" href="#combining-gene-association-files" title="Permalink to this headline">¶</a></h1>
+<p>This tool can be used to combine the gene association file (GAF) outputs from GOanna and InterProScan.</p>
+<p>The tool accepts two input files:</p>
+<ol class="arabic simple">
+<li>GOanna output GAF</li>
+<li>InterProScan GAF output</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">InterProScan itself does not produce a GAF file. The    <a class="reference external" href="https://hub.docker.com/r/agbase/interproscan">AgBase InterProScan container</a> parses the XML output from InterProScan to produce the GAF file.</p>
+</div>
+<div class="section" id="combining-gafs-on-cyverse">
+<h2>Combining GAFs on CyVerse<a class="headerlink" href="#combining-gafs-on-cyverse" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="combining-gafs-on-the-command-line">
+<h2>Combining GAFs on the Command Line<a class="headerlink" href="#combining-gafs-on-the-command-line" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="combine-gafs-using-docker">
+<h3>Combine GAFs using Docker<a class="headerlink" href="#combine-gafs-using-docker" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="combine-gafs-using-singularity">
+<h3>Combine GAFs using Singularity<a class="headerlink" href="#combine-gafs-using-singularity" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+
 
            </div>
           </div>
@@ -160,10 +195,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../kobas/intro.html" class="btn btn-neutral float-right" title="Intro to KOBAS" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../kobas/intro.html" class="btn btn-neutral float-right" title="Intro" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../interproscan/using_iprs_cmd.html" class="btn btn-neutral" title="Running InterProScan on the Command Line" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../interproscan/using_iprs_cmd.html" class="btn btn-neutral" title="InterProScan on the Command Line" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
