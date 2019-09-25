@@ -10,7 +10,7 @@
 
 
 **Where to Find KOBAS** 
-=======================
+-----------------------
 
 KOBAS is provided as a Docker container for use on the command line and as a group of apps in the CyVerse Discovery Environment. 
 
@@ -23,10 +23,11 @@ KOBAS is provided as a Docker container for use on the command line and as a gro
 
 `KOBAS annotate and identify 3.0.3 <https://de.cyverse.org/de/?type=apps&app-id=2959dcb4-d0d0-11e9-9f25-008cfa5ae621&system-id=de>`_
 
+
 .. _kobasusage:
 
 **Help and Usage Statement**
-============================
+----------------------------
 On the command line the following help statement can be displayed with the option '-h'.
 
 .. code-block:: none

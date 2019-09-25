@@ -76,7 +76,7 @@ The container can be pulled with this command:
 
     sudo docker run --rm -v $(pwd):/work-dir agbase/kobas:3.0.3_0 -h
 
-See `Help and Usage Statement`_
+See :ref:`kobasusage`
 
 
 **Running KOBAS with Data**
