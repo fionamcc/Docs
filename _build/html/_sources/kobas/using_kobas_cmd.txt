@@ -258,7 +258,7 @@ For information of outputs see identifyresults_
     This pipeline will automatically use the output of 'annotate' as the -f foreground input for 'identify. 
     This will also use your species option as the -b background input for 'identify'.
 
-For more information on outputs see annoident_
+For more information on outputs see :ref:`Understanding Your Reseults: Annotate <annoident>`
 
 **Running KOBAS Annotate using Singularity**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -651,7 +651,7 @@ If all goes well, you should get the following:
     Hedgehog signaling pathway	PANTHER	P00025	6	13	3.6166668094e-10	9.94583372585e-09	lcl|NW_020311286.1_prot_XP_025602279.1_78|lcl|NW_020311286.1_prot_XP_025602289.1_76|lcl|NW_020311286.1_prot_XP_025602264.1_79|lcl|NW_020311285.1_prot_XP_012256108.1_32|lcl|NW_020311285.1_prot_XP_012256109.1_33|lcl|NW_020311286.1_prot_XP_012256943.1_77	http://www.pantherdb.org/pathway/pathwayDiagram.jsp?catAccession=P00025
     Signaling by NOTCH2	Reactome	R-DME-1980145	3	8	2.00259649553e-05	0.000275357018136	lcl|NW_020311285.1_prot_XP_012256118.1_28|lcl|NW_020311285.1_prot_XP_012256117.1_27|lcl|NW_020311285.1_prot_XP_012256119.1_26	http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=R-DME-1980145
 
-.. _annoident:
+:ref:`annoident`
 
 **Annotate and Identify Pipeline**
 
