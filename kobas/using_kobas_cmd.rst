@@ -145,7 +145,7 @@ KOBAS can also run both task with a single command (-j).
 
 **-o AROS1000:** name of output file
 
-For information on output files see `annotateresults`_
+For information on output files see annotateresults_
 
 **Identify Example Command**
 """"""""""""""""""""""""""""
@@ -196,7 +196,7 @@ For information on output files see `annotateresults`_
 
 **-o ident_out:** name of output file
 
-For information of outputs see `identifyresults`_
+For information of outputs see identifyresults_
 
 **Running KOBAS Annoate and Identify as a Pipeline**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -258,7 +258,7 @@ For information of outputs see `identifyresults`_
     This pipeline will automatically use the output of 'annotate' as the -f foreground input for 'identify. 
     This will also use your species option as the -b background input for 'identify'.
 
-For more information on outputs see `annoident`_
+For more information on outputs see annoident_
 
 **Running KOBAS Annotate using Singularity**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
