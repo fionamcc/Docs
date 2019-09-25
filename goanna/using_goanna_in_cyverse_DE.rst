@@ -42,7 +42,7 @@ Enabling this flag will copy all the input files into the analysis result folder
     Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.
 
 **Input**
----------
+^^^^^^^^^
 
 This menu is used to select the BLAST database and your input file.
 
@@ -51,7 +51,7 @@ This menu is used to select the BLAST database and your input file.
 **Peptide FASTA file:** Use the Browse button on the right hand side to navigate to your Data folder and select your protein sequence file. 
 
 **Parameters**
---------------
+^^^^^^^^^^^^^^
 
 Use this menu to select your BLAST parameters.
 
@@ -66,7 +66,7 @@ The remaining parameters are standard BLAST parameters, and their defaults can b
     This tool uses stand alone BLAST and interprets FASTA deflines accordingly. NCBI ‘bar’-delimited deflines can be interpreted correctly using the ‘parse-deflines’ option. If the ‘parse-deflines’ option is not checked then BLAST will interpret the ID to be everything before the first space.
 
 **Output**
-----------
+^^^^^^^^^^
 
 This menu is used to format your GO annotation results into a standard gene association file format.
 

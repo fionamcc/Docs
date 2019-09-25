@@ -120,44 +120,36 @@ The container can be pulled with this command:
 
     [-j runs both KOBAS annotate and identify]
 
-**Running GOanna with Data**
+**Running KOBAS with Data**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. tip::
 
     There are 3 directories built into this container. These directories should be used to mount data.
-    
-    - /agbase_database
-    - /go_info
-    - /work-dir
+     - /work-dir
+     - /seq_pep
+     - /sqlite3
 
-GOanna has three required parameters:
+KOBAS can perform two tasks:
+- annotate (-a)
+- identify (enrichment) (-g)
+KOBAS can also run both task with a single command (-j).
 
-.. code-block:: bash
-
-    -a BLAST database basename (acceptable options are listed in the help/usage)
-    -c peptide FASTA file to BLAST
-    -o output file basename
-
-**Example Command**
-"""""""""""""""""""
+**Annotate Example Command**
+""""""""""""""""""""""""""""
 
 .. code-block:: none
 
     sudo docker run \
     --rm \
-    -v /home/amcooksey/i5k/agbase_database:/agbase_database \
-    -v /home/amcooksey/i5k/go_info:/go_info \
+    -v /home/amcooksey/i5k/seq_pep:/seq_pep \
+    -v /home/amcooksey/i5k/sqlite3:/sqlite3 \
     -v $(pwd):/work-dir \
-    agbase/goanna:2.0 \
-    -a invertebrates \
-    -c AROS_10.faa \
-    -o AROS_10_invert_exponly \
-    -p \
-    -g 70 \
-    -s 900 \
-    -d RefSeq \
-    -u "Amanda Cooksey" \
-    -x 37344
+    agbase/kobas:3.0.3_0 \
+    -a 
+    -i AROS1000.fa \
+    -s dme \
+    -t fasta:pro
+    -o AROS1000
 
 **Breakdown of Command**
 """"""""""""""""""""""""
@@ -166,72 +158,37 @@ GOanna has three required parameters:
 
 **--rm:** removes the container when the analysis has finished. The image will remain for future use.
 
-**-v /home/amcooksey/i5k/agbase_database:/agbase_database:** tells docker to mount the 'agbase_database' directory I downloaded to the host machine to the '/agbase_database' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
+**-v /home/amcooksey/i5k/seq_pep:/seq_pep:** tells docker to mount the 'seq_pep' directory I downloaded to the host machine to the '/seq_pep' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
 
-**-v /home/amcooksey/i5k/go_info:/go_info:** mounts 'go_info' directory on host machine into 'go_info' directory inside the container
+**-v /home/amcooksey/i5k/sqlite3:/sqlite3:** mounts 'sqlite3' directory on host machine into 'go_info' directory inside the container
 
 **-v $(pwd):/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
 
-**agbase/goanna:2.0:** the name of the Docker image to use
+**agbase/kobas:3.0.3_0:** the name of the Docker image to use
 
 .. tip::
 
-    All the options supplied after the image name are GOanna options
+    All the options supplied after the image name are KOBAS options
 
-**-a invertebrates:** GOanna BLAST database to use--first of three required options.
+**-a:** Tells KOBAS to runt he 'annotate' process.
 
-**-c AROS_10.faa:** input file (peptide FASTA)--second of three required options
+**-i AROS1000.fa:** input file (peptide FASTA)
 
-**-o AROS_10_invert_exponly:** output file basename--last of three required options
+**-s dme:** Enter the species for the species of the sequences in your input file. 
 
-**-p:** our input file has NCBI deflines. This specifies how to parse them.
+.. NOTE:: 
 
-**-g 70:** tells GOanna to keep only those matches with at least 70% identity
+    If you don't know the code for your species it can be found here: https://www.kegg.jp/kegg/catalog/org_list.html
 
-**-s 900:** tells GOanna to keep only those matches with a bitscore above 900
+    If your species of interest is not available then you should choose the code for the closest-related species available
 
-**-d RefSeq:** database of query ID. This will appear in column 1 of the GAF output file.
+**-t:** input file type; in this case, protein FASTA.
 
-**-u "Amanda Cooksey":** name to appear in column 15 of the GAF output file
+**-o AROS1000:** name of output file
 
-**-x 37344:** NCBI taxon ID of input file species will appear in column 13 of the GAF output file
+For information on output files see `Understanding Your Results`_
 
-**Understanding Your Results**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If all goes well, you should get 4 output files:
-
-**<basename>.asn:** This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.
-
-**<basename>.html:** This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters. 
-
-**<basename>.tsv:** This is the tab-delimited BLAST output that can be opened and sorted in Excel to determine BLAST parameter values. The file contains the following columns:
-
-- Query ID
-- query length
-- query start
-- query end
-- subject ID
-- subject length
-- subject start
-- subject end
-- e-value
-- percent ID
-- query coverage
-- percent positive ID
-- gap openings
-- total gaps
-- bitscore
-- raw score
-
-For more information on the BLAST output parameters see the `NCBI BLAST documentation <https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_.>`_.
-
-**<basename>_goanna_gaf.tsv:** This is the standard tab-separated `GO annotation file format <http://geneontology.org/docs/go-annotation-file-gaf-format-2.1>`_  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment. 
-
-If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. `Contact us <agbase@email.arizona.edu>`_.
-
-
-
-**Running GOanna using Singularity**
+**Running KOBAS Annotate using Singularity**
 ------------------------------------
 
 .. admonition:: About Singularity
@@ -248,16 +205,16 @@ If you see more files in your output folder there may have been an error in the 
 
     Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.
 
-**Getting the GOanna container**
+**Getting the KOBAS container**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The GOanna tool is available as a Docker container on Docker Hub: 
-`GOanna container <https://hub.docker.com/r/agbase/goanna>`_ 
+`GOanna container <https://hub.docker.com/r/agbase/kobas>`_ 
 
 The container can be pulled with this command: 
 
 .. code-block:: bash
 
-    singularity pull docker://agbase/goanna:2.0
+    singularity pull docker://agbase/kobas:3.0.3_0
 
 
 
@@ -268,7 +225,7 @@ The container can be pulled with this command:
 .. code-block:: bash
 
     #!/bin/bash
-    #PBS -N goanna
+    #PBS -N kobas
     #PBS -W group_list=fionamcc
     #PBS -l select=1:ncpus=28:mem=168gb
     #PBS -q standard
@@ -277,68 +234,79 @@ The container can be pulled with this command:
     
     module load singularity
     
-    cd /rsgrps/shaneburgess/amanda/i5k/GOanna
+    cd /rsgrps/shaneburgess/amanda/i5k/kobas
     
-    singularity pull docker://agbase/goanna:2.0
+    singularity pull docker://agbase/kobas:3.0.3_0
     
     singularity run \
-    goanna_2.0.sif \
+    kobas_3.0.3_0.sif \
     -h
 
 
 .. code-block:: none
 
-    Options:
-    -a BLAST database basename ('arthropod', 'bacteria', 'bird', 'crustacean', 'fish', 'fungi', 'human', 'insecta',
-       'invertebrates', 'mammals', 'nematode', 'plants', 'rodents' 'uniprot_sprot', 'uniprot_trembl', 'vertebrates'
-        or 'viruses')
-    -c peptide fasta filename
-    -o BLAST output file basename
-    [-b transfer GO with experimental evidence only ('yes' or 'no'). Default = 'yes'.]
-    [-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
-        to preserve the space, use quotes around your entry. Default: 'user_input_db']
-    [-e Expect value (E) for saving hits. Default is 10.]
-    [-f Number of aligned sequences to keep. Default: 3]
-    [-g BLAST percent identity above which match should be kept. Default: keep all matches.]
-    [-h help]
-    [-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
-    [-s bitscore above which match should be kept. Default: keep all matches.]
-    [-k Maximum number of gap openings allowed for match to be kept.Default: 100]
-    [-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
-    [-q Minimum query coverage per subject for match to be kept. Default: keep all matches]
-    [-t Number of threads.  Default: 8]
-    [-u 'Assigned by' field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
-        either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. "firstname lastname")
-        Default: 'user']
-    [-x Taxon ID of the query species. Default: 'taxon:0000']
-    [-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
     
-**Running GOanna with Data**
+    Options:
+    [-h prints this help statement]
+
+    [-a runs KOBAS annotate]
+    KOBAS annotate options:
+        -i INFILE can be FASTA or one-per-lineidentifiers. See -t intype for details.
+        -s SPECIES 3 or 4 letter species abbreviation (can be found here: ftp://ftp.cbi.pku.edu.cn/pub/KOBAS_3.0_DOWNLOAD/species_abbr.txt or here: https://www.kegg.jp/kegg/catalog/org_list.html)
+        -o OUTPUT file (Default is stdout.)
+        -t INTYPE (fasta:pro, fasta:nuc, blastout:xml, blastout:tab, id:ncbigi, id:uniprot, id:ensembl, id:ncbigene), default fasta:pro
+        [-l LIST available species, or list available databases for a specific species]
+        [-e EVALUE expect threshold for BLAST, default 1e-5]
+        [-r RANK rank cutoff for valid hits from BLAST result, default is 5]
+        [-C COVERAGE subject coverage cutoff for BLAST, default 0]
+        [-z ORTHOLOG whether only use orthologs for cross-species annotation or not, default NO (if only using orthologs, please provide the species abbreviation of your input)]
+        [-k KOBAS HOME The path to kobas_home, which is the parent directory of sqlite3/ and seq_pep/. This is the absolute path in the container.]
+        [-v BLAST HOME The path to blast_home, which is the parent directory of blastx and blastp. This is the absolute path in the container.]
+        [-y BLASTDB The path to seq_pep/. This is the absolute path in the container.]
+        [-q KOBASDB The path to sqlite3/, This is the absolute path in the container.]
+        [-p BLASTP The path to blastp. This is the absolute path in the container.]
+        [-x BLASTX The path to blastx. This is the absolute path in the container.]
+        [-T number of THREADS to use in BLAST search. Default = 8]
+
+    [-g runs KOBAS identify]
+        KOBAS identify options:
+        -f FGFILE foreground file, the output of annotate
+        -b BGFILE background file, species abbreviation, see this list for species codes: https://www.kegg.jp/kegg/catalog/org_list.html
+        -o OUTPUT file (Default is stdout.)
+        [-d DB databases for selection, 1-letter abbreviation separated by "/": K for KEGG PATHWAY, n for PID, b for BioCarta, R for Reactome, B for BioCyc, p for PANTHER,
+               o for OMIM, k for KEGG DISEASE, f for FunDO, g for GAD, N for NHGRI GWAS Catalog and G for Gene Ontology, default K/n/b/R/B/p/o/k/f/g/N/]
+        [-m METHOD choose statistical test method: b for binomial test, c for chi-square test, h for hypergeometric test / Fisher's exact test, and x for frequency list,
+               default hypergeometric test / Fisher's exact test
+        [-n FDR choose false discovery rate (FDR) correction method: BH for Benjamini and Hochberg, BY for Benjamini and Yekutieli, QVALUE, and None, default BH
+        [-c CUTOFF terms with less than cutoff number of genes are not used for statistical tests, default 5]
+        [-k KOBAS HOME The path to kobas_home, which is the parent directory of sqlite3/ and seq_pep/. This is the absolute path in the container.]
+        [-v BLAST HOME The path to blast_home, which is the parent directory of blastx and blastp. This is the absolute path in the container.]
+        [-y BLASTDB The path to seq_pep/. This is the absolute path in the container.]
+        [-q KOBASDB The path to sqlite3/. This is the absolute path in the container.]
+        [-p BLASTP The path to blastp. This is the absolute path in the container.]
+        [-x BLASTX The path to blastx. This is the absolute path in the container.]
+
+    [-j runs both KOBAS annotate and identify]
+    
+**Running KOBAS with Data**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tip::
 
     There are 3 directories built into this container. These directories should be used to mount data.
     
-    - /agbase_database
-    - /go_info
+    - /seq_pep
+    - /sqlite3
     - /work-dir
     
-GOanna has three required parameters:
 
-.. code-block:: bash
-
-    -a BLAST database basename (acceptable options are listed in the help/usage)
-    -c peptide FASTA file to BLAST
-    -o output file basename
-
-**Example PBS Script**
-""""""""""""""""""""""
+**Example PBS Script for Annotate Process**
+"""""""""""""""""""""""""""""""""""""""""""
 
 .. code-block:: bash
 
     #!/bin/bash
-    #PBS -N goanna
+    #PBS -N kobas
     #PBS -W group_list=fionamcc
     #PBS -l select=1:ncpus=28:mem=168gb
     #PBS -q standard
@@ -347,95 +315,135 @@ GOanna has three required parameters:
     
     module load singularity
     
-    cd /rsgrps/shaneburgess/amanda/i5k/GOanna
+    cd /rsgrps/shaneburgess/amanda/i5k/kobas
     
-    singularity pull docker://agbase/goanna:2.0
+    singularity pull docker://agbase/kobas:3.0.3_0
     
     singularity run \
-    -B /rsgrps/shaneburgess/amanda/i5k/agbase_database:/agbase_database \
-    -B /rsgrps/shaneburgess/amanda/i5k/go_info:/go_info \
-    -B /rsgrps/shaneburgess/amanda/i5k/goanna:/work-dir \
-    goanna_2.0.sif \
-    -a invertebrates \
-    -c AROS_10.faa \
-    -o AROS_10_invert_exponly \
-    -p \
-    -g 70 \
-    -s 900 \
-    -d RefSeq \
-    -u "Amanda Cooksey" \
-    -x 37344 \
-    -t 28
+    -B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep \
+    -B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3 \
+    -B /rsgrps/shaneburgess/amanda/i5k/kobas:/work-dir \
+    kobas_3.0.3_0.sif \
+    -a 
+    -i AROS1000.fa \
+    -s dme \
+    -t fasta:pro \
+    -o AROS1000 \
+
 
 **Breakdown of Command**
 """"""""""""""""""""""""
 
 **singularity run:** tells Singularity to run
 
-**-B /rsgrps/shaneburgess/amanda/i5k/agbase_database:/agbase_database:** tells docker to mount the 'agbase_database' directory I downloaded to the host machine to the '/agbase_database' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
+**-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:** tells docker to mount the 'seq_pep' directory I downloaded to the host machine to the '/seq_pep' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
 
-**-B /rsgrps/shaneburgess/amanda/i5k/go_info:/go_info:** mounts 'go_info' directory on host machine into 'go_info' directory inside the container
+**-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:** mounts 'sqlite3' directory on host machine into 'go_info' directory inside the container
 
-**-B /rsgrps/shaneburgess/amanda/i5k/goanna:/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
+**-B /rsgrps/shaneburgess/amanda/i5k/kobas:/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
 
-**goanna_2.0.sif:** the name of the Singularity image file to use
+**kobas_3.0.3_0.sif:** the name of the Singularity image to use
 
 .. tip::
 
-    All the options supplied after the image name are GOanna options
+    All the options supplied after the image name are KOBAS options
 
-**-a invertebrates:** GOanna BLAST database to use--first of three required options.
+**-a:** Tells KOBAS to runt he 'annotate' process.
 
-**-c AROS_10.faa:** input file (peptide FASTA)--second of three required options
+**-i AROS1000.fa:** input file (peptide FASTA)
 
-**-o AROS_10_invert_exponly:** output file basename--last of three required options
+**-s dme:** Enter the species for the species of the sequences in your input file. 
 
-**-p:** our input file has NCBI deflines. This specifies how to parse them.
+.. NOTE:: 
 
-**-g 70:** tells GOanna to keep only those matches with at least 70% identity
+    If you don't know the code for your species it can be found here: https://www.kegg.jp/kegg/catalog/org_list.html
 
-**-s 900:** tells GOanna to keep only those matches with a bitscore above 900
+    If your species of interest is not available then you should choose the code for the closest-related species available
 
-**-d RefSeq:** database of query ID. This will appear in column 1 of the GAF output file.
+**-t:** input file type; in this case, protein FASTA.
 
-**-u "Amanda Cooksey":** name to appear in column 15 of the GAF output file
+**-o AROS1000:** name of output file 
 
-**-x 37344:** NCBI taxon ID of input file species will appear in column 13 of the GAF output file
-
-**-t 28:** number of threads to use for BLAST. This was run on a node with 28 cores.
+For information on output files see `Understanding Your Annotate Results`_
 
 
 **Understanding Your Results**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If all goes well, you should get 4 output files:
+-------------------------------
 
-**<basename>.asn:** This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.
+.. _Understanding Your Annotate Results:
 
-**<basename>.html:** This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters. 
+**Annotate**
+------------
+If all goes well, you should get the following:
 
-**<basename>.tsv:** This is the tab-delimited BLAST output that can be opened and sorted in Excel to determine BLAST parameter values. The file contains the following columns:
+- **seq_pep folder:** This folder contains the BLAST database files used in your analysis.
+- **sqlite3 folder:** This folder contains the annotation database files used in your analysis
+- **<species>.tsv:** This is the tab-delimited output from the BLAST search. It is unlikely that you will need to look at this file.
+- **<output_file_name_you_provided>:** KOBAS-annotate generates a text file with the name you provide. It has two sections. 
 
-- Query ID
-- query length
-- query start
-- query end
-- subject ID
-- subject length
-- subject start
-- subject end
-- e-value
-- percent ID
-- query coverage
-- percent positive ID
-- gap openings
-- total gaps
-- bitscore
-- raw score
+The first sections looks like this:
 
-For more information on the BLAST output parameters see the `NCBI BLAST documentation <https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_.>`_.
+.. code-block:: none
 
-**<basename>_goanna_gaf.tsv:** This is the standard tab-separated `GO annotation file format <http://geneontology.org/docs/go-annotation-file-gaf-format-2.1>`_  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment. 
+    ##dme	Drosophila melanogaster (fruit fly)
+    ##Method: BLAST	Options: evalue <= 1e-05
+    ##Summary:	87 succeed, 0 fail
 
-If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. `Contact us <agbase@email.arizona.edu>`_.
+    #Query	Gene ID|Gene name|Hyperlink
+    lcl|NW_020311285.1_prot_XP_012256083.1_15	dme:Dmel_CG34349|Unc-13-4B|http://www.genome.jp/dbget-bin/www_bget?dme:Dmel_CG34349
+    lcl|NW_020311286.1_prot_XP_020708336.1_46	dme:Dmel_CG6963|gish|http://www.genome.jp/dbget-bin/www_bget?dme:Dmel_CG6963
+    lcl|NW_020311285.1_prot_XP_020707987.1_39	dme:Dmel_CG30403||http://www.genome.jp/dbget-bin/www_bget?dme:Dmel_CG30403
+    
+The second section follows a dashed line and looks like this:
+
+.. code-block:: none
+
+    --------------------
+
+    ////
+    Query:              	lcl|NW_020311285.1_prot_XP_012256083.1_15
+    Gene:               	dme:Dmel_CG34349	Unc-13-4B
+    Entrez Gene ID:      	43002
+    ////
+    Query:              	lcl|NW_020311286.1_prot_XP_020708336.1_46
+    Gene:               	dme:Dmel_CG6963	gish
+    Entrez Gene ID:      	49701
+    Pathway:            	Hedgehog signaling pathway - fly	KEGG PATHWAY	dme04341
+    ////
+    Query:              	lcl|NW_020311285.1_prot_XP_020707987.1_39
+    Gene:               	dme:Dmel_CG30403	
+    Entrez Gene ID:      	246595
+    ////
+    Query:              	lcl|NW_020311285.1_prot_XP_020707989.1_40
+    Gene:               	dme:Dmel_CG6148	Past1
+    Entrez Gene ID:      	41569
+    Pathway:            	Endocytosis	KEGG PATHWAY	dme04144
+                                Hemostasis	Reactome	R-DME-109582
+                    	        Factors involved in megakaryocyte development and platelet production	Reactome	R-DME-98323
+
+**Identify**
+""""""""""""
+
+**Understanding Your Results**
+""""""""""""""""""""""""""""""
+
+If all goes well, you should get the following:
+
+- **sqlite3 folder:** This folder contains the annotation database files used in your analysis
+
+- **<output_file_name_you_provided>:** KOBAS identify generates a text file with the name you provide.
+
+.. code-block:: none
+
+    ##Databases: PANTHER, KEGG PATHWAY, Reactome, BioCyc
+    ##Statistical test method: hypergeometric test / Fisher's exact test
+    ##FDR correction method: Benjamini and Hochberg
+
+    #Term	Database	ID	Input number	Background number	P-Value	Corrected P-Value	Input	Hyperlink
+    Hedgehog signaling pathway - fly	KEGG PATHWAY	dme04341	12	33	3.20002656734e-18	1.76001461204e-16	lcl|NW_020311286.1_prot_XP_012256678.1_51|lcl|NW_020311286.1_prot_XP_025602973.1_48|lcl|NW_020311286.1_prot_XP_012256683.1_52|lcl|NW_020311286.1_prot_XP_012256679.1_55|lcl|NW_020311286.1_prot_XP_012256674.1_54|lcl|NW_020311286.1_prot_XP_020708336.1_46|lcl|NW_020311285.1_prot_XP_012256108.1_32|lcl|NW_020311286.1_prot_XP_012256682.1_53|lcl|NW_020311286.1_prot_XP_025603025.1_47|lcl|NW_020311286.1_prot_XP_020708334.1_49|lcl|NW_020311285.1_prot_XP_012256109.1_33|lcl|NW_020311286.1_prot_XP_020708333.1_50	http://www.genome.jp/kegg-bin/show_pathway?dme04341/dme:Dmel_CG6963%09red/dme:Dmel_CG6054%09red
+    Hedgehog signaling pathway	PANTHER	P00025	6	13	3.6166668094e-10	9.94583372585e-09	lcl|NW_020311286.1_prot_XP_025602279.1_78|lcl|NW_020311286.1_prot_XP_025602289.1_76|lcl|NW_020311286.1_prot_XP_025602264.1_79|lcl|NW_020311285.1_prot_XP_012256108.1_32|lcl|NW_020311285.1_prot_XP_012256109.1_33|lcl|NW_020311286.1_prot_XP_012256943.1_77	http://www.pantherdb.org/pathway/pathwayDiagram.jsp?catAccession=P00025
+    Signaling by NOTCH2	Reactome	R-DME-1980145	3	8	2.00259649553e-05	0.000275357018136	lcl|NW_020311285.1_prot_XP_012256118.1_28|lcl|NW_020311285.1_prot_XP_012256117.1_27|lcl|NW_020311285.1_prot_XP_012256119.1_26	http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=R-DME-1980145
+    
+`Contact us <agbase@email.arizona.edu>`_.
 
 
