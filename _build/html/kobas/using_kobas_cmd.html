@@ -201,7 +201,7 @@
 <h1><strong>KOBAS on the Command Line</strong><a class="headerlink" href="#kobas-on-the-command-line" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="getting-the-databases">
 <h2><strong>Getting the databases</strong><a class="headerlink" href="#getting-the-databases" title="Permalink to this headline">¶</a></h2>
-<p>To run the tool you need some public data. The files can be downloaded directly fro the <a class="reference external" href="kobas.cbi.pku.edu.cn">KOBAS homepage</a>. These directories are also available as two tar archives in the CyVerse Data Store. The files are best downloaded with <a class="reference external" href="https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html">iCommands</a>. Once iCommands is <a class="reference external" href="https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html#icommands-first-time-configuration">setup</a> you can use ‘iget’ to download the data.</p>
+<p>To run the tool you need some public data. The files can be downloaded directly from the <a class="reference external" href="kobas.cbi.pku.edu.cn">KOBAS homepage</a>. These directories are also available as two tar archives in the CyVerse Data Store. The files are best downloaded with <a class="reference external" href="https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html">iCommands</a>. Once iCommands is <a class="reference external" href="https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html#icommands-first-time-configuration">setup</a> you can use ‘iget’ to download the data.</p>
 <ol class="arabic simple">
 <li>seq_pep.tar: species-specific BLAST databases used by KOBAS</li>
 </ol>
@@ -261,6 +261,7 @@ tar -xf sqlite3.tar
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work-dir agbase/kobas:3.0.3_0 -h
 </pre></div>
 </div>
+<p>See Help and Usage Statement <a href="#id7"><span class="problematic" id="id8">`kobasusage`_</span></a></p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>Options:
 [-h prints this help statement]
 
