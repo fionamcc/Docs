@@ -198,8 +198,6 @@ For information on output files see :ref:`Understanding Your Results: Annotate <
 
 For information of outputs see :ref:`Understanding Your Results: Identify <identifyresults>`
 
-**Running KOBAS Annoate and Identify as a Pipeline**
-----------------------------------------------------
 
 **Annotate and Identify Pipeline Example Command**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -260,7 +258,7 @@ For information of outputs see :ref:`Understanding Your Results: Identify <ident
 
 For more information on outputs see :ref:`Understanding Your Results: Annotate and Identify <annoident>`
 
-**Running KOBAS Annotate using Singularity**
+**Running KOBAS using Singularity**
 ============================================
 .. admonition:: About Singularity
 
@@ -394,48 +392,6 @@ See :ref:`kobasusage`
 
 For information on output files see `annotateresults`_
 
-**Running KOBAS Identify using Singularity**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-    
-**Running KOBAS Identify with Data**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-**Getting the Help and Usage Statement**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**Example PBS script:**
-
-.. code-block:: bash
-
-    #!/bin/bash
-    #PBS -N kobas
-    #PBS -W group_list=fionamcc
-    #PBS -l select=1:ncpus=28:mem=168gb
-    #PBS -q standard
-    #PBS -l walltime=6:0:0
-    #PBS -l cput=168:0:0
-    
-    module load singularity
-    
-    cd /rsgrps/shaneburgess/amanda/i5k/kobas
-    
-    singularity pull docker://agbase/kobas:3.0.3_0
-    
-    singularity run \
-    kobas_3.0.3_0.sif \
-    -h
-
-
-See :ref:`kobasusage`
-
-.. tip::
-
-    There are 3 directories built into this container. These directories should be used to mount data.
-    
-    - /seq_pep
-    - /sqlite3
-    - /work-dir
-    
 
 **Example PBS Script for Identify Process**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

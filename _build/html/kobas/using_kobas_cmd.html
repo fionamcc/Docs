@@ -117,22 +117,16 @@
 <li class="toctree-l4"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#annotate-example-command"><strong>Annotate Example Command</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#identify-example-command"><strong>Identify Example Command</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#running-kobas-annoate-and-identify-as-a-pipeline"><strong>Running KOBAS Annoate and Identify as a Pipeline</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#annotate-and-identify-pipeline-example-command"><strong>Annotate and Identify Pipeline Example Command</strong></a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#running-kobas-annotate-using-singularity"><strong>Running KOBAS Annotate using Singularity</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#running-kobas-using-singularity"><strong>Running KOBAS using Singularity</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Getting the KOBAS container</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id5"><strong>Running KOBAS with Data</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-annotate-process"><strong>Example PBS Script for Annotate Process</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-kobas-identify-using-singularity"><strong>Running KOBAS Identify using Singularity</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-kobas-identify-with-data"><strong>Running KOBAS Identify with Data</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id8"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-identify-process"><strong>Example PBS Script for Identify Process</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-annotate-and-identify-pipeline"><strong>Example PBS Script for Annotate and Identify Pipeline</strong></a></li>
 </ul>
@@ -353,9 +347,6 @@ agbase/kobas:3.0.3_0 \
 <p>For information of outputs see <a class="reference internal" href="#identifyresults"><span class="std std-ref">Understanding Your Results: Identify</span></a></p>
 </div>
 </div>
-</div>
-<div class="section" id="running-kobas-annoate-and-identify-as-a-pipeline">
-<h3><strong>Running KOBAS Annoate and Identify as a Pipeline</strong><a class="headerlink" href="#running-kobas-annoate-and-identify-as-a-pipeline" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="annotate-and-identify-pipeline-example-command">
 <h4><strong>Annotate and Identify Pipeline Example Command</strong><a class="headerlink" href="#annotate-and-identify-pipeline-example-command" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-none"><div class="highlight"><pre><span></span>sudo docker run \
@@ -403,8 +394,8 @@ This will also use your species option as the -b background input for &#8216;ide
 </div>
 </div>
 </div>
-<div class="section" id="running-kobas-annotate-using-singularity">
-<h2><strong>Running KOBAS Annotate using Singularity</strong><a class="headerlink" href="#running-kobas-annotate-using-singularity" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="running-kobas-using-singularity">
+<h2><strong>Running KOBAS using Singularity</strong><a class="headerlink" href="#running-kobas-using-singularity" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-about-singularity admonition">
 <p class="first admonition-title">About Singularity</p>
 <ul class="last simple">
@@ -516,45 +507,6 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 <p>For information on output files see <a class="reference internal" href="#annotateresults">annotateresults</a></p>
 </div>
 </div>
-<div class="section" id="running-kobas-identify-using-singularity">
-<h4><strong>Running KOBAS Identify using Singularity</strong><a class="headerlink" href="#running-kobas-identify-using-singularity" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="running-kobas-identify-with-data">
-<h4><strong>Running KOBAS Identify with Data</strong><a class="headerlink" href="#running-kobas-identify-with-data" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="id8">
-<h4><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
-<p><strong>Example PBS script:</strong></p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">#PBS -N kobas</span>
-<span class="c1">#PBS -W group_list=fionamcc</span>
-<span class="c1">#PBS -l select=1:ncpus=28:mem=168gb</span>
-<span class="c1">#PBS -q standard</span>
-<span class="c1">#PBS -l walltime=6:0:0</span>
-<span class="c1">#PBS -l cput=168:0:0</span>
-
-module load singularity
-
-<span class="nb">cd</span> /rsgrps/shaneburgess/amanda/i5k/kobas
-
-singularity pull docker://agbase/kobas:3.0.3_0
-
-singularity run <span class="se">\</span>
-kobas_3.0.3_0.sif <span class="se">\</span>
--h
-</pre></div>
-</div>
-<p>See <a class="reference internal" href="intro.html#kobasusage"><span class="std std-ref">Help and Usage Statement</span></a></p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p>There are 3 directories built into this container. These directories should be used to mount data.</p>
-<ul class="last simple">
-<li>/seq_pep</li>
-<li>/sqlite3</li>
-<li>/work-dir</li>
-</ul>
-</div>
-</div>
 <div class="section" id="example-pbs-script-for-identify-process">
 <h4><strong>Example PBS Script for Identify Process</strong><a class="headerlink" href="#example-pbs-script-for-identify-process" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
@@ -582,8 +534,8 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 -o ident_out
 </pre></div>
 </div>
-<div class="section" id="id9">
-<h5><strong>Command Explained</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id8">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
@@ -633,8 +585,8 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 -o AROS1000 <span class="se">\</span>
 </pre></div>
 </div>
-<div class="section" id="id10">
-<h5><strong>Command Explained</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id9">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
