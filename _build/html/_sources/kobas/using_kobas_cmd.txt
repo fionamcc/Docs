@@ -390,7 +390,7 @@ See :ref:`kobasusage`
 
 **-o AROS1000:** name of output file 
 
-For information on output files see `annotateresults`_
+For information on output files see :ref:`Understanding Your Results: Annotate <annotateresults>`
 
 
 **Example PBS Script for Identify Process**
@@ -454,7 +454,7 @@ For information on output files see `annotateresults`_
 
 **-o ident_out:** name of output file 
 
-For information on output see `identifyresults`_
+For information on output see :ref:`Understanding Your Results: Identify <identifyresults>`
 
 **Example PBS Script for Annotate and Identify Pipeline**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -525,7 +525,7 @@ For information on output see `identifyresults`_
     This pipeline will automatically use the output of 'annotate' as the -f foreground input for 'identify'. 
     This will also use your species option as the -b background input for 'identify'.
 
-For information on outputs see `annoident`_.
+For information on outputs see :ref:`Understanding Your Results: Annotate and Identify <annoident>`
 
 **Understanding Your Results**
 ==============================
