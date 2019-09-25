@@ -13,12 +13,12 @@ The tool accepts two input files:
 
     InterProScan itself does not produce a GAF file. The    `AgBase InterProScan container <https://hub.docker.com/r/agbase/interproscan>`_ parses the XML output from InterProScan to produce the GAF file.
 
-Combining GAFs on CyVerse
+Combine GAFs on CyVerse
 =========================
 
 
 
-Combining GAFs on the Command Line
+Combine GAFs on the Command Line
 ==================================
 
 

@@ -4,7 +4,7 @@
 
 
 **Getting the databases**
--------------------------
+==========================
 To run the tool you need some public data. The files can be downloaded directly from the `KOBAS homepage <kobas.cbi.pku.edu.cn>`_. These directories are also available as two tar archives in the CyVerse Data Store. The files are best downloaded with `iCommands <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html>`_. Once iCommands is `setup <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html#icommands-first-time-configuration>`_ you can use ‘iget’ to download the data.
 
 
@@ -31,7 +31,7 @@ To run the tool you need some public data. The files can be downloaded directly 
 
 
 **Container Technologies**
---------------------------
+===========================
 KOBAS is provided as a Docker container. 
 
 A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
@@ -41,7 +41,7 @@ There are two major containerization technologies: **Docker** and **Singularity*
 Docker containers can be run with either technology.
 
 **Running KOBAS using Docker**
--------------------------------
+==============================
 .. admonition:: About Docker
 
     - Docker must be installed on the computer you wish to use for your analysis.
@@ -52,7 +52,7 @@ Docker containers can be run with either technology.
 
 
 **Getting the KOBAS container**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 The KOBAS tool is available as a Docker container on Docker Hub: 
 `KOBAS container <https://hub.docker.com/r/agbase/kobas>`_ 
 
@@ -69,6 +69,9 @@ The container can be pulled with this command:
     sudo docker pull agbase/kobas:3.0.3_0
 
 
+**Running KOBAS with Data**
+---------------------------
+
 **Getting the Help and Usage Statement**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -78,9 +81,6 @@ The container can be pulled with this command:
 
 See :ref:`kobasusage`
 
-
-**Running KOBAS with Data**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. tip::
 
     There are 3 directories built into this container. These directories should be used to mount data.
@@ -94,7 +94,7 @@ KOBAS can perform two tasks:
 KOBAS can also run both task with a single command (-j).
 
 **Annotate Example Command**
-""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: none
 
@@ -110,8 +110,8 @@ KOBAS can also run both task with a single command (-j).
     -t fasta:pro
     -o AROS1000
 
-**Breakdown of Annotate Command**
-"""""""""""""""""""""""""""""""""
+**Command Explained**
+""""""""""""""""""""""
 
 **sudo docker run:** tells docker to run
 
@@ -145,10 +145,10 @@ KOBAS can also run both task with a single command (-j).
 
 **-o AROS1000:** name of output file
 
-For information on output files see :ref:`Understanding Your Results: Annotate <annotate_results>`
+For information on output files see :ref:`Understanding Your Results: Annotate <annotateresults>`
 
 **Identify Example Command**
-""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: none
 
@@ -163,7 +163,7 @@ For information on output files see :ref:`Understanding Your Results: Annotate <
     -b dme \
     -o ident_out
 
-**Breakdown of Identify Command**
+**Command Explained**
 """""""""""""""""""""""""""""""""
 
 **sudo docker run:** tells docker to run
@@ -199,10 +199,10 @@ For information on output files see :ref:`Understanding Your Results: Annotate <
 For information of outputs see :ref:`Understanding Your Results: Identify <identifyresults>`
 
 **Running KOBAS Annoate and Identify as a Pipeline**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------------------
 
 **Annotate and Identify Pipeline Example Command**
-""""""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: none
 
@@ -218,8 +218,8 @@ For information of outputs see :ref:`Understanding Your Results: Identify <ident
     -t fasta:pro
     -o AROS1000
 
-**Breakdown of Annotate and Identify Pipeline Command**
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**Command Explained**
+"""""""""""""""""""""
 
 **sudo docker run:** tells docker to run
 
@@ -261,8 +261,7 @@ For information of outputs see :ref:`Understanding Your Results: Identify <ident
 For more information on outputs see :ref:`Understanding Your Results: Annotate and Identify <annoident>`
 
 **Running KOBAS Annotate using Singularity**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
+============================================
 .. admonition:: About Singularity
 
     - does not require ‘root’ permissions
@@ -278,7 +277,7 @@ For more information on outputs see :ref:`Understanding Your Results: Annotate a
     Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.
 
 **Getting the KOBAS container**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+-------------------------------
 The KOBAS tool is available as a Docker container on Docker Hub: 
 `KOBAS container <https://hub.docker.com/r/agbase/kobas>`_ 
 
@@ -289,6 +288,9 @@ The container can be pulled with this command:
     singularity pull docker://agbase/kobas:3.0.3_0
 
 
+
+**Running KOBAS with Data**
+----------------------------
 
 **Getting the Help and Usage Statement**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -317,9 +319,6 @@ The container can be pulled with this command:
 
 See :ref:`kobasusage`
 
-**Running KOBAS with Data**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 .. tip::
 
     There are 3 directories built into this container. These directories should be used to mount data.
@@ -330,7 +329,7 @@ See :ref:`kobasusage`
     
 
 **Example PBS Script for Annotate Process**
-"""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -360,8 +359,8 @@ See :ref:`kobasusage`
     -o AROS1000 \
 
 
-**Breakdown of Command**
-""""""""""""""""""""""""
+**Command Explained**
+"""""""""""""""""""""
 
 **singularity run:** tells Singularity to run
 
@@ -396,9 +395,11 @@ See :ref:`kobasusage`
 For information on output files see `annotateresults`_
 
 **Running KOBAS Identify using Singularity**
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-
+    
+**Running KOBAS Identify with Data**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 **Getting the Help and Usage Statement**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -426,9 +427,6 @@ For information on output files see `annotateresults`_
 
 
 See :ref:`kobasusage`
-    
-**Running KOBAS Identify with Data**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. tip::
 
@@ -440,7 +438,7 @@ See :ref:`kobasusage`
     
 
 **Example PBS Script for Identify Process**
-"""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -469,8 +467,8 @@ See :ref:`kobasusage`
     -o ident_out
 
 
-**Breakdown of Identify Command**
-"""""""""""""""""""""""""""""""""
+**Command Explained**
+"""""""""""""""""""""
 
 **singularity run:** tells Singularity to run
 
@@ -503,7 +501,7 @@ See :ref:`kobasusage`
 For information on output see `identifyresults`_
 
 **Example PBS Script for Annotate and Identify Pipeline**
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -533,8 +531,8 @@ For information on output see `identifyresults`_
     -o AROS1000 \
 
 
-**Breakdown of Annotate and Idenfity Command**
-""""""""""""""""""""""""""""""""""""""""""""""
+**Command Explained**
+""""""""""""""""""""""
 
 **singularity run:** tells Singularity to run
 
@@ -568,19 +566,19 @@ For information on output see `identifyresults`_
 
 .. NOTE::
 
-    This pipeline will automatically use the output of 'annotate' as the -f foreground input for 'identify. 
+    This pipeline will automatically use the output of 'annotate' as the -f foreground input for 'identify'. 
     This will also use your species option as the -b background input for 'identify'.
 
 For information on outputs see `annoident`_.
 
 **Understanding Your Results**
--------------------------------
+==============================
 
 .. _annotateresults:
 
 
 **Annotate**
-^^^^^^^^^^^^
+------------
 
 If all goes well, you should get the following:
 
@@ -632,7 +630,7 @@ The second section follows a dashed line and looks like this:
 .. _identifyresults:
 
 **Identify**
-^^^^^^^^^^^^
+------------
 
 If all goes well, you should get the following:
 
@@ -654,6 +652,7 @@ If all goes well, you should get the following:
 .. _annoident:
 
 **Annotate and Identify Pipeline**
+----------------------------------
 
 If all goes well, you should get the following:
 

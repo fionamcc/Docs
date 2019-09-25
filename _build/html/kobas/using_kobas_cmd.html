@@ -113,36 +113,28 @@
 <li class="toctree-l2"><a class="reference internal" href="#container-technologies"><strong>Container Technologies</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-kobas-using-docker"><strong>Running KOBAS using Docker</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#getting-the-kobas-container"><strong>Getting the KOBAS container</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-kobas-with-data"><strong>Running KOBAS with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#annotate-example-command"><strong>Annotate Example Command</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-annotate-command"><strong>Breakdown of Annotate Command</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#identify-example-command"><strong>Identify Example Command</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-identify-command"><strong>Breakdown of Identify Command</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#running-kobas-annoate-and-identify-as-a-pipeline"><strong>Running KOBAS Annoate and Identify as a Pipeline</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#annotate-and-identify-pipeline-example-command"><strong>Annotate and Identify Pipeline Example Command</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-annotate-and-identify-pipeline-command"><strong>Breakdown of Annotate and Identify Pipeline Command</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#running-kobas-annotate-using-singularity"><strong>Running KOBAS Annotate using Singularity</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Getting the KOBAS container</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Getting the Help and Usage Statement</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4"><strong>Running KOBAS with Data</strong></a><ul>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-kobas-annotate-using-singularity"><strong>Running KOBAS Annotate using Singularity</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Getting the KOBAS container</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5"><strong>Running KOBAS with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-annotate-process"><strong>Example PBS Script for Annotate Process</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-command"><strong>Breakdown of Command</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#running-kobas-identify-using-singularity"><strong>Running KOBAS Identify using Singularity</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id5"><strong>Getting the Help and Usage Statement</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-kobas-identify-with-data"><strong>Running KOBAS Identify with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#running-kobas-identify-using-singularity"><strong>Running KOBAS Identify using Singularity</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#running-kobas-identify-with-data"><strong>Running KOBAS Identify with Data</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-identify-process"><strong>Example PBS Script for Identify Process</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Breakdown of Identify Command</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-annotate-and-identify-pipeline"><strong>Example PBS Script for Annotate and Identify Pipeline</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-annotate-and-idenfity-command"><strong>Breakdown of Annotate and Idenfity Command</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -150,6 +142,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#annotate"><strong>Annotate</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#identifyresults"><strong>Identify</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#annotate-and-identify-pipeline"><strong>Annotate and Identify Pipeline</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -257,15 +250,14 @@ tar -xf sqlite3.tar
 <p class="last">sudo docker pull agbase/kobas:3.0.3_0</p>
 </div>
 </div>
+<div class="section" id="running-kobas-with-data">
+<h3><strong>Running KOBAS with Data</strong><a class="headerlink" href="#running-kobas-with-data" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="getting-the-help-and-usage-statement">
-<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work-dir agbase/kobas:3.0.3_0 -h
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="intro.html#kobasusage"><span class="std std-ref">Help and Usage Statement</span></a></p>
-</div>
-<div class="section" id="running-kobas-with-data">
-<h3><strong>Running KOBAS with Data</strong><a class="headerlink" href="#running-kobas-with-data" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <dl class="last docutils">
@@ -282,6 +274,7 @@ tar -xf sqlite3.tar
 - annotate (-a)
 - identify (enrichment) (-g)
 KOBAS can also run both task with a single command (-j).</p>
+</div>
 <div class="section" id="annotate-example-command">
 <h4><strong>Annotate Example Command</strong><a class="headerlink" href="#annotate-example-command" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-none"><div class="highlight"><pre><span></span>sudo docker run \
@@ -297,9 +290,8 @@ agbase/kobas:3.0.3_0 \
 -o AROS1000
 </pre></div>
 </div>
-</div>
-<div class="section" id="breakdown-of-annotate-command">
-<h4><strong>Breakdown of Annotate Command</strong><a class="headerlink" href="#breakdown-of-annotate-command" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="command-explained">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#command-explained" title="Permalink to this headline">¶</a></h5>
 <p><strong>sudo docker run:</strong> tells docker to run</p>
 <p><strong>&#8211;rm:</strong> removes the container when the analysis has finished. The image will remain for future use.</p>
 <p><strong>-v /home/amcooksey/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
@@ -320,7 +312,8 @@ agbase/kobas:3.0.3_0 \
 </div>
 <p><strong>-t:</strong> input file type; in this case, protein FASTA.</p>
 <p><strong>-o AROS1000:</strong> name of output file</p>
-<p>For information on output files see <span class="xref std std-ref">Understanding Your Results: Annotate</span></p>
+<p>For information on output files see <a class="reference internal" href="#annotateresults"><span class="std std-ref">Understanding Your Results: Annotate</span></a></p>
+</div>
 </div>
 <div class="section" id="identify-example-command">
 <h4><strong>Identify Example Command</strong><a class="headerlink" href="#identify-example-command" title="Permalink to this headline">¶</a></h4>
@@ -336,9 +329,8 @@ agbase/kobas:3.0.3_0 \
 -o ident_out
 </pre></div>
 </div>
-</div>
-<div class="section" id="breakdown-of-identify-command">
-<h4><strong>Breakdown of Identify Command</strong><a class="headerlink" href="#breakdown-of-identify-command" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id1">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h5>
 <p><strong>sudo docker run:</strong> tells docker to run</p>
 <p><strong>&#8211;rm:</strong> removes the container when the analysis has finished. The image will remain for future use.</p>
 <p><strong>-v /home/amcooksey/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
@@ -361,6 +353,7 @@ agbase/kobas:3.0.3_0 \
 <p>For information of outputs see <a class="reference internal" href="#identifyresults"><span class="std std-ref">Understanding Your Results: Identify</span></a></p>
 </div>
 </div>
+</div>
 <div class="section" id="running-kobas-annoate-and-identify-as-a-pipeline">
 <h3><strong>Running KOBAS Annoate and Identify as a Pipeline</strong><a class="headerlink" href="#running-kobas-annoate-and-identify-as-a-pipeline" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="annotate-and-identify-pipeline-example-command">
@@ -378,9 +371,8 @@ agbase/kobas:3.0.3_0 \
 -o AROS1000
 </pre></div>
 </div>
-</div>
-<div class="section" id="breakdown-of-annotate-and-identify-pipeline-command">
-<h4><strong>Breakdown of Annotate and Identify Pipeline Command</strong><a class="headerlink" href="#breakdown-of-annotate-and-identify-pipeline-command" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h5>
 <p><strong>sudo docker run:</strong> tells docker to run</p>
 <p><strong>&#8211;rm:</strong> removes the container when the analysis has finished. The image will remain for future use.</p>
 <p><strong>-v /home/amcooksey/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
@@ -409,8 +401,10 @@ This will also use your species option as the -b background input for &#8216;ide
 <p>For more information on outputs see <a class="reference internal" href="#annoident"><span class="std std-ref">Understanding Your Results: Annotate and Identify</span></a></p>
 </div>
 </div>
+</div>
+</div>
 <div class="section" id="running-kobas-annotate-using-singularity">
-<h3><strong>Running KOBAS Annotate using Singularity</strong><a class="headerlink" href="#running-kobas-annotate-using-singularity" title="Permalink to this headline">¶</a></h3>
+<h2><strong>Running KOBAS Annotate using Singularity</strong><a class="headerlink" href="#running-kobas-annotate-using-singularity" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-about-singularity admonition">
 <p class="first admonition-title">About Singularity</p>
 <ul class="last simple">
@@ -426,9 +420,8 @@ This will also use your species option as the -b background input for &#8216;ide
 <p class="first admonition-title">HPC Job Schedulers</p>
 <p class="last">Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.</p>
 </div>
-</div>
-<div class="section" id="id1">
-<h3><strong>Getting the KOBAS container</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id3">
+<h3><strong>Getting the KOBAS container</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
 <p>The KOBAS tool is available as a Docker container on Docker Hub:
 <a class="reference external" href="https://hub.docker.com/r/agbase/kobas">KOBAS container</a></p>
 <p>The container can be pulled with this command:</p>
@@ -436,8 +429,10 @@ This will also use your species option as the -b background input for &#8216;ide
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3><strong>Running KOBAS with Data</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p><strong>Example PBS script:</strong></p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N kobas</span>
@@ -459,9 +454,6 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="intro.html#kobasusage"><span class="std std-ref">Help and Usage Statement</span></a></p>
-</div>
-<div class="section" id="id4">
-<h3><strong>Running KOBAS with Data</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>There are 3 directories built into this container. These directories should be used to mount data.</p>
@@ -470,6 +462,7 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 <li>/sqlite3</li>
 <li>/work-dir</li>
 </ul>
+</div>
 </div>
 <div class="section" id="example-pbs-script-for-annotate-process">
 <h4><strong>Example PBS Script for Annotate Process</strong><a class="headerlink" href="#example-pbs-script-for-annotate-process" title="Permalink to this headline">¶</a></h4>
@@ -499,9 +492,8 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 -o AROS1000 <span class="se">\</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="breakdown-of-command">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#breakdown-of-command" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
@@ -524,11 +516,14 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 <p>For information on output files see <a class="reference internal" href="#annotateresults">annotateresults</a></p>
 </div>
 </div>
-</div>
 <div class="section" id="running-kobas-identify-using-singularity">
-<h2><strong>Running KOBAS Identify using Singularity</strong><a class="headerlink" href="#running-kobas-identify-using-singularity" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id5">
-<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Running KOBAS Identify using Singularity</strong><a class="headerlink" href="#running-kobas-identify-using-singularity" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="running-kobas-identify-with-data">
+<h4><strong>Running KOBAS Identify with Data</strong><a class="headerlink" href="#running-kobas-identify-with-data" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="id8">
+<h4><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <p><strong>Example PBS script:</strong></p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N kobas</span>
@@ -550,9 +545,6 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 </pre></div>
 </div>
 <p>See <a class="reference internal" href="intro.html#kobasusage"><span class="std std-ref">Help and Usage Statement</span></a></p>
-</div>
-<div class="section" id="running-kobas-identify-with-data">
-<h3><strong>Running KOBAS Identify with Data</strong><a class="headerlink" href="#running-kobas-identify-with-data" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>There are 3 directories built into this container. These directories should be used to mount data.</p>
@@ -561,6 +553,7 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 <li>/sqlite3</li>
 <li>/work-dir</li>
 </ul>
+</div>
 </div>
 <div class="section" id="example-pbs-script-for-identify-process">
 <h4><strong>Example PBS Script for Identify Process</strong><a class="headerlink" href="#example-pbs-script-for-identify-process" title="Permalink to this headline">¶</a></h4>
@@ -589,9 +582,8 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 -o ident_out
 </pre></div>
 </div>
-</div>
-<div class="section" id="id6">
-<h4><strong>Breakdown of Identify Command</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
@@ -611,6 +603,7 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 </div>
 <p><strong>-o ident_out:</strong> name of output file</p>
 <p>For information on output see <a class="reference internal" href="#identifyresults">identifyresults</a></p>
+</div>
 </div>
 <div class="section" id="example-pbs-script-for-annotate-and-identify-pipeline">
 <h4><strong>Example PBS Script for Annotate and Identify Pipeline</strong><a class="headerlink" href="#example-pbs-script-for-annotate-and-identify-pipeline" title="Permalink to this headline">¶</a></h4>
@@ -640,9 +633,8 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 -o AROS1000 <span class="se">\</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="breakdown-of-annotate-and-idenfity-command">
-<h4><strong>Breakdown of Annotate and Idenfity Command</strong><a class="headerlink" href="#breakdown-of-annotate-and-idenfity-command" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
@@ -664,10 +656,11 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 <p><strong>-o AROS1000:</strong> name of output file</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">This pipeline will automatically use the output of &#8216;annotate&#8217; as the -f foreground input for &#8216;identify.
+<p class="last">This pipeline will automatically use the output of &#8216;annotate&#8217; as the -f foreground input for &#8216;identify&#8217;.
 This will also use your species option as the -b background input for &#8216;identify&#8217;.</p>
 </div>
 <p>For information on outputs see <a class="reference internal" href="#annoident">annoident</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -736,7 +729,9 @@ Hedgehog signaling pathway  PANTHER P00025  6       13      3.6166668094e-10    
 Signaling by NOTCH2 Reactome        R-DME-1980145   3       8       2.00259649553e-05       0.000275357018136       lcl|NW_020311285.1_prot_XP_012256118.1_28|lcl|NW_020311285.1_prot_XP_012256117.1_27|lcl|NW_020311285.1_prot_XP_012256119.1_26   http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=R-DME-1980145
 </pre></div>
 </div>
-<p id="annoident"><strong>Annotate and Identify Pipeline</strong></p>
+</div>
+<div class="section" id="annotate-and-identify-pipeline">
+<span id="annoident"></span><h3><strong>Annotate and Identify Pipeline</strong><a class="headerlink" href="#annotate-and-identify-pipeline" title="Permalink to this headline">¶</a></h3>
 <p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>logs folder:</strong> This folder contains the &#8216;conder_stderr&#8217; and &#8216;condor_stdout&#8217; files. The files record feedback, progress and, importantly, any errors the app encountered during the analysis. You won&#8217;t normally need to look at these but they are very helpful in figuring out what may have happened if your output doesn&#8217;t look like you expected.</li>
