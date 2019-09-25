@@ -3,7 +3,7 @@
 ===========================
 
 **Accessing KOBAS in the Discovery Environment**
--------------------------------------------------
+------------------------------------------------
 
 1. `Create an account on CyVerse <user.cyverse.org>`_ (free)
 2. Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.
@@ -25,22 +25,22 @@ The KOBAS apps are called:
 .. admonition:: Find Apps Easily with 'Communities'
 
     The KOBAS apps belong to the 'i5k' and 'AgBase' communties. You can join either of these communities and they will appear in the left-hand pane of your 'Apps' window (see above). 
-
     To join a community:
-     
-        1. Click on the person icon in the top-right corner of the Discovery Environment window
-
-        2. Select 'Communities'  
-        
-        3. In the 'Communities' window choose 'all communities' from the drop-down list. A list of communities will appear in the main pane of this window. 
     
-        4. Select the one you wish to join by clicking on it and then clicking on the 'join' button.
+    1. Click on the person icon in the top-right corner of the Discovery Environment window
+    2. Select 'Communities'
+    3. In the 'Communities' window choose 'all communities' from the drop-down list. A list of communities will appear in the main pane of this window.
+    4. Select the one you wish to join by clicking on it and then clicking on the 'join' button.
     
 
 **KOBAS annotate 3.0.3**
---------------------------------------
+------------------------
+**Launching the app**
+^^^^^^^^^^^^^^^^^^^^^
 
-**Analysis Name:KOBAS_annotate_3.0.3_analysis_1:**
+|kobas_anno|
+
+**Analysis Name: KOBAS_annotate_3.0.3_analysis_1:**
 This menu is used to name the job you will run so that you can find it later.
 Analysis Name: The default name is "KOBAS_annotate_3.0.3_analysis1". We recommend changing the 'analysis1' portion of this to reflect the data you are running.
 
@@ -58,7 +58,7 @@ Enabling this flag will copy all the input files into the analysis result folder
     Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.
 
 **Input**
-"""""""""
+""""""""""
 
 **Input File:** Use the 'browse' button on the right side of the field to navigate to your input file.
 
@@ -90,7 +90,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 
 **Understanding Your Results**
-""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If all goes well, you should get the following:
 
@@ -144,7 +144,12 @@ The second section follows a dashed line and looks like this:
 **KOBAS identify 3.0.3**
 --------------------------------------
 
-**Analysis Name:KOBAS_identify_3.0.3_analysis_1:**
+**Launching the App**
+^^^^^^^^^^^^^^^^^^^^^^
+
+|kobas_ident|
+
+**Analysis Name: KOBAS_identify_3.0.3_analysis_1:**
 This menu is used to name the job you will run so that you can find it later.
 Analysis Name: The default name is "KOBAS_identify_3.0.3_analysis1". We recommend changing the 'analysis1' portion of this to reflect the data you are running.
 
@@ -190,7 +195,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 
 **Understanding Your Results**
-""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If all goes well, you should get the following:
 
@@ -215,9 +220,14 @@ If all goes well, you should get the following:
 **KOBAS annotate and identify 3.0.3**
 ---------------------------------------------------
 
+**Launching the App**
+^^^^^^^^^^^^^^^^^^^^^
+
+|kobas_annoident|
+
 This app runs both the annotate and identify analysis together as a convenience for user who wish to run both steps. 
 
-**Analysis Name:KOBAS_annotate_and_identify_3.0.3_analysis_1:**
+**Analysis Name: KOBAS_annotate_and_identify_3.0.3_analysis_1:**
 This menu is used to name the job you will run so that you can find it later.
 Analysis Name: The default name is "KOBAS_annotate_identify_3.0.3_analysis1". We recommend changing the 'analysis1' portion of this to reflect the data you are running.
 
@@ -243,7 +253,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 **Input File Type:** Select your input file type from the drop-down list. If your file type isn't there then the app does not support that file type. 
 
 **Annotate Options**
-"""""""""""""""""""""
+""""""""""""""""""""
 
 **Species Code:** Enter the species for the species of the sequences in your input file. 
 
@@ -277,7 +287,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 
 **Understanding Your Results**
-""""""""""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 If all goes well, you should get the following:
 
@@ -349,4 +359,13 @@ The second section follows a dashed line and looks like this:
 If that doesn't clarify the problem contact us at agbase@email.arizona.edu or support@cyverse.org.
 
 .. |find_kobas| image:: ../img/find_kobas.png
+  :width: 700
+
+.. |kobas_anno| image:: ../img/kobas_anno.png
+  :width: 700
+
+.. |kobas_ident| image:: ../img/kobas_ident.png
+  :width: 700
+
+.. |kobas_annoident| image:: ../img/kobas_annoident.png
   :width: 700

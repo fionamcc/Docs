@@ -302,7 +302,7 @@ For information of outputs see `identifyresults`_
 For more information on outputs see `annoident`_
 
 **Running KOBAS Annotate using Singularity**
-------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. admonition:: About Singularity
 

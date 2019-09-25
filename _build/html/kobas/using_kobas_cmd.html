@@ -120,9 +120,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#breakdown-of-identify-command"><strong>Breakdown of Identify Command</strong></a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#running-kobas-annoate-and-identify-as-a-pipeline"><strong>Running KOBAS Annoate and Identify as a Pipeline</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#annotate-and-identify-pipeline-example-command"><strong>Annotate and Identify Pipeline Example Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-annotate-and-identify-pipeline-command"><strong>Breakdown of Annotate and Identify Pipeline Command</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#running-kobas-annotate-using-singularity"><strong>Running KOBAS Annotate using Singularity</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-kobas-annotate-using-singularity"><strong>Running KOBAS Annotate using Singularity</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Getting the KOBAS container</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id4"><strong>Running KOBAS with Data</strong></a><ul>
@@ -136,7 +139,9 @@
 <li class="toctree-l3"><a class="reference internal" href="#id5"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-kobas-identify-with-data"><strong>Running KOBAS Identify with Data</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-identify-process"><strong>Example PBS Script for Identify Process</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Breakdown of Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Breakdown of Identify Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-pbs-script-for-annotate-and-identify-pipeline"><strong>Example PBS Script for Annotate and Identify Pipeline</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-annotate-and-idenfity-command"><strong>Breakdown of Annotate and Idenfity Command</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -397,9 +402,56 @@ agbase/kobas:3.0.3_0 \
 <p>For information of outputs see <a class="reference internal" href="#identifyresults">identifyresults</a></p>
 </div>
 </div>
+<div class="section" id="running-kobas-annoate-and-identify-as-a-pipeline">
+<h3><strong>Running KOBAS Annoate and Identify as a Pipeline</strong><a class="headerlink" href="#running-kobas-annoate-and-identify-as-a-pipeline" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="annotate-and-identify-pipeline-example-command">
+<h4><strong>Annotate and Identify Pipeline Example Command</strong><a class="headerlink" href="#annotate-and-identify-pipeline-example-command" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-none"><div class="highlight"><pre><span></span>sudo docker run \
+--rm \
+-v /home/amcooksey/i5k/seq_pep:/seq_pep \
+-v /home/amcooksey/i5k/sqlite3:/sqlite3 \
+-v $(pwd):/work-dir \
+agbase/kobas:3.0.3_0 \
+-j
+-i AROS1000.fa \
+-s dme \
+-t fasta:pro
+-o AROS1000
+</pre></div>
+</div>
+</div>
+<div class="section" id="breakdown-of-annotate-and-identify-pipeline-command">
+<h4><strong>Breakdown of Annotate and Identify Pipeline Command</strong><a class="headerlink" href="#breakdown-of-annotate-and-identify-pipeline-command" title="Permalink to this headline">¶</a></h4>
+<p><strong>sudo docker run:</strong> tells docker to run</p>
+<p><strong>&#8211;rm:</strong> removes the container when the analysis has finished. The image will remain for future use.</p>
+<p><strong>-v /home/amcooksey/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
+<p><strong>-v /home/amcooksey/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
+<p><strong>-v $(pwd):/work-dir:</strong> mounts my current working directory on the host machine to &#8216;/work-dir&#8217; in the container</p>
+<p><strong>agbase/kobas:3.0.3_0:</strong> the name of the Docker image to use</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">All the options supplied after the image name are KOBAS options</p>
+</div>
+<p><strong>-j:</strong> Tells KOBAS to runt he &#8216;annotate&#8217; process.</p>
+<p><strong>-i AROS1000.fa:</strong> input file (peptide FASTA)</p>
+<p><strong>-s dme:</strong> Enter the species for the species of the sequences in your input file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you don&#8217;t know the code for your species it can be found here: <a class="reference external" href="https://www.kegg.jp/kegg/catalog/org_list.html">https://www.kegg.jp/kegg/catalog/org_list.html</a></p>
+<p class="last">If your species of interest is not available then you should choose the code for the closest-related species available</p>
+</div>
+<p><strong>-t:</strong> input file type; in this case, protein FASTA.</p>
+<p><strong>-o AROS1000:</strong> basename of output files</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This pipeline will automatically use the output of &#8216;annotate&#8217; as the -f foreground input for &#8216;identify.
+This will also use your species option as the -b background input for &#8216;identify&#8217;.</p>
+</div>
+<p>For more information on outputs see <a class="reference internal" href="#annoident">annoident</a></p>
+</div>
 </div>
 <div class="section" id="running-kobas-annotate-using-singularity">
-<h2><strong>Running KOBAS Annotate using Singularity</strong><a class="headerlink" href="#running-kobas-annotate-using-singularity" title="Permalink to this headline">¶</a></h2>
+<h3><strong>Running KOBAS Annotate using Singularity</strong><a class="headerlink" href="#running-kobas-annotate-using-singularity" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-about-singularity admonition">
 <p class="first admonition-title">About Singularity</p>
 <ul class="last simple">
@@ -414,6 +466,7 @@ agbase/kobas:3.0.3_0 \
 <div class="admonition-hpc-job-schedulers admonition">
 <p class="first admonition-title">HPC Job Schedulers</p>
 <p class="last">Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.</p>
+</div>
 </div>
 <div class="section" id="id1">
 <h3><strong>Getting the KOBAS container</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
@@ -663,7 +716,7 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 </div>
 </div>
 <div class="section" id="id6">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<h4><strong>Breakdown of Identify Command</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
@@ -683,6 +736,63 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 </div>
 <p><strong>-o ident_out:</strong> name of output file</p>
 <p>For information on output see <a class="reference internal" href="#identifyresults">identifyresults</a></p>
+</div>
+<div class="section" id="example-pbs-script-for-annotate-and-identify-pipeline">
+<h4><strong>Example PBS Script for Annotate and Identify Pipeline</strong><a class="headerlink" href="#example-pbs-script-for-annotate-and-identify-pipeline" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="c1">#PBS -N kobas</span>
+<span class="c1">#PBS -W group_list=fionamcc</span>
+<span class="c1">#PBS -l select=1:ncpus=28:mem=168gb</span>
+<span class="c1">#PBS -q standard</span>
+<span class="c1">#PBS -l walltime=6:0:0</span>
+<span class="c1">#PBS -l cput=168:0:0</span>
+
+module load singularity
+
+<span class="nb">cd</span> /rsgrps/shaneburgess/amanda/i5k/kobas
+
+singularity pull docker://agbase/kobas:3.0.3_0
+
+singularity run <span class="se">\</span>
+-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep <span class="se">\</span>
+-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3 <span class="se">\</span>
+-B /rsgrps/shaneburgess/amanda/i5k/kobas:/work-dir <span class="se">\</span>
+kobas_3.0.3_0.sif <span class="se">\</span>
+-j
+-i AROS1000.fa <span class="se">\</span>
+-s dme <span class="se">\</span>
+-t fasta:pro <span class="se">\</span>
+-o AROS1000 <span class="se">\</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="breakdown-of-annotate-and-idenfity-command">
+<h4><strong>Breakdown of Annotate and Idenfity Command</strong><a class="headerlink" href="#breakdown-of-annotate-and-idenfity-command" title="Permalink to this headline">¶</a></h4>
+<p><strong>singularity run:</strong> tells Singularity to run</p>
+<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/seq_pep:/seq_pep:</strong> tells docker to mount the &#8216;seq_pep&#8217; directory I downloaded to the host machine to the &#8216;/seq_pep&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
+<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/sqlite3:/sqlite3:</strong> mounts &#8216;sqlite3&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
+<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/kobas:/work-dir:</strong> mounts my current working directory on the host machine to &#8216;/work-dir&#8217; in the container</p>
+<p><strong>kobas_3.0.3_0.sif:</strong> the name of the Singularity image to use</p>
+<div class="admonition tip">
+<p class="first admonition-title">Tip</p>
+<p class="last">All the options supplied after the image name are KOBAS options</p>
+</div>
+<p><strong>-j:</strong> Tells KOBAS to runt he &#8216;annotate&#8217; process.</p>
+<p><strong>-i AROS1000.fa:</strong> input file (peptide FASTA)</p>
+<p><strong>-s dme:</strong> Enter the species for the species of the sequences in your input file.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p>If you don&#8217;t know the code for your species it can be found here: <a class="reference external" href="https://www.kegg.jp/kegg/catalog/org_list.html">https://www.kegg.jp/kegg/catalog/org_list.html</a></p>
+<p class="last">If your species of interest is not available then you should choose the code for the closest-related species available</p>
+</div>
+<p><strong>-t:</strong> input file type; in this case, protein FASTA.</p>
+<p><strong>-o AROS1000:</strong> name of output file</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This pipeline will automatically use the output of &#8216;annotate&#8217; as the -f foreground input for &#8216;identify.
+This will also use your species option as the -b background input for &#8216;identify&#8217;.</p>
+</div>
+<p>For information on outputs see <a class="reference internal" href="#annoident">annoident</a>.</p>
 </div>
 </div>
 </div>
@@ -740,6 +850,65 @@ Pathway:                    Endocytosis     KEGG PATHWAY    dme04144
 <ul class="simple">
 <li><strong>sqlite3 folder:</strong> This folder contains the annotation database files used in your analysis</li>
 <li><strong>&lt;output_file_name_you_provided&gt;:</strong> KOBAS identify generates a text file with the name you provide.</li>
+</ul>
+<div class="highlight-none"><div class="highlight"><pre><span></span>##Databases: PANTHER, KEGG PATHWAY, Reactome, BioCyc
+##Statistical test method: hypergeometric test / Fisher&#39;s exact test
+##FDR correction method: Benjamini and Hochberg
+
+#Term       Database        ID      Input number    Background number       P-Value Corrected P-Value       Input   Hyperlink
+Hedgehog signaling pathway - fly    KEGG PATHWAY    dme04341        12      33      3.20002656734e-18       1.76001461204e-16       lcl|NW_020311286.1_prot_XP_012256678.1_51|lcl|NW_020311286.1_prot_XP_025602973.1_48|lcl|NW_020311286.1_prot_XP_012256683.1_52|lcl|NW_020311286.1_prot_XP_012256679.1_55|lcl|NW_020311286.1_prot_XP_012256674.1_54|lcl|NW_020311286.1_prot_XP_020708336.1_46|lcl|NW_020311285.1_prot_XP_012256108.1_32|lcl|NW_020311286.1_prot_XP_012256682.1_53|lcl|NW_020311286.1_prot_XP_025603025.1_47|lcl|NW_020311286.1_prot_XP_020708334.1_49|lcl|NW_020311285.1_prot_XP_012256109.1_33|lcl|NW_020311286.1_prot_XP_020708333.1_50 http://www.genome.jp/kegg-bin/show_pathway?dme04341/dme:Dmel_CG6963%09red/dme:Dmel_CG6054%09red
+Hedgehog signaling pathway  PANTHER P00025  6       13      3.6166668094e-10        9.94583372585e-09       lcl|NW_020311286.1_prot_XP_025602279.1_78|lcl|NW_020311286.1_prot_XP_025602289.1_76|lcl|NW_020311286.1_prot_XP_025602264.1_79|lcl|NW_020311285.1_prot_XP_012256108.1_32|lcl|NW_020311285.1_prot_XP_012256109.1_33|lcl|NW_020311286.1_prot_XP_012256943.1_77     http://www.pantherdb.org/pathway/pathwayDiagram.jsp?catAccession=P00025
+Signaling by NOTCH2 Reactome        R-DME-1980145   3       8       2.00259649553e-05       0.000275357018136       lcl|NW_020311285.1_prot_XP_012256118.1_28|lcl|NW_020311285.1_prot_XP_012256117.1_27|lcl|NW_020311285.1_prot_XP_012256119.1_26   http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=R-DME-1980145
+</pre></div>
+</div>
+<p id="annoident"><strong>Annotate and Identify Pipeline</strong></p>
+<p>If all goes well, you should get the following:</p>
+<ul class="simple">
+<li><strong>logs folder:</strong> This folder contains the &#8216;conder_stderr&#8217; and &#8216;condor_stdout&#8217; files. The files record feedback, progress and, importantly, any errors the app encountered during the analysis. You won&#8217;t normally need to look at these but they are very helpful in figuring out what may have happened if your output doesn&#8217;t look like you expected.</li>
+<li><strong>sqlite3 folder:</strong> This folder contains the annotation database files used in your analysis</li>
+<li><strong>seq_pep folder:</strong> This folder contains the BLAST database files used in your analysis.</li>
+<li><strong>&lt;species&gt;.tsv:</strong> This is the tab-delimited output from the BLAST search. It is unlikely that you will need to look at this file.</li>
+<li><strong>&lt;basename&gt;_annotate_out.txt:</strong> KOBAS annotate generates a text file with the name you provide. It has two sections.</li>
+</ul>
+<p>The first sections looks like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>##dme       Drosophila melanogaster (fruit fly)
+##Method: BLAST     Options: evalue &lt;= 1e-05
+##Summary:  87 succeed, 0 fail
+
+#Query      Gene ID|Gene name|Hyperlink
+lcl|NW_020311285.1_prot_XP_012256083.1_15   dme:Dmel_CG34349|Unc-13-4B|http://www.genome.jp/dbget-bin/www_bget?dme:Dmel_CG34349
+lcl|NW_020311286.1_prot_XP_020708336.1_46   dme:Dmel_CG6963|gish|http://www.genome.jp/dbget-bin/www_bget?dme:Dmel_CG6963
+lcl|NW_020311285.1_prot_XP_020707987.1_39   dme:Dmel_CG30403||http://www.genome.jp/dbget-bin/www_bget?dme:Dmel_CG30403
+</pre></div>
+</div>
+<p>The second section follows a dashed line and looks like this:</p>
+<div class="highlight-none"><div class="highlight"><pre><span></span>--------------------
+
+////
+Query:                      lcl|NW_020311285.1_prot_XP_012256083.1_15
+Gene:                       dme:Dmel_CG34349        Unc-13-4B
+Entrez Gene ID:             43002
+////
+Query:                      lcl|NW_020311286.1_prot_XP_020708336.1_46
+Gene:                       dme:Dmel_CG6963 gish
+Entrez Gene ID:             49701
+Pathway:                    Hedgehog signaling pathway - fly        KEGG PATHWAY    dme04341
+////
+Query:                      lcl|NW_020311285.1_prot_XP_020707987.1_39
+Gene:                       dme:Dmel_CG30403
+Entrez Gene ID:             246595
+////
+Query:                      lcl|NW_020311285.1_prot_XP_020707989.1_40
+Gene:                       dme:Dmel_CG6148 Past1
+Entrez Gene ID:             41569
+Pathway:                    Endocytosis     KEGG PATHWAY    dme04144
+                            Hemostasis      Reactome        R-DME-109582
+                            Factors involved in megakaryocyte development and platelet production   Reactome        R-DME-98323mel_CG6963
+lcl|NW_020311285.1_prot_XP_020707987.1_39   dme:Dmel_CG30403||http://www.genome.jp/dbget-bin/www_bget?dme:Dmel_CG30403
+</pre></div>
+</div>
+<ul class="simple">
+<li><strong>&lt;basename&gt;_identify_out.txt:</strong> KOBAS identify generates a text file with the name you provide.</li>
 </ul>
 <div class="highlight-none"><div class="highlight"><pre><span></span>##Databases: PANTHER, KEGG PATHWAY, Reactome, BioCyc
 ##Statistical test method: hypergeometric test / Fisher&#39;s exact test

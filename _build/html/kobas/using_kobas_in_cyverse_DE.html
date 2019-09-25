@@ -31,6 +31,7 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
+        <link rel="next" title="KOBAS on the Command Line" href="using_kobas_cmd.html"/>
         <link rel="prev" title="Intro" href="intro.html"/> 
 
   
@@ -109,29 +110,39 @@
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>KOBAS on CyVerse</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-kobas-in-the-discovery-environment"><strong>Accessing KOBAS in the Discovery Environment</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id1"><strong>KOBAS annotate 3.0.3</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#input"><strong>Input</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#options"><strong>Options</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#output"><strong>Output</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#launching-the-app"><strong>Launching the app</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#input"><strong>Input</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#options"><strong>Options</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output"><strong>Output</strong></a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id2"><strong>KOBAS identify 3.0.3</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Input</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4"><strong>Options</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id5"><strong>Output</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id6"><strong>Understanding Your Results</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Launching the App</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><strong>Input</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><strong>Options</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Output</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id7"><strong>KOBAS annotate and identify 3.0.3</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id8"><strong>Input</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#annotate-options"><strong>Annotate Options</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#identify-options"><strong>Identify Options</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id9"><strong>Output</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id10"><strong>Understanding Your Results</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7"><strong>Understanding Your Results</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id8"><strong>KOBAS annotate and identify 3.0.3</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id9"><strong>Launching the App</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id10"><strong>Input</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#annotate-options"><strong>Annotate Options</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#identify-options"><strong>Identify Options</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11"><strong>Output</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id12"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l1"><a class="reference internal" href="using_kobas_cmd.html"><strong>KOBAS on the Command Line</strong></a></li>
 </ul>
 
             
@@ -197,21 +208,22 @@
 <p><a class="reference internal" href="../_images/find_kobas.png"><img alt="find_kobas" src="../_images/find_kobas.png" style="width: 700px;" /></a></p>
 <div class="admonition-find-apps-easily-with-communities admonition">
 <p class="first admonition-title">Find Apps Easily with &#8216;Communities&#8217;</p>
-<p>The KOBAS apps belong to the &#8216;i5k&#8217; and &#8216;AgBase&#8217; communties. You can join either of these communities and they will appear in the left-hand pane of your &#8216;Apps&#8217; window (see above).</p>
-<p>To join a community:</p>
-<blockquote class="last">
-<div><ol class="arabic simple">
+<p>The KOBAS apps belong to the &#8216;i5k&#8217; and &#8216;AgBase&#8217; communties. You can join either of these communities and they will appear in the left-hand pane of your &#8216;Apps&#8217; window (see above).
+To join a community:</p>
+<ol class="last arabic simple">
 <li>Click on the person icon in the top-right corner of the Discovery Environment window</li>
 <li>Select &#8216;Communities&#8217;</li>
 <li>In the &#8216;Communities&#8217; window choose &#8216;all communities&#8217; from the drop-down list. A list of communities will appear in the main pane of this window.</li>
 <li>Select the one you wish to join by clicking on it and then clicking on the &#8216;join&#8217; button.</li>
 </ol>
-</div></blockquote>
 </div>
 </div>
 <div class="section" id="id1">
 <h2><strong>KOBAS annotate 3.0.3</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p><strong>Analysis Name:KOBAS_annotate_3.0.3_analysis_1:</strong>
+<div class="section" id="launching-the-app">
+<h3><strong>Launching the app</strong><a class="headerlink" href="#launching-the-app" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../_images/kobas_anno.png"><img alt="kobas_anno" src="../_images/kobas_anno.png" style="width: 700px;" /></a></p>
+<p><strong>Analysis Name: KOBAS_annotate_3.0.3_analysis_1:</strong>
 This menu is used to name the job you will run so that you can find it later.
 Analysis Name: The default name is &#8220;KOBAS_annotate_3.0.3_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
 <p><strong>Comments:</strong>
@@ -225,12 +237,12 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
 </div>
 <div class="section" id="input">
-<h3><strong>Input</strong><a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Input</strong><a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
 <p><strong>Input File:</strong> Use the &#8216;browse&#8217; button on the right side of the field to navigate to your input file.</p>
 <p><strong>Input File Type:</strong> Select your input file type from the drop-down list. If your file type isn&#8217;t there then the app does not support that file type.</p>
 </div>
 <div class="section" id="options">
-<h3><strong>Options</strong><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Options</strong><a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h4>
 <p><strong>Species Code:</strong> Enter the species for the species of the sequences in your input file.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -243,8 +255,9 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p><strong>Ortholog:</strong> when checked KOBAS will only use orthologs for cross species annotation.</p>
 </div>
 <div class="section" id="output">
-<h3><strong>Output</strong><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Output</strong><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h4>
 <p><strong>Output File Name:</strong> Provide an output file name .</p>
+</div>
 </div>
 <div class="section" id="understanding-your-results">
 <h3><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h3>
@@ -296,7 +309,10 @@ Pathway:                    Endocytosis     KEGG PATHWAY    dme04144
 </div>
 <div class="section" id="id2">
 <h2><strong>KOBAS identify 3.0.3</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
-<p><strong>Analysis Name:KOBAS_identify_3.0.3_analysis_1:</strong>
+<div class="section" id="id3">
+<h3><strong>Launching the App</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../_images/kobas_ident.png"><img alt="kobas_ident" src="../_images/kobas_ident.png" style="width: 700px;" /></a></p>
+<p><strong>Analysis Name: KOBAS_identify_3.0.3_analysis_1:</strong>
 This menu is used to name the job you will run so that you can find it later.
 Analysis Name: The default name is &#8220;KOBAS_identify_3.0.3_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
 <p><strong>Comments:</strong>
@@ -309,8 +325,8 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p class="first admonition-title">Warning</p>
 <p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
 </div>
-<div class="section" id="id3">
-<h3><strong>Input</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4><strong>Input</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p><strong>Foreground File:</strong> Use the &#8216;browse&#8217; button on the right side of the field to navigate to your input file. This should be the output of KOBAS annotate.</p>
 <p><strong>Background:</strong> Enter the species for the species of the sequences in your input file.</p>
 <div class="admonition note">
@@ -319,18 +335,19 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p class="last">If your species of interest is not available then you should choose the code for the closest-related species available</p>
 </div>
 </div>
-<div class="section" id="id4">
-<h3><strong>Options</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4><strong>Options</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <p><strong>Cutoff:</strong> Annotation terms with less than cutoff number of genes are not used for statistical tests. Default is 5.</p>
 <p><strong>Method:</strong> Choose the statistical method to be used from the drop-down list. Default is hypergeometric/Fisher&#8217;s Exact.</p>
 <p><strong>FDR:</strong> Method for determining false discovery rate. Default is Benjamnini-Hochberg.</p>
 </div>
-<div class="section" id="id5">
-<h3><strong>Output</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id6">
+<h4><strong>Output</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p><strong>Output File Name:</strong> Provide an output file name .</p>
 </div>
-<div class="section" id="id6">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id7">
+<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>logs folder:</strong> This folder contains the &#8216;conder_stderr&#8217; and &#8216;condor_stdout&#8217; files. The files record feedback, progress and, importantly, any errors the app encountered during the analysis. You won&#8217;t normally need to look at these but they are very helpful in figuring out what may have happened if your output doesn&#8217;t look like you expected.</li>
@@ -349,10 +366,13 @@ Signaling by NOTCH2 Reactome        R-DME-1980145   3       8       2.0025964955
 </div>
 </div>
 </div>
-<div class="section" id="id7">
-<h2><strong>KOBAS annotate and identify 3.0.3</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id8">
+<h2><strong>KOBAS annotate and identify 3.0.3</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id9">
+<h3><strong>Launching the App</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../_images/kobas_annoident.png"><img alt="kobas_annoident" src="../_images/kobas_annoident.png" style="width: 700px;" /></a></p>
 <p>This app runs both the annotate and identify analysis together as a convenience for user who wish to run both steps.</p>
-<p><strong>Analysis Name:KOBAS_annotate_and_identify_3.0.3_analysis_1:</strong>
+<p><strong>Analysis Name: KOBAS_annotate_and_identify_3.0.3_analysis_1:</strong>
 This menu is used to name the job you will run so that you can find it later.
 Analysis Name: The default name is &#8220;KOBAS_annotate_identify_3.0.3_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
 <p><strong>Comments:</strong>
@@ -365,13 +385,13 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p class="first admonition-title">Warning</p>
 <p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
 </div>
-<div class="section" id="id8">
-<h3><strong>Input</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id10">
+<h4><strong>Input</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p><strong>Input File:</strong> Use the &#8216;browse&#8217; button on the right side of the field to navigate to your input file.</p>
 <p><strong>Input File Type:</strong> Select your input file type from the drop-down list. If your file type isn&#8217;t there then the app does not support that file type.</p>
 </div>
 <div class="section" id="annotate-options">
-<h3><strong>Annotate Options</strong><a class="headerlink" href="#annotate-options" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Annotate Options</strong><a class="headerlink" href="#annotate-options" title="Permalink to this headline">¶</a></h4>
 <p><strong>Species Code:</strong> Enter the species for the species of the sequences in your input file.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
@@ -384,17 +404,18 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p><strong>Ortholog:</strong> when checked KOBAS will only use orthologs for cross species annotation.</p>
 </div>
 <div class="section" id="identify-options">
-<h3><strong>Identify Options</strong><a class="headerlink" href="#identify-options" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Identify Options</strong><a class="headerlink" href="#identify-options" title="Permalink to this headline">¶</a></h4>
 <p><strong>Cutoff:</strong> Annotation terms with less than cutoff number of genes are not used for statistical tests. Default is 5.</p>
 <p><strong>Method:</strong> Choose the statistical method to be used from the drop-down list. Default is hypergeometric/Fisher&#8217;s Exact.</p>
 <p><strong>FDR:</strong> Method for determining false discovery rate. Default is Benjamnini-Hochberg.</p>
 </div>
-<div class="section" id="id9">
-<h3><strong>Output</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id11">
+<h4><strong>Output</strong><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
 <p><strong>Output File Basename:</strong> This will the the prefix of your output files.</p>
 </div>
-<div class="section" id="id10">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="id12">
+<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
 <p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>logs folder:</strong> This folder contains the &#8216;conder_stderr&#8217; and &#8216;condor_stdout&#8217; files. The files record feedback, progress and, importantly, any errors the app encountered during the analysis. You won&#8217;t normally need to look at these but they are very helpful in figuring out what may have happened if your output doesn&#8217;t look like you expected.</li>
@@ -464,6 +485,8 @@ Signaling by NOTCH2 Reactome        R-DME-1980145   3       8       2.0025964955
           <footer>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="using_kobas_cmd.html" class="btn btn-neutral float-right" title="KOBAS on the Command Line" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="intro.html" class="btn btn-neutral" title="Intro" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
