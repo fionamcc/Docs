@@ -130,14 +130,8 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#annotate"><strong>Annotate</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#identify"><strong>Identify</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Understanding Your Results</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#annotate"><strong>Annotate</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -231,8 +225,8 @@ tar -xf sqlite3.tar
 </div>
 <div class="section" id="getting-the-kobas-container">
 <h3><strong>Getting the KOBAS container</strong><a class="headerlink" href="#getting-the-kobas-container" title="Permalink to this headline">¶</a></h3>
-<p>The GOanna tool is available as a Docker container on Docker Hub:
-<a class="reference external" href="https://hub.docker.com/r/agbase/kobas">GOanna container</a></p>
+<p>The KOBAS tool is available as a Docker container on Docker Hub:
+<a class="reference external" href="https://hub.docker.com/r/agbase/kobas">KOBAS container</a></p>
 <p>The container can be pulled with this command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>docker pull agbase/kobas:3.0.3_0
 </pre></div>
@@ -348,7 +342,7 @@ agbase/kobas:3.0.3_0 \
 </div>
 <p><strong>-t:</strong> input file type; in this case, protein FASTA.</p>
 <p><strong>-o AROS1000:</strong> name of output file</p>
-<p>For information on output files see <a href="#id7"><span class="problematic" id="id8">`Understanding Your Results`_</span></a></p>
+<p>For information on output files see <a class="reference internal" href="#understanding-your-results">Understanding Your Results</a></p>
 </div>
 </div>
 </div>
@@ -371,8 +365,8 @@ agbase/kobas:3.0.3_0 \
 </div>
 <div class="section" id="id1">
 <h3><strong>Getting the KOBAS container</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
-<p>The GOanna tool is available as a Docker container on Docker Hub:
-<a class="reference external" href="https://hub.docker.com/r/agbase/kobas">GOanna container</a></p>
+<p>The KOBAS tool is available as a Docker container on Docker Hub:
+<a class="reference external" href="https://hub.docker.com/r/agbase/kobas">KOBAS container</a></p>
 <p>The container can be pulled with this command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>singularity pull docker://agbase/kobas:3.0.3_0
 </pre></div>
@@ -505,15 +499,16 @@ kobas_3.0.3_0.sif <span class="se">\</span>
 </div>
 <p><strong>-t:</strong> input file type; in this case, protein FASTA.</p>
 <p><strong>-o AROS1000:</strong> name of output file</p>
-<p>For information on output files see <a class="reference internal" href="#understanding-your-annotate-results">Understanding Your Annotate Results</a></p>
+<p>For information on output files see <a class="reference internal" href="#annotateresults">annotateresults</a></p>
 </div>
 </div>
 </div>
 <div class="section" id="understanding-your-results">
 <h2><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h2>
+</div>
 <div class="section" id="annotate">
-<span id="understanding-your-annotate-results"></span><h3><strong>Annotate</strong><a class="headerlink" href="#annotate" title="Permalink to this headline">¶</a></h3>
-<p>If all goes well, you should get the following:</p>
+<h2><strong>Annotate</strong><a class="headerlink" href="#annotate" title="Permalink to this headline">¶</a></h2>
+<p id="annotateresults">If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>seq_pep folder:</strong> This folder contains the BLAST database files used in your analysis.</li>
 <li><strong>sqlite3 folder:</strong> This folder contains the annotation database files used in your analysis</li>
@@ -556,11 +551,6 @@ Pathway:                    Endocytosis     KEGG PATHWAY    dme04144
                             Factors involved in megakaryocyte development and platelet production   Reactome        R-DME-98323
 </pre></div>
 </div>
-<div class="section" id="identify">
-<h4><strong>Identify</strong><a class="headerlink" href="#identify" title="Permalink to this headline">¶</a></h4>
-</div>
-<div class="section" id="id6">
-<h4><strong>Understanding Your Results</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>sqlite3 folder:</strong> This folder contains the annotation database files used in your analysis</li>
@@ -577,8 +567,6 @@ Signaling by NOTCH2 Reactome        R-DME-1980145   3       8       2.0025964955
 </pre></div>
 </div>
 <p><a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">Contact us</a>.</p>
-</div>
-</div>
 </div>
 </div>
 

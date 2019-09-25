@@ -53,8 +53,8 @@ Docker containers can be run with either technology.
 
 **Getting the KOBAS container**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The GOanna tool is available as a Docker container on Docker Hub: 
-`GOanna container <https://hub.docker.com/r/agbase/kobas>`_ 
+The KOBAS tool is available as a Docker container on Docker Hub: 
+`KOBAS container <https://hub.docker.com/r/agbase/kobas>`_ 
 
 The container can be pulled with this command: 
 
@@ -186,7 +186,7 @@ KOBAS can also run both task with a single command (-j).
 
 **-o AROS1000:** name of output file
 
-For information on output files see `Understanding Your Results`_
+For information on output files see `annotateresults`_
 
 **Running KOBAS Annotate using Singularity**
 ------------------------------------
@@ -207,8 +207,8 @@ For information on output files see `Understanding Your Results`_
 
 **Getting the KOBAS container**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The GOanna tool is available as a Docker container on Docker Hub: 
-`GOanna container <https://hub.docker.com/r/agbase/kobas>`_ 
+The KOBAS tool is available as a Docker container on Docker Hub: 
+`KOBAS container <https://hub.docker.com/r/agbase/kobas>`_ 
 
 The container can be pulled with this command: 
 
@@ -364,16 +364,18 @@ The container can be pulled with this command:
 
 **-o AROS1000:** name of output file 
 
-For information on output files see `Understanding Your Annotate Results`_
+For information on output files see `annotateresults`_
 
 
 **Understanding Your Results**
 -------------------------------
 
-.. _Understanding Your Annotate Results:
+.. _annotateresults:
+
 
 **Annotate**
 ------------
+
 If all goes well, you should get the following:
 
 - **seq_pep folder:** This folder contains the BLAST database files used in your analysis.
@@ -423,9 +425,6 @@ The second section follows a dashed line and looks like this:
 
 **Identify**
 """"""""""""
-
-**Understanding Your Results**
-""""""""""""""""""""""""""""""
 
 If all goes well, you should get the following:
 
