@@ -103,7 +103,7 @@ Docker containers can be run with either technology.
 **Getting the Combine GAFs container**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The Combine GAFs tool is available as a Docker container on Docker Hub: 
-`GOanna container <https://hub.docker.com/r/agbase/combine_gafs>`_ 
+`Combine GAFs container <https://hub.docker.com/r/agbase/combine_gafs>`_ 
 
 The container can be pulled with this command: 
 

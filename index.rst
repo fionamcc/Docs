@@ -13,11 +13,7 @@ Contents:
    :caption: Agbase Home
 
    agbase/intro
-
-.. toctree::
-   :maxdepth: 1
-   
-   workflow/workflow
+   agbase/workflow
 
 .. toctree::
    :maxdepth: 1

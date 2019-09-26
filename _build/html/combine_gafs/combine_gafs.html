@@ -82,10 +82,9 @@
             
             
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
-<ul class="simple">
-</ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agbase/intro.html"><strong>AgBase</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../agbase/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">TransDecoder</span></p>
 <ul class="simple">
@@ -123,7 +122,7 @@
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-singularity"><strong>Combine GAFs using Singularity</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id1"><strong>Getting the Combine GAFs Container</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id2"><strong>Running Combine GAFs with Data</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3"><strong>Running Combine GAFs with Data</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -266,7 +265,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 <div class="section" id="getting-the-combine-gafs-container">
 <h4><strong>Getting the Combine GAFs container</strong><a class="headerlink" href="#getting-the-combine-gafs-container" title="Permalink to this headline">¶</a></h4>
 <p>The Combine GAFs tool is available as a Docker container on Docker Hub:
-<a class="reference external" href="https://hub.docker.com/r/agbase/combine_gafs">GOanna container</a></p>
+<a class="reference external" href="https://hub.docker.com/r/agbase/combine_gafs">Combine GAFs container</a></p>
 <p>The container can be pulled with this command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>docker pull agbase/combine_gafs:1.0
 </pre></div>
@@ -339,8 +338,8 @@ agbase/combine_gafs:1.0 \
 </pre></div>
 </div>
 </div>
-<div class="section" id="id2">
-<h4><strong>Running Combine GAFs with Data</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id3">
+<h4><strong>Running Combine GAFs with Data</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
 <p>Combine GAFs has three parameters:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>-i InterProScan XML Parser GAF output
 -g GOanna GAF output
@@ -372,8 +371,8 @@ combine_gafs_1.0.sif <span class="se">\</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h5><strong>Breakdown of Command</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id4">
+<h5><strong>Breakdown of Command</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/combine_gafs:/work-dir:</strong> mounts my current working directory on the host machine to &#8216;/work-dir&#8217; in the container</p>
 <p><strong>combine_gafs_1.0.sif:</strong> the name of the Singularity image file to use</p>

@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>AgBase &mdash; AgBase 1.0 documentation</title>
+  <title>Functional Annotation Workflow &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Functional Annotation Workflow" href="workflow.html"/>
-        <link rel="prev" title="Welcome to AgBase’s documentation!" href="../index.html"/> 
+        <link rel="next" title="Intro" href="../goanna/intro.html"/>
+        <link rel="prev" title="AgBase" href="intro.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -83,17 +83,8 @@
             
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>AgBase</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#about-agbase"><strong>About AgBase</strong></a></li>
-<li class="toctree-l2"><a class="reference internal" href="#acknowledgements"><strong>Acknowledgements</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#agbase-has-received-financial-support-from"><strong>AgBase has received financial support from</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#competitive-grants"><strong>Competitive Grants</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#contact-us"><strong>Contact Us</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>AgBase</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Functional Annotation Workflow</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">TransDecoder</span></p>
 <ul class="simple">
@@ -148,11 +139,11 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li><strong>AgBase</strong></li>
+    <li><strong>Functional Annotation Workflow</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
-            <a href="../_sources/agbase/intro.txt" rel="nofollow"> View page source</a>
+            <a href="../_sources/agbase/workflow.txt" rel="nofollow"> View page source</a>
           
         
       </li>
@@ -162,39 +153,23 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="agbase">
-<h1><strong>AgBase</strong><a class="headerlink" href="#agbase" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://agbase.arizona.edu/">AgBase</a> is a curated resource for functional analysis of agricultural plant and animal gene products including Gene Ontotlogy annotatations.</p>
-<div class="section" id="about-agbase">
-<h2><strong>About AgBase</strong><a class="headerlink" href="#about-agbase" title="Permalink to this headline">¶</a></h2>
-<p>AgBase is a curated, open-source, Web-accessible resource for functional analysis of agricultural plant and animal gene products. Our long-term goal is to serve the needs of the agricultural research communities by facilitating post-genome biology for agriculture researchers and for those researchers primarily using agricultural species as biomedical models.</p>
-<p>We use controlled vocabularies developed by the Gene Ontology (GO) Consortium to describe molecular function, biological process, and cellular component for genes and gene products in agricultural species. For more information about the AgBase database please visit our Educational Resources page or refer to our AgBase publications.</p>
-<p>AgBase will also accept annotations from any interested party in the research communities. AgBase develops freely available tools for functional analysis, including tools for using GO. We appreciate any and all questions, comments, and suggestions. Please send us your ideas about how to make AgBase more useful for you.</p>
+  <div class="section" id="functional-annotation-workflow">
+<h1><strong>Functional Annotation Workflow</strong><a class="headerlink" href="#functional-annotation-workflow" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference internal" href="../_images/i5k_workflow_diagram1.png"><img alt="workflow" src="../_images/i5k_workflow_diagram1.png" style="width: 700px;" /></a></p>
+<p>This functional annotation workflow imploys three annotation tools:</p>
+<ol class="arabic simple">
+<li><strong>GOanna:</strong> performs a BLAST search and transfers gene ontology (GO) annotations from BLAST matches to the query gene products.</li>
+<li><strong>InterProScan:</strong> InterPro is a database which integrates together predictive information about proteins&#8217; function from a number of partner resources, giving an overview of the families that a protein belongs to and the domains and sites it contains. InterProScan can also provide GO and pathway annotations.</li>
+<li><strong>KOBAS:</strong> uses BLAST to annotate the input with KEGG Orthology terms and KEGG pathways</li>
+</ol>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">Each of these tools accepts a peptide FASTA file. For those users with nucloetide sequences some documentation has been provided for using <strong>TransDecoder</strong> (although other tools are also acceptable).
+The <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=74828a18-f351-11e8-be2b-008cfa5ae621&amp;system-id=de">TransDecoder app</a> is available through CyVerse or as a <a class="reference external" href="https://quay.io/repository/biocontainers/transdecoder?tab=tags">BioContainer</a> for use on the command line.</p>
 </div>
-<div class="section" id="acknowledgements">
-<h2><strong>Acknowledgements</strong><a class="headerlink" href="#acknowledgements" title="Permalink to this headline">¶</a></h2>
-<p>AgBase acknowledges the following groups for their help and support: The GO Consortium, especially DictyBase for providing the database schema and for technical assistance with implementation, MGI for providing training and continued support with manual curation issues and the EBI GOA Project for allowing us access to their tools and for their continued help, support and patience.</p>
-<div class="section" id="agbase-has-received-financial-support-from">
-<h3><strong>AgBase has received financial support from</strong><a class="headerlink" href="#agbase-has-received-financial-support-from" title="Permalink to this headline">¶</a></h3>
-<p>Mississippi State University
-Office of Research and Economic Development (ORED)
-Division of Agriculture, Forestry and Veterinary Medicine (DAFVM)
-Mississippi Agricultural and Forestry Experiment Station (MAFES)
-College of Veterinary Medicine
-Bagley College of Engineering
-Institute for Genomics, Biocomputing &amp; Biotechnology (IGBB; formerly the Life Sciences and Biotechnology Institute)</p>
-</div>
-<div class="section" id="competitive-grants">
-<h3><strong>Competitive Grants</strong><a class="headerlink" href="#competitive-grants" title="Permalink to this headline">¶</a></h3>
-<p>USDA Agriculture and Food Research Initiative Competitive Grant no. 2011-67015-30332
-National Research Initiative of the USDA Cooperative State Research, Education and Extension Service, grant number 2007-35205-17941
-National Institutes of Health NIGMS project 07111084
-NSF EPSCoR award number EPS 0903787</p>
-</div>
-</div>
-<div class="section" id="contact-us">
-<h2><strong>Contact Us</strong><a class="headerlink" href="#contact-us" title="Permalink to this headline">¶</a></h2>
-<p><a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a></p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As both GOanna and InterProScan provide GO annotations, their outputs are provided in GAF format. The <strong>&#8216;Combine GAFs&#8217;</strong> tool can then be used to make a single GAF of GO annotations, if desired.</p>
 </div>
 </div>
 
@@ -205,10 +180,10 @@ NSF EPSCoR award number EPS 0903787</p>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="workflow.html" class="btn btn-neutral float-right" title="Functional Annotation Workflow" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../goanna/intro.html" class="btn btn-neutral float-right" title="Intro" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../index.html" class="btn btn-neutral" title="Welcome to AgBase’s documentation!" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral" title="AgBase" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
