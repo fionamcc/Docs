@@ -39,7 +39,6 @@ agbase@email.arizona.edu
    :maxdepth: 1
    :caption: Agbase Home
 
-   agbase/intro
    agbase/workflow
 
 .. toctree::
