@@ -29,10 +29,10 @@ AgBase acknowledges the following groups for their help and support: The GO Cons
 
 **Competitive Grants**
 ----------------------
-USDA Agriculture and Food Research Initiative Competitive Grant no. 2011-67015-30332
-National Research Initiative of the USDA Cooperative State Research, Education and Extension Service, grant number 2007-35205-17941
-National Institutes of Health NIGMS project 07111084
-NSF EPSCoR award number EPS 0903787
+- USDA Agriculture and Food Research Initiative Competitive Grant no. 2011-67015-30332
+- National Research Initiative of the USDA Cooperative State Research, Education and Extension Service, grant number 2007-35205-17941
+- National Institutes of Health NIGMS project 07111084
+- NSF EPSCoR award number EPS 0903787
 
 **Contact Us**
 ==============
