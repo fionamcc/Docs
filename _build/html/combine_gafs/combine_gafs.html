@@ -103,8 +103,17 @@
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Combining Gene Association Files</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#combine-gafs-on-cyverse">Combine GAFs on CyVerse</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Combining Gene Association Files</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#combine-gafs-on-cyverse"><strong>Combine GAFs on CyVerse</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#accessing-goanna-in-the-discovery-environment"><strong>Accessing GOanna in the Discovery Environment</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-the-combine-gafs-app"><strong>Using the Combine_GAFs App</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#launching-the-app"><strong>Launching the App</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#input"><strong>Input</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#output"><strong>Output</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l2"><a class="reference internal" href="#combine-gafs-on-the-command-line">Combine GAFs on the Command Line</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-docker">Combine GAFs using Docker</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-singularity">Combine GAFs using Singularity</a></li>
@@ -148,7 +157,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>Combining Gene Association Files</li>
+    <li><strong>Combining Gene Association Files</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -163,11 +172,11 @@
            <div itemprop="articleBody">
             
   <div class="section" id="combining-gene-association-files">
-<h1>Combining Gene Association Files<a class="headerlink" href="#combining-gene-association-files" title="Permalink to this headline">¶</a></h1>
+<h1><strong>Combining Gene Association Files</strong><a class="headerlink" href="#combining-gene-association-files" title="Permalink to this headline">¶</a></h1>
 <p>This tool can be used to combine the gene association file (GAF) outputs from GOanna and InterProScan.</p>
 <p>The tool accepts two input files:</p>
 <ol class="arabic simple">
-<li>GOanna output GAF</li>
+<li>GOanna GAF output</li>
 <li>InterProScan GAF output</li>
 </ol>
 <div class="admonition note">
@@ -175,7 +184,56 @@
 <p class="last">InterProScan itself does not produce a GAF file. The    <a class="reference external" href="https://hub.docker.com/r/agbase/interproscan">AgBase InterProScan container</a> parses the XML output from InterProScan to produce the GAF file.</p>
 </div>
 <div class="section" id="combine-gafs-on-cyverse">
-<h2>Combine GAFs on CyVerse<a class="headerlink" href="#combine-gafs-on-cyverse" title="Permalink to this headline">¶</a></h2>
+<h2><strong>Combine GAFs on CyVerse</strong><a class="headerlink" href="#combine-gafs-on-cyverse" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="accessing-goanna-in-the-discovery-environment">
+<h3><strong>Accessing GOanna in the Discovery Environment</strong><a class="headerlink" href="#accessing-goanna-in-the-discovery-environment" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><a class="reference external" href="user.cyverse.org">Create an account on CyVerse</a> (free)</li>
+<li>Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.</li>
+<li>If you are new to the Discovery Environment (DE) the user guide can be found <a class="reference external" href="https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/">here</a>.</li>
+<li>Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.</li>
+<li>To access the <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=d8219400-7b47-11e9-a097-008cfa5ae621&amp;system-id=de">combine_GAFs 1.0</a> app click on the ‘Apps’ button at the left side of the DE.</li>
+<li>Search for &#8216;combine&#8221; in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The combine_GAFs app is called ‘combine_GAFs 1.0’; click on the name to open the app.</li>
+</ol>
+<p><a class="reference internal" href="../_images/find_combine_gafs.png"><img alt="find_combine_gafs" src="../_images/find_combine_gafs.png" style="width: 700px;" /></a></p>
+<div class="admonition-find-apps-easily-with-communities admonition">
+<p class="first admonition-title">Find Apps Easily with &#8216;Communities&#8217;</p>
+<p>The GOanna 2.0 app belongs to the &#8216;i5k&#8217; and &#8216;AgBase&#8217; communties. You can join either of these communities and they will appear in the left-hand pane of your &#8216;Apps&#8217; window (see above).</p>
+<p class="last">To join a community click on the person icon in the top-right corner of the Discovery Environment window and select &#8216;Communities&#8217;. In the &#8216;Communities&#8217; window choose &#8216;all communities&#8217; from the drop-down list. A list of communities will appear in the main pane of this window. Select the one you wish to join by clicking on it and then clicking on the &#8216;join&#8217; button.</p>
+</div>
+</div>
+<div class="section" id="using-the-combine-gafs-app">
+<h3><strong>Using the Combine_GAFs App</strong><a class="headerlink" href="#using-the-combine-gafs-app" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="launching-the-app">
+<h4><strong>Launching the App</strong><a class="headerlink" href="#launching-the-app" title="Permalink to this headline">¶</a></h4>
+<p><a class="reference internal" href="../_images/combine_gafs.png"><img alt="combine_gafs" src="../_images/combine_gafs.png" style="width: 700px;" /></a>
+<strong>Analysis Name: Combine_GAFs_1.0_analysis1:</strong>
+This menu is used to name the job you will run so that you can find it later.
+Analysis Name: The default name is &#8220;Combine_GAFs_1.0_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
+<p><strong>Comments:</strong>
+(Optional) You can add additional information in the comments section to distinguish your analyses further.</p>
+<p><strong>Select output folder:</strong>
+This is where your results will be placed. The default (recommended) is your &#8216;analyses&#8217; folder.</p>
+<p><strong>Retain Inputs:</strong>
+Enabling this flag will copy all the input files into the analysis result folder.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
+</div>
+</div>
+<div class="section" id="input">
+<h4><strong>Input</strong><a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+<p>This menu is used to select the BLAST database and your input file.</p>
+<p><strong>GOanna GAF Output File:</strong> This is the GAF file generated by a GOanna analysis.</p>
+<p><strong>InterProScan XML Parser GAF Output File:</strong> This is the GAF output file generated by an InterProScan XML Parser analysis. InterProScan itself does not produce this file, though some IntperProScan apps include this analysis. If it is missing from your InterProScan output you can generate it using the InterProScan XML Parser app.</p>
+</div>
+<div class="section" id="output">
+<h4><strong>Output</strong><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h4>
+<p>This menu is used to format your GO annotation results into a standard gene association file format.</p>
+<p><strong>Output File Basename:</strong> This will be the prefix for your output file (a .tsv extension will be added).</p>
+<p>If your analysis fails please check the &#8216;condor_stderr&#8217; file in the analysis output &#8216;logs&#8217; folder. If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
+</div>
+</div>
 </div>
 <div class="section" id="combine-gafs-on-the-command-line">
 <h2>Combine GAFs on the Command Line<a class="headerlink" href="#combine-gafs-on-the-command-line" title="Permalink to this headline">¶</a></h2>
