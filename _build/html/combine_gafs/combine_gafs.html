@@ -116,14 +116,14 @@
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#combine-gafs-on-the-command-line">Combine GAFs on the Command Line</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#container-technologies"><strong>Container Technologies</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-docker">Combine GAFs using Docker</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-docker"><strong>Combine GAFs using Docker</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#getting-the-combine-gafs-container"><strong>Getting the Combine GAFs container</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#running-combine-gafs-with-data"><strong>Running Combine GAFs with Data</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-singularity"><strong>Combine GAFs using Singularity</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id1"><strong>Getting the Combine GAFs Container</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3"><strong>Running Combine GAFs with Data</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2"><strong>Running Combine GAFs with Data</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -252,7 +252,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p>Docker containers can be run with either technology.</p>
 </div>
 <div class="section" id="combine-gafs-using-docker">
-<h3>Combine GAFs using Docker<a class="headerlink" href="#combine-gafs-using-docker" title="Permalink to this headline">¶</a></h3>
+<h3><strong>Combine GAFs using Docker</strong><a class="headerlink" href="#combine-gafs-using-docker" title="Permalink to this headline">¶</a></h3>
 <div class="admonition-about-docker admonition">
 <p class="first admonition-title">About Docker</p>
 <ul class="last simple">
@@ -332,15 +332,15 @@ agbase/combine_gafs:1.0 \
 </div>
 <div class="section" id="id1">
 <h4><strong>Getting the Combine GAFs Container</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<p>The GOanna tool is available as a Docker container on Docker Hub:
-<a class="reference external" href="https://hub.docker.com/r/agbase/combine_gafs">GOanna container</a></p>
+<p>The Combine GAFs tool is available as a Docker container on Docker Hub:
+<a class="reference external" href="https://hub.docker.com/r/agbase/combine_gafs">Combine GAFs container</a></p>
 <p>The container can be pulled with this command:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>singularity pull docker://agbase/combine_gafs:1.0
 </pre></div>
 </div>
 </div>
-<div class="section" id="id3">
-<h4><strong>Running Combine GAFs with Data</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id2">
+<h4><strong>Running Combine GAFs with Data</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
 <p>Combine GAFs has three parameters:</p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>-i InterProScan XML Parser GAF output
 -g GOanna GAF output
@@ -372,8 +372,8 @@ combine_gafs_1.0.sif <span class="se">\</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id4">
-<h5><strong>Breakdown of Command</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
+<div class="section" id="id3">
+<h5><strong>Breakdown of Command</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/combine_gafs:/work-dir:</strong> mounts my current working directory on the host machine to &#8216;/work-dir&#8217; in the container</p>
 <p><strong>combine_gafs_1.0.sif:</strong> the name of the Singularity image file to use</p>

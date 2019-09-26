@@ -88,8 +88,8 @@ There are two major containerization technologies: **Docker** and **Singularity*
 Docker containers can be run with either technology.
 
 
-Combine GAFs using Docker
--------------------------
+**Combine GAFs using Docker**
+-----------------------------
 
 .. admonition:: About Docker
 
@@ -184,8 +184,8 @@ Combine GAFs has three parameters:
 
 **Getting the Combine GAFs Container**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The GOanna tool is available as a Docker container on Docker Hub: 
-`GOanna container <https://hub.docker.com/r/agbase/combine_gafs>`_ 
+The Combine GAFs tool is available as a Docker container on Docker Hub: 
+`Combine GAFs container <https://hub.docker.com/r/agbase/combine_gafs>`_ 
 
 The container can be pulled with this command: 
 
