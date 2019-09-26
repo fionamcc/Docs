@@ -19,13 +19,13 @@ AgBase acknowledges the following groups for their help and support: The GO Cons
 
 **AgBase has received financial support from**
 -----------------------------------------------
-Mississippi State University
-Office of Research and Economic Development (ORED)
-Division of Agriculture, Forestry and Veterinary Medicine (DAFVM)
-Mississippi Agricultural and Forestry Experiment Station (MAFES)
-College of Veterinary Medicine
-Bagley College of Engineering
-Institute for Genomics, Biocomputing & Biotechnology (IGBB; formerly the Life Sciences and Biotechnology Institute)
+- Mississippi State University
+- Office of Research and Economic Development (ORED)
+- Division of Agriculture, Forestry and Veterinary Medicine (DAFVM)
+- Mississippi Agricultural and Forestry Experiment Station (MAFES)
+- College of Veterinary Medicine
+- Bagley College of Engineering
+- Institute for Genomics, Biocomputing & Biotechnology (IGBB; formerly the Life Sciences and Biotechnology Institute)
 
 **Competitive Grants**
 ----------------------
