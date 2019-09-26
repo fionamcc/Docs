@@ -4,13 +4,13 @@
 
 `AgBase <https://agbase.arizona.edu/>`_ is a curated, open-source, Web-accessible resource for functional analysis of agricultural plant and animal gene products. Our long-term goal is to serve the needs of the agricultural research communities by facilitating post-genome biology for agriculture researchers and for those researchers primarily using agricultural species as biomedical models. 
 
-We use controlled vocabularies developed by the Gene Ontology (GO) Consortium to describe molecular function, biological process, and cellular component for genes and gene products in agricultural species. For more information about the AgBase database please visit our Educational Resources page or refer to our AgBase publications. 
+We use controlled vocabularies developed by the `Gene Ontology (GO) Consortium <http://www.geneontology.org/>`_ to describe molecular function, biological process, and cellular component for genes and gene products in agricultural species. For more information about the AgBase database please visit our `Educational Resources <https://agbase.arizona.edu/cgi-bin/education.cgi>`_ page or refer to our `AgBase publications <https://agbase.arizona.edu/cgi-bin/cite.pl>`_ . 
 
 AgBase will also accept annotations from any interested party in the research communities. AgBase develops freely available tools for functional analysis, including tools for using GO. We appreciate any and all questions, comments, and suggestions. Please send us your ideas about how to make AgBase more useful for you.
 
 **Acknowledgements**
 ====================
-AgBase acknowledges the following groups for their help and support: The GO Consortium, especially DictyBase for providing the database schema and for technical assistance with implementation, MGI for providing training and continued support with manual curation issues and the EBI GOA Project for allowing us access to their tools and for their continued help, support and patience.
+AgBase acknowledges the following groups for their help and support: The GO Consortium, especially `DictyBase <http://www.dictybase.org/>`_ for providing the database schema and for technical assistance with implementation, `MGI <http://www.informatics.jax.org/>`_ for providing training and continued support with manual curation issues and the `EBI GOA Project <http://www.ebi.ac.uk/GOA/>`_ for allowing us access to their tools and for their continued help, support and patience.
 
 **AgBase has received financial support from**
 -----------------------------------------------
