@@ -197,11 +197,11 @@ The container can be pulled with this command:
  -M <mapping file>                       Optional. Mapping file.
  -B <bad seq file>                       Optional. Bad input sequence file.
 
-**Running GOanna with Data**
+**Running InterProScan with Data**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. tip::
 
-    There are one directory built into this container. This directory should be used to mount your working directory.
+    There is one directory built into this container. This directory should be used to mount your working directory.
     
     - /data
 

@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="../combine_gafs/combine_gafs.html"/>
+        <link rel="next" title="Combining Gene Association Files" href="../combine_gafs/combine_gafs.html"/>
         <link rel="prev" title="&lt;no title&gt;" href="using_iprs_in_cyverse_DE.html"/> 
 
   
@@ -105,7 +105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="#running-interproscan-using-docker"><strong>Running InterProScan using Docker</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#getting-the-interproscan-container"><strong>Getting the InterProScan Container</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#running-goanna-with-data"><strong>Running GOanna with Data</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#running-interproscan-with-data"><strong>Running InterProScan with Data</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#example-command"><strong>Example Command</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#breakdown-of-command"><strong>Breakdown of Command</strong></a></li>
 </ul>
@@ -124,14 +124,14 @@
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script"><strong>Example PBS script:</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#running-interproscan-with-data"><strong>Running InterProScan with Data</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id5"><strong>Example PBS Script</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Breakdown of Command</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5"><strong>Running InterProScan with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Example PBS Script</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><strong>Breakdown of Command</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id7"><strong>Understanding Your Results</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id8"><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id9"><strong>Parser Outputs</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><strong>Understanding Your Results</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9"><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10"><strong>Parser Outputs</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -140,12 +140,14 @@
 </li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs.html">Combining Gene Association Files</a></li>
 </ul>
 <p class="caption"><span class="caption-text">KOBAS</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../kobas/intro.html"><strong>Intro</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_in_cyverse_DE.html"><strong>KOBAS on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_cmd.html"><strong>KOBAS on the Command Line</strong></a></li>
 </ul>
 
             
@@ -369,11 +371,11 @@ OPTIONS FOR XML PARSER OUTPUTS
 </pre></div>
 </div>
 </div>
-<div class="section" id="running-goanna-with-data">
-<h3><strong>Running GOanna with Data</strong><a class="headerlink" href="#running-goanna-with-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="running-interproscan-with-data">
+<h3><strong>Running InterProScan with Data</strong><a class="headerlink" href="#running-interproscan-with-data" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
-<p>There are one directory built into this container. This directory should be used to mount your working directory.</p>
+<p>There is one directory built into this container. This directory should be used to mount your working directory.</p>
 <ul class="last simple">
 <li>/data</li>
 </ul>
@@ -538,8 +540,8 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 </div>
 </div>
 </div>
-<div class="section" id="running-interproscan-with-data">
-<h3><strong>Running InterProScan with Data</strong><a class="headerlink" href="#running-interproscan-with-data" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h3><strong>Running InterProScan with Data</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>There is one directory built into this container. This directory should be used to mount your working directory.</p>
@@ -547,8 +549,8 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 <li>/data</li>
 </ul>
 </div>
-<div class="section" id="id5">
-<h4><strong>Example PBS Script</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h4><strong>Example PBS Script</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N 10000j100</span>
 <span class="c1">#PBS -q standard</span>
@@ -578,8 +580,8 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 </pre></div>
 </div>
 </div>
-<div class="section" id="id6">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id7">
+<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data:</strong> mounts my working directory on the host machine into the /data directory in the container the syntax for this is &lt;aboslute path on host machine&gt;:&lt;aboslute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data:</strong> mounts he InterProScan data directory that was downloaded from the FTP site into the InterProScan data directory in the container</p>
@@ -598,10 +600,10 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 <p><strong>-D AgBase:</strong> database of query accession to be used in column 1 of GAF output file</p>
 </div>
 </div>
-<div class="section" id="id7">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="id8">
-<h4><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
+<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id9">
+<h4><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p><strong>Default</strong>
 - &lt;basename&gt;.gff3
 - &lt;basename&gt;.tsv
@@ -611,8 +613,8 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 - &lt;basename&gt;.html.tar.gz
 - &lt;basename&gt;.svg.tar.gz</p>
 </div>
-<div class="section" id="id9">
-<h4><strong>Parser Outputs</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4><strong>Parser Outputs</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p><strong>&lt;basename&gt;_gaf.txt:</strong>
 -This table follows the formatting of a gene association file (gaf) and can be used in GO enrichment analyses.</p>
 <p><strong>&lt;basename&gt;_acc_go_counts.txt:</strong>
@@ -642,7 +644,7 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../combine_gafs/combine_gafs.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../combine_gafs/combine_gafs.html" class="btn btn-neutral float-right" title="Combining Gene Association Files" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="using_iprs_in_cyverse_DE.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
