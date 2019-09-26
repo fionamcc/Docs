@@ -43,12 +43,6 @@ agbase@email.arizona.edu
 
 .. toctree::
    :maxdepth: 1
-   :caption: TransDecoder
-
-   transdecoder/usage
-
-.. toctree::
-   :maxdepth: 1
    :caption: GOanna
 
    goanna/intro
@@ -67,7 +61,9 @@ agbase@email.arizona.edu
    :maxdepth: 1
    :caption: Combine GAFs
 
-   combine_gafs/combine_gafs
+   combine_gafs/intro
+   combine_gafs/combine_gafs_cyverse
+   combine_gafs/combine_gafs_cmd
 
 .. toctree::
    :maxdepth: 1

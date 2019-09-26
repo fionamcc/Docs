@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>Combining Gene Association Files &mdash; AgBase 1.0 documentation</title>
+  <title>Intro &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -30,9 +30,7 @@
   
 
   
-    <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Intro" href="../kobas/intro.html"/>
-        <link rel="prev" title="InterProScan on the Command Line" href="../interproscan/using_iprs_cmd.html"/> 
+    <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -83,11 +81,7 @@
             
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../agbase/intro.html"><strong>AgBase</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../agbase/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
-</ul>
-<p class="caption"><span class="caption-text">TransDecoder</span></p>
-<ul class="simple">
 </ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
@@ -101,34 +95,9 @@
 <li class="toctree-l1"><a class="reference internal" href="../interproscan/using_iprs_cmd.html"><strong>InterProScan on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Combining Gene Association Files</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#combine-gafs-on-cyverse"><strong>Combine GAFs on CyVerse</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#accessing-goanna-in-the-discovery-environment"><strong>Accessing GOanna in the Discovery Environment</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#using-the-combine-gafs-app"><strong>Using the Combine_GAFs App</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#launching-the-app"><strong>Launching the App</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#input"><strong>Input</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#output"><strong>Output</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#combine-gafs-on-the-command-line">Combine GAFs on the Command Line</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#container-technologies"><strong>Container Technologies</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-docker"><strong>Combine GAFs using Docker</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#getting-the-combine-gafs-container"><strong>Getting the Combine GAFs container</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#running-combine-gafs-with-data"><strong>Running Combine GAFs with Data</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#combine-gafs-using-singularity"><strong>Combine GAFs using Singularity</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id1"><strong>Getting the Combine GAFs Container</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id3"><strong>Running Combine GAFs with Data</strong></a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="combine_gafs_cyverse.html"><strong>Combine GAFs on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="combine_gafs_cmd.html">Combine GAFs on the Command Line</a></li>
 </ul>
 <p class="caption"><span class="caption-text">KOBAS</span></p>
 <ul>
@@ -165,7 +134,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li><strong>Combining Gene Association Files</strong></li>
+    <li><strong>Intro</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -179,8 +148,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="combining-gene-association-files">
-<h1><strong>Combining Gene Association Files</strong><a class="headerlink" href="#combining-gene-association-files" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="intro">
+<h1><strong>Intro</strong><a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
 <p>This tool can be used to combine the gene association file (GAF) outputs from GOanna and InterProScan.</p>
 <p>The tool accepts two input files:</p>
 <ol class="arabic simple">
@@ -191,217 +160,12 @@
 <p class="first admonition-title">Note</p>
 <p class="last">InterProScan itself does not produce a GAF file. The    <a class="reference external" href="https://hub.docker.com/r/agbase/interproscan">AgBase InterProScan container</a> parses the XML output from InterProScan to produce the GAF file.</p>
 </div>
-<div class="section" id="combine-gafs-on-cyverse">
-<h2><strong>Combine GAFs on CyVerse</strong><a class="headerlink" href="#combine-gafs-on-cyverse" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="accessing-goanna-in-the-discovery-environment">
-<h3><strong>Accessing GOanna in the Discovery Environment</strong><a class="headerlink" href="#accessing-goanna-in-the-discovery-environment" title="Permalink to this headline">¶</a></h3>
-<ol class="arabic simple">
-<li><a class="reference external" href="user.cyverse.org">Create an account on CyVerse</a> (free)</li>
-<li>Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.</li>
-<li>If you are new to the Discovery Environment (DE) the user guide can be found <a class="reference external" href="https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/">here</a>.</li>
-<li>Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.</li>
-<li>To access the <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=d8219400-7b47-11e9-a097-008cfa5ae621&amp;system-id=de">combine_GAFs 1.0</a> app click on the ‘Apps’ button at the left side of the DE.</li>
-<li>Search for &#8216;combine&#8221; in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The combine_GAFs app is called ‘combine_GAFs 1.0’; click on the name to open the app.</li>
-</ol>
-<p><a class="reference internal" href="../_images/find_combine_gafs.png"><img alt="find_combine_gafs" src="../_images/find_combine_gafs.png" style="width: 700px;" /></a></p>
-<div class="admonition-find-apps-easily-with-communities admonition">
-<p class="first admonition-title">Find Apps Easily with &#8216;Communities&#8217;</p>
-<p>The GOanna 2.0 app belongs to the &#8216;i5k&#8217; and &#8216;AgBase&#8217; communties. You can join either of these communities and they will appear in the left-hand pane of your &#8216;Apps&#8217; window (see above).</p>
-<p class="last">To join a community click on the person icon in the top-right corner of the Discovery Environment window and select &#8216;Communities&#8217;. In the &#8216;Communities&#8217; window choose &#8216;all communities&#8217; from the drop-down list. A list of communities will appear in the main pane of this window. Select the one you wish to join by clicking on it and then clicking on the &#8216;join&#8217; button.</p>
-</div>
-</div>
-<div class="section" id="using-the-combine-gafs-app">
-<h3><strong>Using the Combine_GAFs App</strong><a class="headerlink" href="#using-the-combine-gafs-app" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="launching-the-app">
-<h4><strong>Launching the App</strong><a class="headerlink" href="#launching-the-app" title="Permalink to this headline">¶</a></h4>
-<p><a class="reference internal" href="../_images/combine_gafs.png"><img alt="combine_gafs" src="../_images/combine_gafs.png" style="width: 700px;" /></a></p>
-<p><strong>Analysis Name: Combine_GAFs_1.0_analysis1:</strong>
-This menu is used to name the job you will run so that you can find it later.
-Analysis Name: The default name is &#8220;Combine_GAFs_1.0_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
-<p><strong>Comments:</strong>
-(Optional) You can add additional information in the comments section to distinguish your analyses further.</p>
-<p><strong>Select output folder:</strong>
-This is where your results will be placed. The default (recommended) is your &#8216;analyses&#8217; folder.</p>
-<p><strong>Retain Inputs:</strong>
-Enabling this flag will copy all the input files into the analysis result folder.</p>
-<div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
-</div>
-</div>
-<div class="section" id="input">
-<h4><strong>Input</strong><a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
-<p><strong>GOanna GAF Output File:</strong> This is the GAF file generated by a GOanna analysis.</p>
-<p><strong>InterProScan XML Parser GAF Output File:</strong> This is the GAF output file generated by an InterProScan XML Parser analysis. InterProScan itself does not produce this file, though some IntperProScan apps include this analysis. If it is missing from your InterProScan output you can generate it using the InterProScan XML Parser app.</p>
-</div>
-<div class="section" id="output">
-<h4><strong>Output</strong><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h4>
-<p><strong>Output File Basename:</strong> This will be the prefix for your output file (a .tsv extension will be added).</p>
-<p>If your analysis fails please check the &#8216;condor_stderr&#8217; file in the analysis output &#8216;logs&#8217; folder. If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
-</div>
-</div>
-</div>
-<div class="section" id="combine-gafs-on-the-command-line">
-<h2>Combine GAFs on the Command Line<a class="headerlink" href="#combine-gafs-on-the-command-line" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="container-technologies">
-<h3><strong>Container Technologies</strong><a class="headerlink" href="#container-technologies" title="Permalink to this headline">¶</a></h3>
-<p>GOanna is provided as a Docker container.</p>
-<p>A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.</p>
-<p>There are two major containerization technologies: <strong>Docker</strong> and <strong>Singularity</strong>.</p>
-<p>Docker containers can be run with either technology.</p>
-</div>
-<div class="section" id="combine-gafs-using-docker">
-<h3><strong>Combine GAFs using Docker</strong><a class="headerlink" href="#combine-gafs-using-docker" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-about-docker admonition">
-<p class="first admonition-title">About Docker</p>
-<ul class="last simple">
-<li>Docker must be installed on the computer you wish to use for your analysis.</li>
-<li>To run Docker you must have ‘root’ permissions (or use sudo).</li>
-<li>Docker will run all containers as ‘root’. This makes Docker incompatible with HPC systems (see Singularity below).</li>
-<li>Docker can be run on your local computer, a server, a cloud virtual machine (such as CyVerse Atmosphere) etc. Docker can be installed quickly on an Atmosphere instance by typing ‘ezd’.</li>
-<li>For more information on installing Docker on other systems see this tutorial:  <a class="reference external" href="https://learning.cyverse.org/projects/container_camp_workshop_2019/en/latest/docker/dockerintro.html">Installing Docker on your machine</a>.</li>
-</ul>
-</div>
-<div class="section" id="getting-the-combine-gafs-container">
-<h4><strong>Getting the Combine GAFs container</strong><a class="headerlink" href="#getting-the-combine-gafs-container" title="Permalink to this headline">¶</a></h4>
-<p>The Combine GAFs tool is available as a Docker container on Docker Hub:
-<a class="reference external" href="https://hub.docker.com/r/agbase/combine_gafs">Combine GAFs container</a></p>
-<p>The container can be pulled with this command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>docker pull agbase/combine_gafs:1.0
-</pre></div>
-</div>
-<div class="admonition-remember admonition">
-<p class="first admonition-title">Remember</p>
-<p>You must have root permissions or use sudo, like so:</p>
-<p class="last">sudo docker pull agbase/combine_gafs:1.0</p>
-</div>
-</div>
-<div class="section" id="running-combine-gafs-with-data">
-<h4><strong>Running Combine GAFs with Data</strong><a class="headerlink" href="#running-combine-gafs-with-data" title="Permalink to this headline">¶</a></h4>
-<p>Combine GAFs has three parameters:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>-i InterProScan XML Parser GAF output
--g GOanna GAF output
--o output file basename
-</pre></div>
-</div>
-<div class="section" id="example-command">
-<h5><strong>Example Command</strong><a class="headerlink" href="#example-command" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-none"><div class="highlight"><pre><span></span>sudo docker run \
---rm \
--v $(pwd):/work-dir \
-agbase/combine_gafs:1.0 \
--i CFLO_1.fa_gaf.txt \
--g clfo1_v_insecta_goanna_gaf.tsv \
--o complete_gaf
-</pre></div>
-</div>
-</div>
-<div class="section" id="breakdown-of-command">
-<h5><strong>Breakdown of Command</strong><a class="headerlink" href="#breakdown-of-command" title="Permalink to this headline">¶</a></h5>
-<p><strong>sudo docker run:</strong> tells docker to run</p>
-<p><strong>&#8211;rm:</strong> removes the container when the analysis has finished. The image will remain for future use.</p>
-<p><strong>-v $(pwd):/work-dir:</strong> mounts my current working directory on the host machine to &#8216;/work-dir&#8217; in the container</p>
-<p><strong>agbase/combine_gafs:1.0:</strong> the name of the Docker image to use</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">All the options supplied after the image name are Combine_GAFs options</p>
-</div>
-<p><strong>-i CFLO_1.fa_gaf.txt:</strong> InterProScan XML Parser GAF output file.</p>
-<p><strong>-g clfo1_v_insecta_goanna_gaf.tsv:</strong> GOanna GAF output file.</p>
-<p><strong>-o complete_gaf:</strong> output file basename&#8211;a .tsv extension will be added</p>
-</div>
-</div>
-</div>
-<div class="section" id="combine-gafs-using-singularity">
-<h3><strong>Combine GAFs using Singularity</strong><a class="headerlink" href="#combine-gafs-using-singularity" title="Permalink to this headline">¶</a></h3>
-<div class="admonition-about-singularity admonition">
-<p class="first admonition-title">About Singularity</p>
-<ul class="last simple">
-<li>does not require ‘root’ permissions</li>
-<li>runs all containers as the user that is logged into the host machine</li>
-<li>HPC systems are likely to have Singularity installed and are unlikely to object if asked to install it (no guarantees).</li>
-<li>can be run on any machine where is is installed</li>
-<li>more information about <a class="reference external" href="https://singularity.lbl.gov/docs-installation">installing Singularity</a></li>
-<li>This tool was tested using Singularity 3.0. Users with Singularity 2.x will need to modify the commands accordingly.</li>
-</ul>
-</div>
-<div class="admonition-hpc-job-schedulers admonition">
-<p class="first admonition-title">HPC Job Schedulers</p>
-<p class="last">Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.</p>
-</div>
-<div class="section" id="id1">
-<h4><strong>Getting the Combine GAFs Container</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
-<p>The Combine GAFs tool is available as a Docker container on Docker Hub:
-<a class="reference external" href="https://hub.docker.com/r/agbase/combine_gafs">Combine GAFs container</a></p>
-<p>The container can be pulled with this command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>singularity pull docker://agbase/combine_gafs:1.0
-</pre></div>
-</div>
-</div>
-<div class="section" id="id3">
-<h4><strong>Running Combine GAFs with Data</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h4>
-<p>Combine GAFs has three parameters:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>-i InterProScan XML Parser GAF output
--g GOanna GAF output
--o output file basename
-</pre></div>
-</div>
-<div class="section" id="example-pbs-script">
-<h5><strong>Example PBS Script</strong><a class="headerlink" href="#example-pbs-script" title="Permalink to this headline">¶</a></h5>
-<div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
-<span class="c1">#PBS -N combine_gafs</span>
-<span class="c1">#PBS -W group_list=fionamcc</span>
-<span class="c1">#PBS -l select=1:ncpus=28:mem=168gb</span>
-<span class="c1">#PBS -q standard</span>
-<span class="c1">#PBS -l walltime=6:0:0</span>
-<span class="c1">#PBS -l cput=168:0:0</span>
-
-module load singularity
-
-<span class="nb">cd</span> /rsgrps/shaneburgess/amanda/i5k/combine_gafs
-
-singularity pull docker://agbase/combine_gafs:1.0
-
-singularity run <span class="se">\</span>
--B /rsgrps/shaneburgess/amanda/i5k/combine_gafs:/work-dir <span class="se">\</span>
-combine_gafs_1.0.sif <span class="se">\</span>
--i CFLO_1.fa_gaf.txt <span class="se">\</span>
--g clfo1_v_insecta_goanna_gaf.tsv <span class="se">\</span>
--o complete_gaf
-</pre></div>
-</div>
-</div>
-<div class="section" id="id4">
-<h5><strong>Breakdown of Command</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h5>
-<p><strong>singularity run:</strong> tells Singularity to run</p>
-<p><strong>-B /rsgrps/shaneburgess/amanda/i5k/combine_gafs:/work-dir:</strong> mounts my current working directory on the host machine to &#8216;/work-dir&#8217; in the container</p>
-<p><strong>combine_gafs_1.0.sif:</strong> the name of the Singularity image file to use</p>
-<div class="admonition tip">
-<p class="first admonition-title">Tip</p>
-<p class="last">All the options supplied after the image name are GOanna options</p>
-</div>
-<p><strong>-i CFLO_1.fa_gaf.txt:</strong> InterProScan XML Parser GAF output file.</p>
-<p><strong>-g clfo1_v_insecta_goanna_gaf.tsv:</strong> GOanna GAF output file.</p>
-<p><strong>-o complete_gaf:</strong> output file basename&#8211;a .tsv extension will be added</p>
-</div>
-</div>
-</div>
-</div>
 </div>
 
 
            </div>
           </div>
           <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../kobas/intro.html" class="btn btn-neutral float-right" title="Intro" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../interproscan/using_iprs_cmd.html" class="btn btn-neutral" title="InterProScan on the Command Line" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
-    </div>
   
 
   <hr/>
