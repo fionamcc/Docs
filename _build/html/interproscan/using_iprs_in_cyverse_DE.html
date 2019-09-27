@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>&lt;no title&gt; &mdash; AgBase 1.0 documentation</title>
+  <title>GOanna on CyVerse &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -31,8 +31,8 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="&lt;no title&gt;" href="using_iprs_with_docker.html"/>
-        <link rel="prev" title="&lt;no title&gt;" href="outputs.html"/> 
+        <link rel="next" title="InterProScan on the Command Line" href="using_iprs_cmd.html"/>
+        <link rel="prev" title="Intro" href="intro.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -82,21 +82,55 @@
             
             
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../agbase/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro to GOanna</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>testing</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>GOanna on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>GOanna on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">InterProScan</span></p>
-<ul class="simple">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>GOanna on CyVerse</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#accessing-interproscan-in-the-discovery-environment"><strong>Accessing InterProScan in the Discovery Environment</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-interproscan-app"><strong>Using the InterProScan App</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#launching-the-app"><strong>Launching the App</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#input"><strong>Input</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#parameters"><strong>Parameters</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interproscan-outputs"><strong>InterProScan Outputs</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#id1"><strong>Using the InterProScan App</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2"><strong>Launching the App</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#input-parameters"><strong>Input Parameters</strong></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#interproscan-results-function-outputs"><strong>InterProScan Results Function Outputs</strong></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="using_iprs_cmd.html"><strong>InterProScan on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cyverse.html"><strong>Combine GAFs on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cmd.html"><strong>Combine GAFs on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">KOBAS</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_in_cyverse_DE.html"><strong>KOBAS on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_cmd.html"><strong>KOBAS on the Command Line</strong></a></li>
 </ul>
 
             
@@ -127,7 +161,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li>&lt;no title&gt;</li>
+    <li><strong>GOanna on CyVerse</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -141,7 +175,97 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  
+  <div class="section" id="goanna-on-cyverse">
+<h1><strong>GOanna on CyVerse</strong><a class="headerlink" href="#goanna-on-cyverse" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="accessing-interproscan-in-the-discovery-environment">
+<h2><strong>Accessing InterProScan in the Discovery Environment</strong><a class="headerlink" href="#accessing-interproscan-in-the-discovery-environment" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><a class="reference external" href="user.cyverse.org">Create an account on CyVerse</a> (free)</li>
+<li>Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.</li>
+<li>If you are new to the Discovery Environment (DE) the user guide can be found <a class="reference external" href="https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/">here</a>.</li>
+<li>Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.</li>
+<li>To access the <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=Interproscan-5.35.74u1&amp;system-id=agave">InterProScan Sequence Search 5.35-74.0</a> app click on the ‘Apps’ button at the left side of the DE.</li>
+<li>Search for &#8216;interproscan&#8221; in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The GOanna app is called ‘InterProScan Sequence Search 5.35-74.0’; click on the name to open the app.</li>
+</ol>
+<p><a class="reference internal" href="../_images/find_iprs.png"><img alt="find_iprs" src="../_images/find_iprs.png" style="width: 700px;" /></a></p>
+</div>
+<div class="section" id="using-the-interproscan-app">
+<h2><strong>Using the InterProScan App</strong><a class="headerlink" href="#using-the-interproscan-app" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="launching-the-app">
+<h3><strong>Launching the App</strong><a class="headerlink" href="#launching-the-app" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../_images/iprs.png"><img alt="iprs" src="../_images/iprs.png" style="width: 700px;" /></a></p>
+<p><strong>InterProScan_Sequence_Search_5.35.74_analysis1:</strong>
+This menu is used to name the job you will run so that you can find it later.
+Analysis Name: The default name is &#8220;InterProScan_Sequence_Search_5.35.74_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
+<p><strong>Comments:</strong>
+(Optional) You can add additional information in the comments section to distinguish your analyses further.</p>
+<p><strong>Select output folder:</strong>
+This is where your results will be placed. The default (recommended) is your &#8216;analyses&#8217; folder.</p>
+<p><strong>Retain Inputs:</strong>
+Enabling this flag will copy all the input files into the analysis result folder.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
+</div>
+<div class="section" id="input">
+<h4><strong>Input</strong><a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+<p><strong>Peptide FASTA file:</strong> Use the Browse button on the right hand side to navigate to your Data folder and select your protein sequence file.</p>
+</div>
+<div class="section" id="parameters">
+<h4><strong>Parameters</strong><a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h4>
+<p><strong>Annotate each peptide with Gene Ontology information:</strong> Be sure this box is checked. This will ensure that you get GO annotations</p>
+<p><strong>Annotate each peptide with biological pathway information:</strong> This is optional. However, if you want pathways annotations be it is checked.</p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">InterProScan version 5.35-74.0 does not include the XML parser to generate GAF file and associated count files. To get these files the user must run the <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=714e28fa-6580-44fc-9756-8b019c192449&amp;system-id=de">InterProScan Results Function</a> app.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="understanding-your-results">
+<h2><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="interproscan-outputs">
+<h3><strong>InterProScan Outputs</strong><a class="headerlink" href="#interproscan-outputs" title="Permalink to this headline">¶</a></h3>
+<p><strong>:</strong> This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.</p>
+<p><strong>:</strong> This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters.</p>
+<p><strong>:</strong> This is the tab-delimited BLAST output that can be opened and sorted in Excel to determine BLAST parameter values. The file contains the following columns:</p>
+<p><strong>:</strong> This is the standard tab-separated <a class="reference external" href="http://geneontology.org/docs/go-annotation-file-gaf-format-2.1">GO annotation file format</a>  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment.</p>
+</div>
+</div>
+<div class="section" id="id1">
+<h2><strong>Using the InterProScan App</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id2">
+<h3><strong>Launching the App</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference internal" href="../_images/resultsfunc.png"><img alt="resultsfunc" src="../_images/resultsfunc.png" style="width: 700px;" /></a></p>
+<p><strong>InterProScan_Results_Function_analysis1:</strong>
+This menu is used to name the job you will run so that you can find it later.
+Analysis Name: The default name is &#8220;InterProScan_Results_Function_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
+<p><strong>Comments:</strong>
+(Optional) You can add additional information in the comments section to distinguish your analyses further.</p>
+<p><strong>Select output folder:</strong>
+This is where your results will be placed. The default (recommended) is your &#8216;analyses&#8217; folder.</p>
+<p><strong>Retain Inputs:</strong>
+Enabling this flag will copy all the input files into the analysis result folder.</p>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
+</div>
+<div class="section" id="input-parameters">
+<h4><strong>Input Parameters</strong><a class="headerlink" href="#input-parameters" title="Permalink to this headline">¶</a></h4>
+<p><strong>InterProScan XML Results File:</strong> Here you should use the &#8216;browse&#8217; button on the right side of the field to navigate to the XML output file from your InterProScan analysis.</p>
+<p><strong>Database:</strong> Use the database that sequences were obtained from (Genbank), or a recognizable project name if these sequences are not in a database (e.g., i5k project or Smith Lab).</p>
+<p><strong>Sequence:</strong> Type of sequence in your original FASTA file. For this pipeline you should always select protein.</p>
+<p><strong>Taxon Number:</strong> Enter the NCBI taxon number for your species. This can be found by searching for your species name (common or scientific) in the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/taxonomy">NCBI taxon database</a>.</p>
+<p><strong>Biocurator Name (Assigned by):</strong> Enter your name. This field is used to track who made the annotations.</p>
+</div>
+</div>
+<div class="section" id="interproscan-results-function-outputs">
+<h3><strong>InterProScan Results Function Outputs</strong><a class="headerlink" href="#interproscan-results-function-outputs" title="Permalink to this headline">¶</a></h3>
+<p>If you output doesn&#8217;t look like you expect please check the &#8216;condor_stderr&#8217; file in the analysis output &#8216;logs&#8217; folder. If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
+</div>
+</div>
+</div>
+
 
            </div>
           </div>
@@ -149,10 +273,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="using_iprs_with_docker.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="using_iprs_cmd.html" class="btn btn-neutral float-right" title="InterProScan on the Command Line" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="outputs.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="intro.html" class="btn btn-neutral" title="Intro" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   

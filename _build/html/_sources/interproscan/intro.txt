@@ -30,7 +30,7 @@
 
 .. Important::
 
-    InterProScan version 5.35-74.0 does not includ the XML parser to generate GAF file and associated count files. To get these files the user must run the `InterProScan Results function <https://de.cyverse.org/de/?type=apps&app-id=714e28fa-6580-44fc-9756-8b019c192449&system-id=de>`_ app.
+    InterProScan version 5.35-74.0 does not include the XML parser to generate GAF file and associated count files. To get these files the user must run the `InterProScan Results function <https://de.cyverse.org/de/?type=apps&app-id=714e28fa-6580-44fc-9756-8b019c192449&system-id=de>`_ app.
 
 .. Coming Soon!::
 
