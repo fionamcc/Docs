@@ -80,6 +80,7 @@ These data will be unarchived into this directory structure. They will need to b
 **Help and Usage Statement**
 ============================
 
+.. _iprsusage:
 
 .. code-block:: none
 

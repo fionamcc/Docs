@@ -67,7 +67,7 @@ Combine GAFs has three parameters:
     -o complete_gaf 
 
 
-**Breakdown of Command**
+**Command Explained**
 """"""""""""""""""""""""
 
 **sudo docker run:** tells docker to run
@@ -155,7 +155,7 @@ Combine GAFs has three parameters:
     -g clfo1_v_insecta_goanna_gaf.tsv \
     -o complete_gaf
 
-**Breakdown of Command**
+**Command Explained**
 """"""""""""""""""""""""
 
 **singularity run:** tells Singularity to run
