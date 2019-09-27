@@ -91,7 +91,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 For information on outputs see :ref:`Understanding Your Results: Annotate <annotateresults>`
 
 **Understanding Your Annotate Results**
-=======================================
+----------------------------------------
 
 If all goes well, you should get the following:
 
@@ -198,7 +198,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 
 **Understanding Your Identify Results**
-=======================================
+---------------------------------------
 
 If all goes well, you should get the following:
 
@@ -230,7 +230,7 @@ If your analysis doesn't complete as you expected please look at your 'condor_st
 
 |kobas_annoident|
 
-This app runs both the annotate and identify analysis together as a convenience for user who wish to run both steps. 
+This app runs both the annotate and identify analyses together as a convenience for user who wish to run both steps. 
 
 **Analysis Name: KOBAS_annotate_and_identify_3.0.3_analysis_1:**
 This menu is used to name the job you will run so that you can find it later.
@@ -293,7 +293,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 
 **Understanding Your Annotate and Identify Pipeline Results**
-=============================================================
+---------------------------------------------------------------
 
 If all goes well, you should get the following:
 
