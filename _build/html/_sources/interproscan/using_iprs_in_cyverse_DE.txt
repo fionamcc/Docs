@@ -100,14 +100,14 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 **Understanding Your Results**
 ==============================
-**InterProScan Outputs**
-------------------------
+**InterProScan `Outputs <https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats>`_**
+------------------------------------------------------------------------------------------------------
 
-**:** 
+**<basename>.gff3:** 
 
-**:** 
+**<basename>.tsv:** 
 
-**:** 
+**<basename>.xml:** 
 
 
 
