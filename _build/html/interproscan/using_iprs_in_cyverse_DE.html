@@ -8,7 +8,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-  <title>GOanna on CyVerse &mdash; AgBase 1.0 documentation</title>
+  <title>InterProScan on CyVerse &mdash; AgBase 1.0 documentation</title>
   
 
   
@@ -94,7 +94,7 @@
 <p class="caption"><span class="caption-text">InterProScan</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>Intro</strong></a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>GOanna on CyVerse</strong></a><ul>
+<li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>InterProScan on CyVerse</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-interproscan-in-the-discovery-environment"><strong>Accessing InterProScan in the Discovery Environment</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#using-the-interproscan-app"><strong>Using the InterProScan App</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#launching-the-app"><strong>Launching the App</strong></a><ul>
@@ -104,15 +104,15 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#interproscan-outputs"><strong>InterProScan Outputs</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="#id1"><strong>Using the InterProScan App</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id2"><strong>Launching the App</strong></a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-interproscan-results-function-app"><strong>Using the InterProScan Results Function App</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Launching the App</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#input-parameters"><strong>Input Parameters</strong></a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#interproscan-outputs"><strong>InterProScan Outputs</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#interproscan-results-function-outputs"><strong>InterProScan Results Function Outputs</strong></a></li>
 </ul>
 </li>
@@ -161,7 +161,7 @@
   <ul class="wy-breadcrumbs">
     <li><a href="../index.html">Docs</a> &raquo;</li>
       
-    <li><strong>GOanna on CyVerse</strong></li>
+    <li><strong>InterProScan on CyVerse</strong></li>
       <li class="wy-breadcrumbs-aside">
         
           
@@ -175,8 +175,8 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
             
-  <div class="section" id="goanna-on-cyverse">
-<h1><strong>GOanna on CyVerse</strong><a class="headerlink" href="#goanna-on-cyverse" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="interproscan-on-cyverse">
+<h1><strong>InterProScan on CyVerse</strong><a class="headerlink" href="#interproscan-on-cyverse" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="accessing-interproscan-in-the-discovery-environment">
 <h2><strong>Accessing InterProScan in the Discovery Environment</strong><a class="headerlink" href="#accessing-interproscan-in-the-discovery-environment" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
@@ -185,7 +185,7 @@
 <li>If you are new to the Discovery Environment (DE) the user guide can be found <a class="reference external" href="https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/">here</a>.</li>
 <li>Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.</li>
 <li>To access the <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=Interproscan-5.35.74u1&amp;system-id=agave">InterProScan Sequence Search 5.35-74.0</a> app click on the ‘Apps’ button at the left side of the DE.</li>
-<li>Search for &#8216;interproscan&#8221; in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The GOanna app is called ‘InterProScan Sequence Search 5.35-74.0’; click on the name to open the app.</li>
+<li>Search for &#8216;interproscan&#8221; in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The InterProScan app is called ‘InterProScan Sequence Search 5.35-74.0’; click on the name to open the app.</li>
 </ol>
 <p><a class="reference internal" href="../_images/find_iprs.png"><img alt="find_iprs" src="../_images/find_iprs.png" style="width: 700px;" /></a></p>
 </div>
@@ -222,20 +222,10 @@ Enabling this flag will copy all the input files into the analysis result folder
 </div>
 </div>
 </div>
-<div class="section" id="understanding-your-results">
-<h2><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="interproscan-outputs">
-<h3><strong>InterProScan Outputs</strong><a class="headerlink" href="#interproscan-outputs" title="Permalink to this headline">¶</a></h3>
-<p><strong>:</strong> This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.</p>
-<p><strong>:</strong> This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters.</p>
-<p><strong>:</strong> This is the tab-delimited BLAST output that can be opened and sorted in Excel to determine BLAST parameter values. The file contains the following columns:</p>
-<p><strong>:</strong> This is the standard tab-separated <a class="reference external" href="http://geneontology.org/docs/go-annotation-file-gaf-format-2.1">GO annotation file format</a>  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment.</p>
-</div>
-</div>
+<div class="section" id="using-the-interproscan-results-function-app">
+<h2><strong>Using the InterProScan Results Function App</strong><a class="headerlink" href="#using-the-interproscan-results-function-app" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id1">
-<h2><strong>Using the InterProScan App</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id2">
-<h3><strong>Launching the App</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<h3><strong>Launching the App</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../_images/resultsfunc.png"><img alt="resultsfunc" src="../_images/resultsfunc.png" style="width: 700px;" /></a></p>
 <p><strong>InterProScan_Results_Function_analysis1:</strong>
 This menu is used to name the job you will run so that you can find it later.
@@ -259,8 +249,33 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p><strong>Biocurator Name (Assigned by):</strong> Enter your name. This field is used to track who made the annotations.</p>
 </div>
 </div>
+</div>
+<div class="section" id="understanding-your-results">
+<h2><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="interproscan-outputs">
+<h3><strong>InterProScan Outputs</strong><a class="headerlink" href="#interproscan-outputs" title="Permalink to this headline">¶</a></h3>
+<p><strong>:</strong></p>
+<p><strong>:</strong></p>
+<p><strong>:</strong></p>
+</div>
 <div class="section" id="interproscan-results-function-outputs">
 <h3><strong>InterProScan Results Function Outputs</strong><a class="headerlink" href="#interproscan-results-function-outputs" title="Permalink to this headline">¶</a></h3>
+<p><strong>&lt;basename&gt;_gaf.txt:</strong>
+-This table follows the formatting of a gene association file (gaf) and can be used in GO enrichment analyses.</p>
+<p><strong>&lt;basename&gt;_acc_go_counts.txt:</strong>
+-This table includes input accessions, the number of GO IDs assigned to each accession and GO ID names. GO IDs are split into BP (Biological Process), MF (Molecular Function) and CC (Cellular Component).</p>
+<p><strong>&lt;basename&gt;_go_counts.txt:</strong>
+-This table counts the numbers of sequences assigned to each GO ID so that the user can quickly identify all genes assigned to a particular function.</p>
+<p><strong>&lt;basename&gt;_acc_interpro_counts.txt:</strong>
+-This table includes input accessions, number of InterPro IDs for each accession, InterPro IDs assigned to each sequence and the InterPro ID name.</p>
+<p><strong>&lt;basename&gt;_interpro_counts.txt:</strong>
+-This table counts the numbers of sequences assigned to each InterPro ID so that the user can quickly identify all genes with a particular motif.</p>
+<p><strong>&lt;basename&gt;_acc_pathway_counts.txt:</strong>
+-This table includes input accessions, number of pathway IDs for the accession and the pathway names. Multiple values are separated by a semi-colon.</p>
+<p><strong>&lt;basename&gt;_pathway_counts.txt:</strong>
+-This table counts the numbers of sequences assigned to each Pathway ID so that the user can quickly identify all genes assigned to a pathway.</p>
+<p><strong>&lt;basename&gt;.err:</strong>
+-This file will list any sequences that were not able to be analyzed by InterProScan. Examples of sequences that will cause an error are sequences with a large run of Xs.</p>
 <p>If you output doesn&#8217;t look like you expect please check the &#8216;condor_stderr&#8217; file in the analysis output &#8216;logs&#8217; folder. If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
 </div>
 </div>

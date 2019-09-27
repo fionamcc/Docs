@@ -1,5 +1,5 @@
 ===========================
-**GOanna on CyVerse**
+**InterProScan on CyVerse**
 ===========================
 
 .. Coming Soon!::
@@ -15,7 +15,7 @@
 
 4. Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.
 5. To access the `InterProScan Sequence Search 5.35-74.0 <https://de.cyverse.org/de/?type=apps&app-id=Interproscan-5.35.74u1&system-id=agave>`_ app click on the ‘Apps’ button at the left side of the DE. 
-6. Search for 'interproscan" in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The GOanna app is called ‘InterProScan Sequence Search 5.35-74.0’; click on the name to open the app.
+6. Search for 'interproscan" in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The InterProScan app is called ‘InterProScan Sequence Search 5.35-74.0’; click on the name to open the app.
 
 |find_iprs|
 
@@ -61,21 +61,8 @@ Enabling this flag will copy all the input files into the analysis result folder
     InterProScan version 5.35-74.0 does not include the XML parser to generate GAF file and associated count files. To get these files the user must run the `InterProScan Results Function <https://de.cyverse.org/de/?type=apps&app-id=714e28fa-6580-44fc-9756-8b019c192449&system-id=de>`_ app.
 
 
-**Understanding Your Results**
-==============================
-**InterProScan Outputs**
-------------------------
-
-**:** This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.
-
-**:** This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters.
-
-**:** This is the tab-delimited BLAST output that can be opened and sorted in Excel to determine BLAST parameter values. The file contains the following columns:
-
-**:** This is the standard tab-separated `GO annotation file format <http://geneontology.org/docs/go-annotation-file-gaf-format-2.1>`_  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment. 
-
-**Using the InterProScan App**
-==============================
+**Using the InterProScan Results Function App**
+===============================================
 **Launching the App**
 ---------------------
 
@@ -111,8 +98,46 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 **Biocurator Name (Assigned by):** Enter your name. This field is used to track who made the annotations.
 
+**Understanding Your Results**
+==============================
+**InterProScan Outputs**
+------------------------
+
+**:** 
+
+**:** 
+
+**:** 
+
+
+
 **InterProScan Results Function Outputs**
 ------------------------------------------
+**<basename>_gaf.txt:**
+-This table follows the formatting of a gene association file (gaf) and can be used in GO enrichment analyses.
+ 
+**<basename>_acc_go_counts.txt:**
+-This table includes input accessions, the number of GO IDs assigned to each accession and GO ID names. GO IDs are split into BP (Biological Process), MF (Molecular Function) and CC (Cellular Component).
+
+**<basename>_go_counts.txt:**
+-This table counts the numbers of sequences assigned to each GO ID so that the user can quickly identify all genes assigned to a particular function.
+
+**<basename>_acc_interpro_counts.txt:**
+-This table includes input accessions, number of InterPro IDs for each accession, InterPro IDs assigned to each sequence and the InterPro ID name.
+
+**<basename>_interpro_counts.txt:**
+-This table counts the numbers of sequences assigned to each InterPro ID so that the user can quickly identify all genes with a particular motif. 
+
+**<basename>_acc_pathway_counts.txt:**
+-This table includes input accessions, number of pathway IDs for the accession and the pathway names. Multiple values are separated by a semi-colon.
+
+**<basename>_pathway_counts.txt:**
+-This table counts the numbers of sequences assigned to each Pathway ID so that the user can quickly identify all genes assigned to a pathway.
+
+**<basename>.err:**
+-This file will list any sequences that were not able to be analyzed by InterProScan. Examples of sequences that will cause an error are sequences with a large run of Xs.
+
+
 
 If you output doesn't look like you expect please check the 'condor_stderr' file in the analysis output 'logs' folder. If that doesn't clarify the problem contact us at agbase@email.arizona.edu or support@cyverse.org.
 
