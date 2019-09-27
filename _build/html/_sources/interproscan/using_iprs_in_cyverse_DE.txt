@@ -100,8 +100,9 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 **Understanding Your Results**
 ==============================
-**InterProScan `Outputs <https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats>`_**
-------------------------------------------------------------------------------------------------------
+**InterProScan Outputs** 
+------------------------
+This app provides the three standard InterProScan outputs. For more details on the contents of each file please refer to the InterProScan `outputs documentation <https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats>`_. 
 
 **<basename>.gff3:** 
 
