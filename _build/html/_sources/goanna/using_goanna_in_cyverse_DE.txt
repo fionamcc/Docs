@@ -3,7 +3,7 @@
 ===========================
 
 **Accessing GOanna in the Discovery Environment**
--------------------------------------------------
+=================================================
 
 1. `Create an account on CyVerse <user.cyverse.org>`_ (free)
 2. Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.
@@ -22,7 +22,11 @@
     To join a community click on the person icon in the top-right corner of the Discovery Environment window and select 'Communities'. In the 'Communities' window choose 'all communities' from the drop-down list. A list of communities will appear in the main pane of this window. Select the one you wish to join by clicking on it and then clicking on the 'join' button.
 
 **Using the GOanna App**
-------------------------
+========================
+**Launching the App**
+---------------------
+
+|goanna|
 
 **Analysis Name:GOanna_2.0_analysis1:**
 This menu is used to name the job you will run so that you can find it later.
@@ -57,7 +61,22 @@ Use this menu to select your BLAST parameters.
 
 **Transfer GO with experimental evidence only:** We strongly recommend selecting the “yes” option from the dropdown menu so that only GO annotations based experimental evidence codes will be transferred . This will ensure the best quality annotations for your data.
 
-The remaining parameters are standard BLAST parameters, and their defaults can be seen by hovering your cursor over the blue i. More information on determining the best BLAST parameters for your specific data set can be found in the next section.
+The remaining parameters are standard BLAST parameters, and their defaults can be seen by hovering your cursor over the blue i. 
+
+
+**Determining BLAST Parameters to Use**
+"""""""""""""""""""""""""""""""""""""""
+
+BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.
+
+.. Tip::
+
+    Make a subset of 100 randomly selected sequences from your larger dataset and use this as the input for GOanna to test for parameters that give good alignments. The `Split FASTA file <https://de.cyverse.org/de/?type=apps&app-id=c7e10a48-f5e6-4db8-8169-825cf62bd09d&system-id=de>`_ app in the CyVerse Discovery Environment can be used to make a subsetted file.
+
+1. To test for good parameters use GOanna (either in CyVerse or online at AgBase) by selecting the same database you will use and setting relaxed parameters (e.g.,  in the CyVerse instance of GOanna, use defaults).
+
+2. Once you have run your subsetted file, use the html file to view alignments, select good alignments and note the parameters for these.
+
 
 **Parse query and subject bar delimited sequence identifiers:** This option should be selected if you are using a protein fasta file from NCBI. These fasta files have headers with pipes that will not format correctly otherwise.
 
@@ -78,21 +97,8 @@ This menu is used to format your GO annotation results into a standard gene asso
 
 **Taxon ID of the query species:** Enter the NCBI taxon number for your species. This can be found by searching for your species name (common or scientific) in the `NCBI taxon database <https://www.ncbi.nlm.nih.gov/taxonomy>`_. The default is "0000".
 
-**Determining BLAST Parameters to Use**
----------------------------------------
-
-BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.
-
-.. Tip::
-
-    Make a subset of 100 randomly selected sequences from your larger dataset and use this as the input for GOanna to test for parameters that give good alignments. The `Split FASTA file <https://de.cyverse.org/de/?type=apps&app-id=c7e10a48-f5e6-4db8-8169-825cf62bd09d&system-id=de>`_ app in the CyVerse Discovery Environment can be used to make a subsetted file.
-
-1. To test for good parameters use GOanna (either in CyVerse or online at AgBase) by selecting the same database you will use and setting relaxed parameters (e.g.,  in the CyVerse instance of GOanna, use defaults).
-
-2. Once you have run your subsetted file, use the html file to view alignments, select good alignments and note the parameters for these.
-
 **Understanding Your Results**
-------------------------------
+==============================
 
 If all goes well, you should get 4 output files and a ‘logs’ folder.
 
@@ -128,4 +134,7 @@ If you see more files in your output folder there may have been an error in the 
 If that doesn't clarify the problem contact us at agbase@email.arizona.edu or support@cyverse.org.
 
 .. |find_goanna| image:: ../img/find_goanna.png
+  :width: 700
+
+.. |goanna| image:: ../img/goanna.png
   :width: 700

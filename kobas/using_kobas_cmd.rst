@@ -196,7 +196,7 @@ For information on output files see :ref:`Understanding Your Results: Annotate <
 
 **-o ident_out:** name of output file
 
-For information of outputs see :ref:`Understanding Your Results: Identify <identifyresults>`
+For information on outputs see :ref:`Understanding Your Results: Identify <identifyresults>`
 
 
 **Annotate and Identify Pipeline Example Command**

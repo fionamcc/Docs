@@ -3,7 +3,7 @@
 ===========================
 
 **Accessing KOBAS in the Discovery Environment**
-------------------------------------------------
+================================================
 
 1. `Create an account on CyVerse <user.cyverse.org>`_ (free)
 2. Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.
@@ -34,9 +34,9 @@ The KOBAS apps are called:
     
 
 **KOBAS annotate 3.0.3**
-------------------------
+========================
 **Launching the app**
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 |kobas_anno|
 
@@ -58,14 +58,14 @@ Enabling this flag will copy all the input files into the analysis result folder
     Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.
 
 **Input**
-""""""""""
+^^^^^^^^^
 
 **Input File:** Use the 'browse' button on the right side of the field to navigate to your input file.
 
 **Input File Type:** Select your input file type from the drop-down list. If your file type isn't there then the app does not support that file type. 
 
 **Options**
-"""""""""""
+^^^^^^^^^^^
 
 **Species Code:** Enter the species for the species of the sequences in your input file. 
 
@@ -84,13 +84,14 @@ Enabling this flag will copy all the input files into the analysis result folder
 **Ortholog:** when checked KOBAS will only use orthologs for cross species annotation.
 
 **Output**
-""""""""""
+^^^^^^^^^^
 
 **Output File Name:** Provide an output file name .
 
+For information on outputs see :ref:`Understanding Your Results: Annotate <annotateresults>`
 
-**Understanding Your Results**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Understanding Your Annotate Results**
+=======================================
 
 If all goes well, you should get the following:
 
@@ -141,11 +142,13 @@ The second section follows a dashed line and looks like this:
                                 Hemostasis	Reactome	R-DME-109582
                     	        Factors involved in megakaryocyte development and platelet production	Reactome	R-DME-98323
 
+If your analysis doesn't complete as you expected please look at your 'condor_stderr' and 'condor_stdout' files. If that doesn't clarify the problem contact us at agbase@email.arizona.edu or support@cyverse.org.
+
 **KOBAS identify 3.0.3**
---------------------------------------
+========================
 
 **Launching the App**
-^^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 |kobas_ident|
 
@@ -167,7 +170,7 @@ Enabling this flag will copy all the input files into the analysis result folder
     Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.
 
 **Input**
-"""""""""
+^^^^^^^^^
 
 **Foreground File:** Use the 'browse' button on the right side of the field to navigate to your input file. This should be the output of KOBAS annotate.
 
@@ -180,7 +183,7 @@ Enabling this flag will copy all the input files into the analysis result folder
     If your species of interest is not available then you should choose the code for the closest-related species available
 
 **Options**
-"""""""""""
+^^^^^^^^^^^
 
 **Cutoff:** Annotation terms with less than cutoff number of genes are not used for statistical tests. Default is 5. 
 
@@ -189,13 +192,13 @@ Enabling this flag will copy all the input files into the analysis result folder
 **FDR:** Method for determining false discovery rate. Default is Benjamnini-Hochberg.
 
 **Output**
-""""""""""
+^^^^^^^^^^
 
 **Output File Name:** Provide an output file name .
 
 
-**Understanding Your Results**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Understanding Your Identify Results**
+=======================================
 
 If all goes well, you should get the following:
 
@@ -216,12 +219,14 @@ If all goes well, you should get the following:
     Hedgehog signaling pathway	PANTHER	P00025	6	13	3.6166668094e-10	9.94583372585e-09	lcl|NW_020311286.1_prot_XP_025602279.1_78|lcl|NW_020311286.1_prot_XP_025602289.1_76|lcl|NW_020311286.1_prot_XP_025602264.1_79|lcl|NW_020311285.1_prot_XP_012256108.1_32|lcl|NW_020311285.1_prot_XP_012256109.1_33|lcl|NW_020311286.1_prot_XP_012256943.1_77	http://www.pantherdb.org/pathway/pathwayDiagram.jsp?catAccession=P00025
     Signaling by NOTCH2	Reactome	R-DME-1980145	3	8	2.00259649553e-05	0.000275357018136	lcl|NW_020311285.1_prot_XP_012256118.1_28|lcl|NW_020311285.1_prot_XP_012256117.1_27|lcl|NW_020311285.1_prot_XP_012256119.1_26	http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=R-DME-1980145
 
+If your analysis doesn't complete as you expected please look at your 'condor_stderr' and 'condor_stdout' files. If that doesn't clarify the problem contact us at agbase@email.arizona.edu or support@cyverse.org.
+
 
 **KOBAS annotate and identify 3.0.3**
----------------------------------------------------
+=====================================
 
 **Launching the App**
-^^^^^^^^^^^^^^^^^^^^^
+---------------------
 
 |kobas_annoident|
 
@@ -245,7 +250,7 @@ Enabling this flag will copy all the input files into the analysis result folder
     Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.
 
 **Input**
-"""""""""
+^^^^^^^^^
 
 
 **Input File:** Use the 'browse' button on the right side of the field to navigate to your input file.
@@ -253,7 +258,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 **Input File Type:** Select your input file type from the drop-down list. If your file type isn't there then the app does not support that file type. 
 
 **Annotate Options**
-""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^
 
 **Species Code:** Enter the species for the species of the sequences in your input file. 
 
@@ -272,7 +277,7 @@ Enabling this flag will copy all the input files into the analysis result folder
 **Ortholog:** when checked KOBAS will only use orthologs for cross species annotation.
 
 **Identify Options**
-""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^
 
 **Cutoff:** Annotation terms with less than cutoff number of genes are not used for statistical tests. Default is 5. 
 
@@ -281,13 +286,14 @@ Enabling this flag will copy all the input files into the analysis result folder
 **FDR:** Method for determining false discovery rate. Default is Benjamnini-Hochberg.
 
 **Output**
-""""""""""
+^^^^^^^^^^
 
 **Output File Basename:** This will the the prefix of your output files.
 
 
-**Understanding Your Results**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Understanding Your Annotate and Identify Pipeline Results**
+=============================================================
 
 If all goes well, you should get the following:
 

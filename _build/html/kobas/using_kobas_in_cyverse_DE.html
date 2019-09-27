@@ -82,13 +82,8 @@
             
             
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
-<ul class="simple">
-</ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
-</ul>
-<p class="caption"><span class="caption-text">TransDecoder</span></p>
-<ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../agbase/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
@@ -102,7 +97,10 @@
 <li class="toctree-l1"><a class="reference internal" href="../interproscan/using_iprs_cmd.html"><strong>InterProScan on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cyverse.html"><strong>Combine GAFs on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cmd.html"><strong>Combine GAFs on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">KOBAS</span></p>
 <ul class="current">
@@ -116,9 +114,9 @@
 <li class="toctree-l4"><a class="reference internal" href="#output"><strong>Output</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-annotate-results"><strong>Understanding Your Annotate Results</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#id2"><strong>KOBAS identify 3.0.3</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Launching the App</strong></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#id4"><strong>Input</strong></a></li>
@@ -126,20 +124,20 @@
 <li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Output</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id7"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id8"><strong>KOBAS annotate and identify 3.0.3</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id9"><strong>Launching the App</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id10"><strong>Input</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-identify-results"><strong>Understanding Your Identify Results</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7"><strong>KOBAS annotate and identify 3.0.3</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id8"><strong>Launching the App</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id9"><strong>Input</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#annotate-options"><strong>Annotate Options</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#identify-options"><strong>Identify Options</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id11"><strong>Output</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10"><strong>Output</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id12"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="#understanding-your-annotate-and-identify-pipeline-results"><strong>Understanding Your Annotate and Identify Pipeline Results</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="using_kobas_cmd.html"><strong>KOBAS on the Command Line</strong></a></li>
@@ -257,10 +255,12 @@ Enabling this flag will copy all the input files into the analysis result folder
 <div class="section" id="output">
 <h4><strong>Output</strong><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h4>
 <p><strong>Output File Name:</strong> Provide an output file name .</p>
+<p>For information on outputs see <a class="reference internal" href="using_kobas_cmd.html#annotateresults"><span class="std std-ref">Understanding Your Results: Annotate</span></a></p>
 </div>
 </div>
-<div class="section" id="understanding-your-results">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="understanding-your-annotate-results">
+<h2><strong>Understanding Your Annotate Results</strong><a class="headerlink" href="#understanding-your-annotate-results" title="Permalink to this headline">¶</a></h2>
 <p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>logs folder:</strong> This folder contains the &#8216;conder_stderr&#8217; and &#8216;condor_stdout&#8217; files. The files record feedback, progress and, importantly, any errors the app encountered during the analysis. You won&#8217;t normally need to look at these but they are very helpful in figuring out what may have happened if your output doesn&#8217;t look like you expected.</li>
@@ -305,7 +305,7 @@ Pathway:                    Endocytosis     KEGG PATHWAY    dme04144
                             Factors involved in megakaryocyte development and platelet production   Reactome        R-DME-98323
 </pre></div>
 </div>
-</div>
+<p>If your analysis doesn&#8217;t complete as you expected please look at your &#8216;condor_stderr&#8217; and &#8216;condor_stdout&#8217; files. If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
 </div>
 <div class="section" id="id2">
 <h2><strong>KOBAS identify 3.0.3</strong><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
@@ -346,8 +346,9 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p><strong>Output File Name:</strong> Provide an output file name .</p>
 </div>
 </div>
-<div class="section" id="id7">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="understanding-your-identify-results">
+<h2><strong>Understanding Your Identify Results</strong><a class="headerlink" href="#understanding-your-identify-results" title="Permalink to this headline">¶</a></h2>
 <p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>logs folder:</strong> This folder contains the &#8216;conder_stderr&#8217; and &#8216;condor_stdout&#8217; files. The files record feedback, progress and, importantly, any errors the app encountered during the analysis. You won&#8217;t normally need to look at these but they are very helpful in figuring out what may have happened if your output doesn&#8217;t look like you expected.</li>
@@ -364,12 +365,12 @@ Hedgehog signaling pathway  PANTHER P00025  6       13      3.6166668094e-10    
 Signaling by NOTCH2 Reactome        R-DME-1980145   3       8       2.00259649553e-05       0.000275357018136       lcl|NW_020311285.1_prot_XP_012256118.1_28|lcl|NW_020311285.1_prot_XP_012256117.1_27|lcl|NW_020311285.1_prot_XP_012256119.1_26   http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID=R-DME-1980145
 </pre></div>
 </div>
+<p>If your analysis doesn&#8217;t complete as you expected please look at your &#8216;condor_stderr&#8217; and &#8216;condor_stdout&#8217; files. If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
 </div>
-</div>
+<div class="section" id="id7">
+<h2><strong>KOBAS annotate and identify 3.0.3</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="id8">
-<h2><strong>KOBAS annotate and identify 3.0.3</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
-<div class="section" id="id9">
-<h3><strong>Launching the App</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h3>
+<h3><strong>Launching the App</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference internal" href="../_images/kobas_annoident.png"><img alt="kobas_annoident" src="../_images/kobas_annoident.png" style="width: 700px;" /></a></p>
 <p>This app runs both the annotate and identify analysis together as a convenience for user who wish to run both steps.</p>
 <p><strong>Analysis Name: KOBAS_annotate_and_identify_3.0.3_analysis_1:</strong>
@@ -385,8 +386,8 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p class="first admonition-title">Warning</p>
 <p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
 </div>
-<div class="section" id="id10">
-<h4><strong>Input</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h4><strong>Input</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
 <p><strong>Input File:</strong> Use the &#8216;browse&#8217; button on the right side of the field to navigate to your input file.</p>
 <p><strong>Input File Type:</strong> Select your input file type from the drop-down list. If your file type isn&#8217;t there then the app does not support that file type.</p>
 </div>
@@ -409,13 +410,14 @@ Enabling this flag will copy all the input files into the analysis result folder
 <p><strong>Method:</strong> Choose the statistical method to be used from the drop-down list. Default is hypergeometric/Fisher&#8217;s Exact.</p>
 <p><strong>FDR:</strong> Method for determining false discovery rate. Default is Benjamnini-Hochberg.</p>
 </div>
-<div class="section" id="id11">
-<h4><strong>Output</strong><a class="headerlink" href="#id11" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id10">
+<h4><strong>Output</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
 <p><strong>Output File Basename:</strong> This will the the prefix of your output files.</p>
 </div>
 </div>
-<div class="section" id="id12">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id12" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="understanding-your-annotate-and-identify-pipeline-results">
+<h2><strong>Understanding Your Annotate and Identify Pipeline Results</strong><a class="headerlink" href="#understanding-your-annotate-and-identify-pipeline-results" title="Permalink to this headline">¶</a></h2>
 <p>If all goes well, you should get the following:</p>
 <ul class="simple">
 <li><strong>logs folder:</strong> This folder contains the &#8216;conder_stderr&#8217; and &#8216;condor_stdout&#8217; files. The files record feedback, progress and, importantly, any errors the app encountered during the analysis. You won&#8217;t normally need to look at these but they are very helpful in figuring out what may have happened if your output doesn&#8217;t look like you expected.</li>
@@ -475,7 +477,6 @@ Signaling by NOTCH2 Reactome        R-DME-1980145   3       8       2.0025964955
 </pre></div>
 </div>
 <p>If your analysis doesn&#8217;t complete as you expected please look at your &#8216;condor_stderr&#8217; and &#8216;condor_stdout&#8217; files. If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
-</div>
 </div>
 </div>
 
