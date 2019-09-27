@@ -82,13 +82,8 @@
             
             
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
-<ul class="simple">
-</ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
-</ul>
-<p class="caption"><span class="caption-text">TransDecoder</span></p>
-<ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../agbase/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul class="current">
@@ -99,24 +94,22 @@
 <li class="toctree-l2"><a class="reference internal" href="#container-technologies"><strong>Container Technologies</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-goanna-using-docker"><strong>Running GOanna using Docker</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#getting-the-goanna-container"><strong>Getting the GOanna container</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-goanna-with-data"><strong>Running GOanna with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-command"><strong>Example Command</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-command"><strong>Breakdown of Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#running-goanna-using-singularity"><strong>Running GOanna using Singularity</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Getting the GOanna container</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Getting the Help and Usage Statement</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4"><strong>Running GOanna with Data</strong></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Getting the GOanna Container</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3"><strong>Running GOanna with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-pbs-script"><strong>Example PBS Script</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id5"><strong>Breakdown of Command</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
-<li class="toctree-l3"><a class="reference internal" href="#id6"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -128,12 +121,16 @@
 <li class="toctree-l1"><a class="reference internal" href="../interproscan/using_iprs_cmd.html"><strong>InterProScan on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cyverse.html"><strong>Combine GAFs on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cmd.html"><strong>Combine GAFs on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">KOBAS</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../kobas/intro.html"><strong>Intro</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_in_cyverse_DE.html"><strong>KOBAS on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_cmd.html"><strong>KOBAS on the Command Line</strong></a></li>
 </ul>
 
             
@@ -229,40 +226,14 @@
 <p class="last">sudo docker pull agbase/goanna:2.0</p>
 </div>
 </div>
+<div class="section" id="running-goanna-with-data">
+<h3><strong>Running GOanna with Data</strong><a class="headerlink" href="#running-goanna-with-data" title="Permalink to this headline">¶</a></h3>
 <div class="section" id="getting-the-help-and-usage-statement">
-<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work-dir agbase/goanna:2.0 -h
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>Options:
--a BLAST database basename (&#39;arthropod&#39;, &#39;bacteria&#39;, &#39;bird&#39;, &#39;crustacean&#39;, &#39;fish&#39;, &#39;fungi&#39;, &#39;human&#39;, &#39;insecta&#39;,
-   &#39;invertebrates&#39;, &#39;mammals&#39;, &#39;nematode&#39;, &#39;plants&#39;, &#39;rodents&#39; &#39;uniprot_sprot&#39;, &#39;uniprot_trembl&#39;, &#39;vertebrates&#39;
-    or &#39;viruses&#39;)
--c peptide fasta filename
--o output file basename
-[-b transfer GO with experimental evidence only (&#39;yes&#39; or &#39;no&#39;). Default = &#39;yes&#39;.]
-[-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
-    to preserve the space, use quotes around your entry. Default: &#39;user_input_db&#39;]
-[-e Expect value (E) for saving hits. Default is 10.]
-[-f Number of aligned sequences to keep. Default: 3]
-[-g BLAST percent identity above which match should be kept. Default: keep all matches.]
-[-h help]
-[-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
-[-s bitscore above which match should be kept. Default: keep all matches.]
-[-k Maximum number of gap openings allowed for match to be kept.Default: 100]
-[-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
-[-q Minimum query coverage per subject for match to be kept. Default: keep all matches]
-[-t Number of threads.  Default: 8]
-[-u &#39;Assigned by&#39; field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
-    either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. &quot;firstname lastname&quot;)
-    Default: &#39;user&#39;]
-[-x Taxon ID of the query species. Default: &#39;taxon:0000&#39;]
-[-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
-</pre></div>
-</div>
-</div>
-<div class="section" id="running-goanna-with-data">
-<h3><strong>Running GOanna with Data</strong><a class="headerlink" href="#running-goanna-with-data" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="intro.html#goannausage"><span class="std std-ref">Help and Usage Statement</span></a></p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>There are 3 directories built into this container. These directories should be used to mount data.</p>
@@ -277,6 +248,7 @@
 -c peptide FASTA file to BLAST
 -o output file basename
 </pre></div>
+</div>
 </div>
 <div class="section" id="example-command">
 <h4><strong>Example Command</strong><a class="headerlink" href="#example-command" title="Permalink to this headline">¶</a></h4>
@@ -297,9 +269,8 @@ agbase/goanna:2.0 \
 -x 37344
 </pre></div>
 </div>
-</div>
-<div class="section" id="breakdown-of-command">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#breakdown-of-command" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="command-explained">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#command-explained" title="Permalink to this headline">¶</a></h5>
 <p><strong>sudo docker run:</strong> tells docker to run</p>
 <p><strong>&#8211;rm:</strong> removes the container when the analysis has finished. The image will remain for future use.</p>
 <p><strong>-v /home/amcooksey/i5k/agbase_database:/agbase_database:</strong> tells docker to mount the &#8216;agbase_database&#8217; directory I downloaded to the host machine to the &#8216;/agbase_database&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
@@ -322,7 +293,7 @@ agbase/goanna:2.0 \
 </div>
 </div>
 <div class="section" id="understanding-your-results">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h4>
 <p>If all goes well, you should get 4 output files:</p>
 <p><strong>&lt;basename&gt;.asn:</strong> This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.</p>
 <p><strong>&lt;basename&gt;.html:</strong> This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters.</p>
@@ -350,6 +321,7 @@ agbase/goanna:2.0 \
 <p>If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">Contact us</a>.</p>
 </div>
 </div>
+</div>
 <div class="section" id="running-goanna-using-singularity">
 <h2><strong>Running GOanna using Singularity</strong><a class="headerlink" href="#running-goanna-using-singularity" title="Permalink to this headline">¶</a></h2>
 <div class="admonition-about-singularity admonition">
@@ -368,16 +340,18 @@ agbase/goanna:2.0 \
 <p class="last">Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.</p>
 </div>
 <div class="section" id="id1">
-<h3><strong>Getting the GOanna container</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<h3><strong>Getting the GOanna Container</strong><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
 <p>The GOanna tool is available as a Docker container on Docker Hub:
 <a class="reference external" href="https://hub.docker.com/r/agbase/goanna">GOanna container</a></p>
 <p>The container can be pulled with this command:</p>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>singularity pull docker://agbase/goanna:2.0
+<div class="highlight-bash"><div class="highlight"><pre><span></span>singularity pull docker://agbase/goanna:20
 </pre></div>
 </div>
 </div>
 <div class="section" id="id3">
-<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<h3><strong>Running GOanna with Data</strong><a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id4">
+<h4><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
 <p><strong>Example PBS script:</strong></p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N goanna</span>
@@ -398,35 +372,7 @@ goanna_2.0.sif <span class="se">\</span>
 -h
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>Options:
--a BLAST database basename (&#39;arthropod&#39;, &#39;bacteria&#39;, &#39;bird&#39;, &#39;crustacean&#39;, &#39;fish&#39;, &#39;fungi&#39;, &#39;human&#39;, &#39;insecta&#39;,
-   &#39;invertebrates&#39;, &#39;mammals&#39;, &#39;nematode&#39;, &#39;plants&#39;, &#39;rodents&#39; &#39;uniprot_sprot&#39;, &#39;uniprot_trembl&#39;, &#39;vertebrates&#39;
-    or &#39;viruses&#39;)
--c peptide fasta filename
--o BLAST output file basename
-[-b transfer GO with experimental evidence only (&#39;yes&#39; or &#39;no&#39;). Default = &#39;yes&#39;.]
-[-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
-    to preserve the space, use quotes around your entry. Default: &#39;user_input_db&#39;]
-[-e Expect value (E) for saving hits. Default is 10.]
-[-f Number of aligned sequences to keep. Default: 3]
-[-g BLAST percent identity above which match should be kept. Default: keep all matches.]
-[-h help]
-[-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
-[-s bitscore above which match should be kept. Default: keep all matches.]
-[-k Maximum number of gap openings allowed for match to be kept.Default: 100]
-[-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
-[-q Minimum query coverage per subject for match to be kept. Default: keep all matches]
-[-t Number of threads.  Default: 8]
-[-u &#39;Assigned by&#39; field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
-    either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. &quot;firstname lastname&quot;)
-    Default: &#39;user&#39;]
-[-x Taxon ID of the query species. Default: &#39;taxon:0000&#39;]
-[-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
-</pre></div>
-</div>
-</div>
-<div class="section" id="id4">
-<h3><strong>Running GOanna with Data</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="intro.html#goannausage"><span class="std std-ref">Help and Usage Statement</span></a></p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>There are 3 directories built into this container. These directories should be used to mount data.</p>
@@ -441,6 +387,7 @@ goanna_2.0.sif <span class="se">\</span>
 -c peptide FASTA file to BLAST
 -o output file basename
 </pre></div>
+</div>
 </div>
 <div class="section" id="example-pbs-script">
 <h4><strong>Example PBS Script</strong><a class="headerlink" href="#example-pbs-script" title="Permalink to this headline">¶</a></h4>
@@ -475,9 +422,8 @@ goanna_2.0.sif <span class="se">\</span>
 -t 28
 </pre></div>
 </div>
-</div>
 <div class="section" id="id5">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/agbase_database:/agbase_database:</strong> tells docker to mount the &#8216;agbase_database&#8217; directory I downloaded to the host machine to the &#8216;/agbase_database&#8217; directory within the container. The syntax for this is: &lt;absolute path on host&gt;:&lt;absolute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/go_info:/go_info:</strong> mounts &#8216;go_info&#8217; directory on host machine into &#8216;go_info&#8217; directory inside the container</p>
@@ -500,7 +446,7 @@ goanna_2.0.sif <span class="se">\</span>
 </div>
 </div>
 <div class="section" id="id6">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Understanding Your Results</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <p>If all goes well, you should get 4 output files:</p>
 <p><strong>&lt;basename&gt;.asn:</strong> This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.</p>
 <p><strong>&lt;basename&gt;.html:</strong> This output displays in your web browser so that you can view pairwise alignments to determine BLAST parameters.</p>
@@ -526,6 +472,7 @@ goanna_2.0.sif <span class="se">\</span>
 <p>For more information on the BLAST output parameters see the <a class="reference external" href="https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_.">NCBI BLAST documentation</a>.</p>
 <p><strong>&lt;basename&gt;_goanna_gaf.tsv:</strong> This is the standard tab-separated <a class="reference external" href="http://geneontology.org/docs/go-annotation-file-gaf-format-2.1">GO annotation file format</a>  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment.</p>
 <p>If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">Contact us</a>.</p>
+</div>
 </div>
 </div>
 </div>

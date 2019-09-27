@@ -4,7 +4,7 @@
 
 
 **Getting the databases**
--------------------------
+==========================
 To run the tool you need some public data. These files are now available as gzipped files to aid downloading. The directories are best downloaded with `iCommands <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html>`_. Once iCommands is `setup <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html#icommands-first-time-configuration>`_ you can use ‘iget’ to download the data.
 
 1) agbase_database: species subset to run BLAST against  (this command will download the entire directory)
@@ -22,7 +22,7 @@ To run the tool you need some public data. These files are now available as gzip
 
 
 **Container Technologies**
---------------------------
+==========================
 GOanna is provided as a Docker container. 
 
 A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
@@ -32,7 +32,7 @@ There are two major containerization technologies: **Docker** and **Singularity*
 Docker containers can be run with either technology.
 
 **Running GOanna using Docker**
--------------------------------
+===============================
 .. admonition:: About Docker
 
     - Docker must be installed on the computer you wish to use for your analysis.
@@ -43,7 +43,7 @@ Docker containers can be run with either technology.
 
 
 **Getting the GOanna container**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 The GOanna tool is available as a Docker container on Docker Hub: 
 `GOanna container <https://hub.docker.com/r/agbase/goanna>`_ 
 
@@ -60,6 +60,9 @@ The container can be pulled with this command:
     sudo docker pull agbase/goanna:2.0
 
 
+**Running GOanna with Data**
+----------------------------
+
 **Getting the Help and Usage Statement**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
@@ -67,35 +70,8 @@ The container can be pulled with this command:
 
     sudo docker run --rm -v $(pwd):/work-dir agbase/goanna:2.0 -h
 
-.. code-block:: none
+See :ref:`goannausage`
 
-    Options:
-    -a BLAST database basename ('arthropod', 'bacteria', 'bird', 'crustacean', 'fish', 'fungi', 'human', 'insecta',
-       'invertebrates', 'mammals', 'nematode', 'plants', 'rodents' 'uniprot_sprot', 'uniprot_trembl', 'vertebrates'
-        or 'viruses')
-    -c peptide fasta filename
-    -o output file basename
-    [-b transfer GO with experimental evidence only ('yes' or 'no'). Default = 'yes'.]
-    [-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
-        to preserve the space, use quotes around your entry. Default: 'user_input_db']
-    [-e Expect value (E) for saving hits. Default is 10.]
-    [-f Number of aligned sequences to keep. Default: 3]
-    [-g BLAST percent identity above which match should be kept. Default: keep all matches.]
-    [-h help]
-    [-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
-    [-s bitscore above which match should be kept. Default: keep all matches.]
-    [-k Maximum number of gap openings allowed for match to be kept.Default: 100]
-    [-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
-    [-q Minimum query coverage per subject for match to be kept. Default: keep all matches]
-    [-t Number of threads.  Default: 8]
-    [-u 'Assigned by' field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
-        either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. "firstname lastname")
-        Default: 'user']
-    [-x Taxon ID of the query species. Default: 'taxon:0000']
-    [-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
-
-**Running GOanna with Data**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. tip::
 
     There are 3 directories built into this container. These directories should be used to mount data.
@@ -113,7 +89,7 @@ GOanna has three required parameters:
     -o output file basename
 
 **Example Command**
-"""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: none
 
@@ -133,7 +109,7 @@ GOanna has three required parameters:
     -u "Amanda Cooksey" \
     -x 37344
 
-**Breakdown of Command**
+**Command Explained**
 """"""""""""""""""""""""
 
 **sudo docker run:** tells docker to run
@@ -206,7 +182,7 @@ If you see more files in your output folder there may have been an error in the 
 
 
 **Running GOanna using Singularity**
-------------------------------------
+====================================
 
 .. admonition:: About Singularity
 
@@ -222,8 +198,8 @@ If you see more files in your output folder there may have been an error in the 
 
     Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.
 
-**Getting the GOanna container**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+**Getting the GOanna Container**
+--------------------------------
 The GOanna tool is available as a Docker container on Docker Hub: 
 `GOanna container <https://hub.docker.com/r/agbase/goanna>`_ 
 
@@ -231,9 +207,11 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    singularity pull docker://agbase/goanna:2.0
+    singularity pull docker://agbase/goanna:20
 
-
+    
+**Running GOanna with Data**
+----------------------------
 
 **Getting the Help and Usage Statement**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -259,36 +237,7 @@ The container can be pulled with this command:
     goanna_2.0.sif \
     -h
 
-
-.. code-block:: none
-
-    Options:
-    -a BLAST database basename ('arthropod', 'bacteria', 'bird', 'crustacean', 'fish', 'fungi', 'human', 'insecta',
-       'invertebrates', 'mammals', 'nematode', 'plants', 'rodents' 'uniprot_sprot', 'uniprot_trembl', 'vertebrates'
-        or 'viruses')
-    -c peptide fasta filename
-    -o BLAST output file basename
-    [-b transfer GO with experimental evidence only ('yes' or 'no'). Default = 'yes'.]
-    [-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
-        to preserve the space, use quotes around your entry. Default: 'user_input_db']
-    [-e Expect value (E) for saving hits. Default is 10.]
-    [-f Number of aligned sequences to keep. Default: 3]
-    [-g BLAST percent identity above which match should be kept. Default: keep all matches.]
-    [-h help]
-    [-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
-    [-s bitscore above which match should be kept. Default: keep all matches.]
-    [-k Maximum number of gap openings allowed for match to be kept.Default: 100]
-    [-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
-    [-q Minimum query coverage per subject for match to be kept. Default: keep all matches]
-    [-t Number of threads.  Default: 8]
-    [-u 'Assigned by' field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
-        either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. "firstname lastname")
-        Default: 'user']
-    [-x Taxon ID of the query species. Default: 'taxon:0000']
-    [-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
-    
-**Running GOanna with Data**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+See :ref:`goannausage`
 
 .. tip::
 
@@ -307,7 +256,7 @@ GOanna has three required parameters:
     -o output file basename
 
 **Example PBS Script**
-""""""""""""""""""""""
+^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
@@ -341,7 +290,7 @@ GOanna has three required parameters:
     -x 37344 \
     -t 28
 
-**Breakdown of Command**
+**Command Explained**
 """"""""""""""""""""""""
 
 **singularity run:** tells Singularity to run
@@ -380,7 +329,7 @@ GOanna has three required parameters:
 
 
 **Understanding Your Results**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If all goes well, you should get 4 output files:
 
 **<basename>.asn:** This is standard BLAST output format that allows for conversion to other formats. You probably won’t need to look at this output.

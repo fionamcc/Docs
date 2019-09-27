@@ -31,7 +31,7 @@
 
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Combining Gene Association Files" href="../combine_gafs/combine_gafs.html"/>
+        <link rel="next" title="Intro" href="../combine_gafs/intro.html"/>
         <link rel="prev" title="&lt;no title&gt;" href="using_iprs_in_cyverse_DE.html"/> 
 
   
@@ -82,13 +82,8 @@
             
             
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
-<ul class="simple">
-</ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
-</ul>
-<p class="caption"><span class="caption-text">TransDecoder</span></p>
-<ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../agbase/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
@@ -104,15 +99,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#container-technologies"><strong>Container Technologies</strong></a></li>
 <li class="toctree-l2"><a class="reference internal" href="#running-interproscan-using-docker"><strong>Running InterProScan using Docker</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#getting-the-interproscan-container"><strong>Getting the InterProScan Container</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#running-interproscan-with-data"><strong>Running InterProScan with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#getting-the-help-and-usage-statement"><strong>Getting the Help and Usage Statement</strong></a></li>
 <li class="toctree-l4"><a class="reference internal" href="#example-command"><strong>Example Command</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#breakdown-of-command"><strong>Breakdown of Command</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats"><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#parser-outputs"><strong>Parser Outputs</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#understanding-your-results"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -120,18 +110,10 @@
 <li class="toctree-l2"><a class="reference internal" href="#running-interproscan-with-singularity-hpc"><strong>Running InterProScan with Singularity (HPC)</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#id1"><strong>Getting the InterProScan Data</strong></a></li>
 <li class="toctree-l3"><a class="reference internal" href="#id2"><strong>Getting the InterProScan Container</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#id4"><strong>Getting the Help and Usage Statement</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#example-pbs-script"><strong>Example PBS script:</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id5"><strong>Running InterProScan with Data</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id6"><strong>Example PBS Script</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id7"><strong>Breakdown of Command</strong></a></li>
-</ul>
-</li>
-<li class="toctree-l3"><a class="reference internal" href="#id8"><strong>Understanding Your Results</strong></a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#id9"><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong></a></li>
-<li class="toctree-l4"><a class="reference internal" href="#id10"><strong>Parser Outputs</strong></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4"><strong>Running InterProScan with Data</strong></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id5"><strong>Getting the Help and Usage Statement</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#example-pbs-script"><strong>Example PBS Script</strong></a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7"><strong>Understanding Your Results</strong></a></li>
 </ul>
 </li>
 </ul>
@@ -141,7 +123,9 @@
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs.html">Combining Gene Association Files</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cyverse.html"><strong>Combine GAFs on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cmd.html"><strong>Combine GAFs on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">KOBAS</span></p>
 <ul>
@@ -264,113 +248,6 @@ tar -pxvzf panther-data-14.1.tar.gz
 <p class="last">sudo docker pull agbase/interproscan:5.36-75.0_0</p>
 </div>
 </div>
-<div class="section" id="getting-the-help-and-usage-statement">
-<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h3>
-<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work-dir agbase/interproscan:5.36-75.0_0 -h
-</pre></div>
-</div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>   Options:
--a  &lt;ANALYSES&gt;                             Optional, comma separated list of analyses.  If this option
-                                           is not set, ALL analyses will be run.
-
--b, &lt;OUTPUT-FILE-BASE&gt;                     Optional, base output filename (relative or absolute path).
-                                           Note that this option, the output directory (-d) option and
-                                           the output file name (-o) option are mutually exclusive.  The
-                                           appropriate file extension for the output format(s) will be
-                                           appended automatically. By default the input file
-                                           path/name will be used.
-
--d,&lt;OUTPUT-DIR&gt;                            Optional, output directory. Note that this option, the
-                                           output file name (-o) option and the output file base (-b) option
-                                           are mutually exclusive. The output filename(s) are the
-                                           same as the input filename, with the appropriate file
-                                           extension(s) for the output format(s) appended automatically .
-
--c                                         Optional.  Disables use of the precalculated match lookup
-                                           service.  All match calculations will be run locally.
-
--C                                         Optional. Supply the number of cpus to use.
-
--e                                         Optional, excludes sites from the XML, JSON output
-
--f &lt;OUTPUT-FORMATS&gt;                        Optional, case-insensitive, comma separated list of output
-                                           formats. Supported formats are TSV, XML, JSON, GFF3, HTML and
-                                           SVG. Default for protein sequences are TSV, XML and
-                                           GFF3, or for nucleotide sequences GFF3 and XML.
-
--g                                         Optional, switch on lookup of corresponding Gene Ontology
-                                           annotation (IMPLIES -l lookup option)
-
--h                                         Optional, display help information
-
--i &lt;INPUT-FILE-PATH&gt;                       Optional, path to fasta file that should be loaded on
-                                           Master startup. Alternatively, in CONVERT mode, the
-                                           InterProScan 5 XML file to convert.
-
--l                                         Also include lookup of corresponding InterPro
-                                           annotation in the TSV and GFF3 output formats.
-
--m &lt;MINIMUM-SIZE&gt;                          Optional, minimum nucleotide size of ORF to report. Will
-                                           only be considered if n is specified as a sequence type.
-                                           Please be aware of the fact that if you specify a too
-                                           short value it might be that the analysis takes a very long
-                                           time!
-
--o &lt;EXPLICIT_OUTPUT_FILENAME&gt;              Optional explicit output file name (relative or absolute
-                                           path).  Note that this option, the output directory -d option
-                                           and the output file basename -b option are mutually
-                                           exclusive. If this option is given, you MUST specify a
-                                           single output format using the -f option.  The output file
-                                           name will not be modified. Note that specifying an output
-                                           file name using this option OVERWRITES ANY EXISTING FILE.
-
--p                                         Optional, switch on lookup of corresponding Pathway
-                                           annotation (IMPLIES -l lookup option)
--t &lt;SEQUENCE-TYPE&gt;                         Optional, the type of the input sequences (dna/rna (n)
-                                           or protein (p)).  The default sequence type is protein.
-
--T &lt;TEMP-DIR&gt;                              Optional, specify temporary file directory (relative or
-                                           absolute path). The default location is temp/.
-
--v                                         Optional, display version number
-
--r                                          Optional. &#39;Mode&#39; required ( -r &#39;cluster&#39;) to run in cluster mode. These options
-                                           are provided but have not been tested with this wrapper script. For
-                                           more information on running InterProScan in cluster mode:
-                                           https://github.com/ebi-pf-team/interproscan/wiki/ClusterMode
-
--R                                          Optional. Clusterrunid (crid) required when using cluster mode.
-                                           -R unique_id
-Available analyses:
-                     TIGRFAM (XX.X) : TIGRFAMs are protein families based on Hidden Markov Models or HMMs
-                        SFLD (X.X) : SFLDs are protein families based on Hidden Markov Models or HMMs
-                       ProDom (XXXX.X) : ProDom is a comprehensive set of protein domain families automatically generated from the UniProt Knowledge Database.
-                       Hamap (XXXXXX.XX) : High-quality Automated and Manual Annotation of Microbial Proteomes
-                       SMART (X.X) : SMART allows the identification and analysis of domain architectures based on Hidden Markov Models or HMMs
-                         CDD (X.XX) : Prediction of CDD domains in Proteins
-             ProSiteProfiles (XX.XXX) : PROSITE consists of documentation entries describing protein domains, families and functional sites as well as associated patterns and profiles to identify them
-             ProSitePatterns (XX.XXX) : PROSITE consists of documentation entries describing protein domains, families and functional sites as well as associated patterns and profiles to identify them
-                 SUPERFAMILY (X.XX) : SUPERFAMILY is a database of structural and functional annotation for all proteins and genomes.
-                      PRINTS (XX.X) : A fingerprint is a group of conserved motifs used to characterise a protein family
-                     PANTHER (X.X) : The PANTHER (Protein ANalysis THrough Evolutionary Relationships) Classification System is a unique resource that classifies genes by their functions, using published scientific experimental evidence and evolutionary relationships to predict fu$
-                      Gene3D (X.X.X) : Structural assignment for whole genes and genomes using the CATH domain structure database
-                       PIRSF (X.XX) : The PIRSF concept is being used as a guiding principle to provide comprehensive and non-overlapping clustering of UniProtKB sequences into a hierarchical order to reflect their evolutionary relationships.
-                        Pfam (XX.X) : A large collection of protein families, each represented by multiple sequence alignments and hidden Markov models (HMMs)
-                       Coils (X.X) : Prediction of Coiled Coil Regions in Proteins
-                  MobiDBLite (X.X) : Prediction of disordered domains Regions in Proteins
-
-OPTIONS FOR XML PARSER OUTPUTS
-
--F &lt;IPRS output directory&gt;              This is the output directory from InterProScan.
--D &lt;database&gt;                           Supply the database responsible for these annotations.
--x &lt;taxon&gt;                              NCBI taxon ID of the ID being annotated
--y &lt;type&gt;                               Transcript or protein
--n &lt;biocurator&gt;                         Name of the biocurator who made these annotations
--M &lt;mapping file&gt;                       Optional. Mapping file.
--B &lt;bad seq file&gt;                       Optional. Bad input sequence file.
-</pre></div>
-</div>
-</div>
 <div class="section" id="running-interproscan-with-data">
 <h3><strong>Running InterProScan with Data</strong><a class="headerlink" href="#running-interproscan-with-data" title="Permalink to this headline">¶</a></h3>
 <div class="admonition tip">
@@ -379,6 +256,13 @@ OPTIONS FOR XML PARSER OUTPUTS
 <ul class="last simple">
 <li>/data</li>
 </ul>
+</div>
+<div class="section" id="getting-the-help-and-usage-statement">
+<h4><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#getting-the-help-and-usage-statement" title="Permalink to this headline">¶</a></h4>
+<div class="highlight-bash"><div class="highlight"><pre><span></span>sudo docker run --rm -v <span class="k">$(</span><span class="nb">pwd</span><span class="k">)</span>:/work-dir agbase/interproscan:5.36-75.0_0 -h
+</pre></div>
+</div>
+<p>See <a class="reference internal" href="intro.html#iprsusage"><span class="std std-ref">Help and Usage Statement</span></a></p>
 </div>
 <div class="section" id="example-command">
 <h4><strong>Example Command</strong><a class="headerlink" href="#example-command" title="Permalink to this headline">¶</a></h4>
@@ -396,9 +280,8 @@ agbase/interproscan:5.36-75.0-0 \
 -D AgBase
 </pre></div>
 </div>
-</div>
-<div class="section" id="breakdown-of-command">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#breakdown-of-command" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="command-explained">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#command-explained" title="Permalink to this headline">¶</a></h5>
 <p><strong>sudo docker run:</strong> tells docker to run</p>
 <p><strong>&#8211;rm:</strong> removes container when analysis finishes (image will remain for furture analyses)</p>
 <p><strong>-v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data:</strong> mount my working directory on the host machine into the /data directory in the container. The syntax for this is &lt;absolute path on host machine&gt;:&lt;absolute path in container&gt;</p>
@@ -419,9 +302,9 @@ agbase/interproscan:5.36-75.0-0 \
 </div>
 </div>
 <div class="section" id="understanding-your-results">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h3>
+<h4><strong>Understanding Your Results</strong><a class="headerlink" href="#understanding-your-results" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats">
-<h4><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats" title="Permalink to this headline">¶</a></h4>
+<h5><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#interproscan-outputs-https-github-com-ebi-pf-team-interproscan-wiki-outputformats" title="Permalink to this headline">¶</a></h5>
 <p><strong>Default</strong>
 - &lt;basename&gt;.gff3
 - &lt;basename&gt;.tsv
@@ -432,7 +315,7 @@ agbase/interproscan:5.36-75.0-0 \
 - &lt;basename&gt;.svg.tar.gz</p>
 </div>
 <div class="section" id="parser-outputs">
-<h4><strong>Parser Outputs</strong><a class="headerlink" href="#parser-outputs" title="Permalink to this headline">¶</a></h4>
+<h5><strong>Parser Outputs</strong><a class="headerlink" href="#parser-outputs" title="Permalink to this headline">¶</a></h5>
 <p><strong>&lt;basename&gt;_gaf.txt:</strong>
 -This table follows the formatting of a gene association file (gaf) and can be used in GO enrichment analyses.</p>
 <p><strong>&lt;basename&gt;_acc_go_counts.txt:</strong>
@@ -450,6 +333,7 @@ agbase/interproscan:5.36-75.0-0 \
 <p><strong>&lt;basename&gt;.err:</strong>
 -This file will list any sequences that were not able to be analyzed by InterProScan. Examples of sequences that will cause an error are sequences with a large run of Xs.</p>
 <p>If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">Contact us</a>.</p>
+</div>
 </div>
 </div>
 </div>
@@ -513,9 +397,10 @@ tar -pxvzf panther-data-14.1.tar.gz
 </div>
 </div>
 <div class="section" id="id4">
-<h3><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="example-pbs-script">
-<h4><strong>Example PBS script:</strong><a class="headerlink" href="#example-pbs-script" title="Permalink to this headline">¶</a></h4>
+<h3><strong>Running InterProScan with Data</strong><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="id5">
+<h4><strong>Getting the Help and Usage Statement</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
+<p><strong>Example PBS script:</strong></p>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N 10000j100</span>
 <span class="c1">#PBS -q standard</span>
@@ -535,13 +420,7 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 -h
 </pre></div>
 </div>
-<div class="highlight-none"><div class="highlight"><pre><span></span>**INSERT HELP STATEMENT HERE**
-</pre></div>
-</div>
-</div>
-</div>
-<div class="section" id="id5">
-<h3><strong>Running InterProScan with Data</strong><a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<p>See <a class="reference internal" href="intro.html#iprsusage"><span class="std std-ref">Help and Usage Statement</span></a></p>
 <div class="admonition tip">
 <p class="first admonition-title">Tip</p>
 <p>There is one directory built into this container. This directory should be used to mount your working directory.</p>
@@ -549,8 +428,9 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 <li>/data</li>
 </ul>
 </div>
-<div class="section" id="id6">
-<h4><strong>Example PBS Script</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="example-pbs-script">
+<h4><strong>Example PBS Script</strong><a class="headerlink" href="#example-pbs-script" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-bash"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
 <span class="c1">#PBS -N 10000j100</span>
 <span class="c1">#PBS -q standard</span>
@@ -579,9 +459,8 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 -D AgBase
 </pre></div>
 </div>
-</div>
-<div class="section" id="id7">
-<h4><strong>Breakdown of Command</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id6">
+<h5><strong>Command Explained</strong><a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h5>
 <p><strong>singularity run:</strong> tells Singularity to run</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data:</strong> mounts my working directory on the host machine into the /data directory in the container the syntax for this is &lt;aboslute path on host machine&gt;:&lt;aboslute path in container&gt;</p>
 <p><strong>-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data:</strong> mounts he InterProScan data directory that was downloaded from the FTP site into the InterProScan data directory in the container</p>
@@ -600,10 +479,10 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 <p><strong>-D AgBase:</strong> database of query accession to be used in column 1 of GAF output file</p>
 </div>
 </div>
+<div class="section" id="id7">
+<h4><strong>Understanding Your Results</strong><a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <div class="section" id="id8">
-<h3><strong>Understanding Your Results</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="id9">
-<h4><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h4>
+<h5><strong>InterProScan `outputs &lt;https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats&gt;`_</strong><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h5>
 <p><strong>Default</strong>
 - &lt;basename&gt;.gff3
 - &lt;basename&gt;.tsv
@@ -613,8 +492,8 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 - &lt;basename&gt;.html.tar.gz
 - &lt;basename&gt;.svg.tar.gz</p>
 </div>
-<div class="section" id="id10">
-<h4><strong>Parser Outputs</strong><a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h4>
+<div class="section" id="id9">
+<h5><strong>Parser Outputs</strong><a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h5>
 <p><strong>&lt;basename&gt;_gaf.txt:</strong>
 -This table follows the formatting of a gene association file (gaf) and can be used in GO enrichment analyses.</p>
 <p><strong>&lt;basename&gt;_acc_go_counts.txt:</strong>
@@ -636,6 +515,7 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
 </div>
 </div>
 </div>
+</div>
 
 
            </div>
@@ -644,7 +524,7 @@ interproscan_5.36-75.0_0.sif <span class="se">\</span>
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../combine_gafs/combine_gafs.html" class="btn btn-neutral float-right" title="Combining Gene Association Files" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
+        <a href="../combine_gafs/intro.html" class="btn btn-neutral float-right" title="Intro" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
         <a href="using_iprs_in_cyverse_DE.html" class="btn btn-neutral" title="&lt;no title&gt;" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
