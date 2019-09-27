@@ -1,3 +1,4 @@
+==========
 **Intro**
 ==========
 
@@ -9,25 +10,26 @@
 
 
 **Where to Find GOanna** 
-^^^^^^^^^^^^^^^^^^^^^^^^
-`Docker Hub <https://hub.docker.com/r/agbase/goanna>`_
-----------------------------------------------------------
+========================
+- `Docker Hub <https://hub.docker.com/r/agbase/goanna>`_
 
-`CyVerse Discovery Environment <https://de.cyverse.org/de/?type=apps&app-id=354731ae-71ab-11e9-b82a-008cfa5ae621&system-id=de>`_
------------------------------------------------------------------------------------------------------------------------------------
 
-`AgBase <https://agbase.arizona.edu/cgi-bin/tools/GOanna.cgi>`_
------------------------------------------------------------------
+- `CyVerse Discovery Environment <https://de.cyverse.org/de/?type=apps&app-id=354731ae-71ab-11e9-b82a-008cfa5ae621&system-id=de>`_
+
+
+- `AgBase <https://agbase.arizona.edu/cgi-bin/tools/GOanna.cgi>`_
+
 
 
 **Inputs**
-^^^^^^^^^^
+----------
 
 1. GOanna accepts a FASTA file of protein sequences. Nucleotide sequences must be translated first. 
 
 .. NOTE::
 
-    If you do not have a preferred method of translating your sequences **TransDecoder**  is available in the CyVerse Discovery Environment **INSERT LINK HERE** and as a `Docker container <https://quay.io/repository/biocontainers/transdecoder?tab=tags>`_ at quay.io.
+    Each of these tools accepts a peptide FASTA file. For those users with nucloetide sequences some documentation has been provided for using **TransDecoder** (although other tools are also acceptable). 
+    The `TransDecoder app <https://de.cyverse.org/de/?type=apps&app-id=74828a18-f351-11e8-be2b-008cfa5ae621&system-id=de>`_ is available through CyVerse or as a `BioContainer <https://quay.io/repository/biocontainers/transdecoder?tab=tags>`_ for use on the command line.
 
 
 .. IMPORTANT::
@@ -53,11 +55,15 @@
 - uniprot_sprot
 - uniprot_trembl
 
+.. NOTE::
+
+    The user has a choice between transferring Gene Ontology (GO) with experiemental evidence only (recommended) or transferring all GO annotations.
+
 
 3. Output file basename. This will be the prefix of all your output files.
 
 **Determining BLAST Parameters**
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------------
 
 - BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis. 
 - We recommend making a subset of 100 randomly selected sequences from your larger data set and using this as the input for GOanna to test for parameters that give good alignment. 
@@ -71,7 +77,7 @@
 
 
 **Outputs**
-^^^^^^^^^^^
+-----------
 
 GOanna generates 4 output files. Three of these are different formats of the BLASTp output and the final file is a gene association file (GAF) that contains to Gene Ontology (GO) annotations.
 

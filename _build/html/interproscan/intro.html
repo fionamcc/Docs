@@ -32,7 +32,7 @@
   
     <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
         <link rel="next" title="&lt;no title&gt;" href="using_iprs_in_cyverse_DE.html"/>
-        <link rel="prev" title="Running GOanna on the Command Line" href="../goanna/using_goanna_cmd.html"/> 
+        <link rel="prev" title="GOanna on the Command Line" href="../goanna/using_goanna_cmd.html"/> 
 
   
   <script src="../_static/js/modernizr.min.js"></script>
@@ -82,38 +82,36 @@
             
             
                 <p class="caption"><span class="caption-text">Agbase Home</span></p>
-<ul class="simple">
-</ul>
 <ul>
-<li class="toctree-l1"><a class="reference internal" href="../workflow/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
-</ul>
-<p class="caption"><span class="caption-text">TransDecoder</span></p>
-<ul class="simple">
+<li class="toctree-l1"><a class="reference internal" href="../agbase/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>Using GOanna on CyVerse</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>Running GOanna on the Command Line</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>GOanna on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>GOanna on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">InterProScan</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Intro</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#basic-functions-of-this-tool"><strong>Basic functions of this tool</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#getting-the-interproscan-data"><strong>Getting the InterProScan Data</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#basic-functions-of-this-tool"><strong>Basic functions of this tool</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#where-to-find-interproscan"><strong>Where to Find InterProScan</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#getting-the-interproscan-data"><strong>Getting the InterProScan Data</strong></a></li>
 </ul>
 </li>
-</ul>
-</li>
-<li class="toctree-l1"><a class="reference internal" href="using_iprs_cmd.html"><strong>Running InterProScan on the Command Line</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="using_iprs_cmd.html"><strong>InterProScan on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">Combine GAFs</span></p>
-<ul class="simple">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cyverse.html"><strong>Combine GAFs on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../combine_gafs/combine_gafs_cmd.html"><strong>Combine GAFs on the Command Line</strong></a></li>
 </ul>
 <p class="caption"><span class="caption-text">KOBAS</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../kobas/intro.html"><strong>Intro</strong></a></li>
-<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_in_cyverse_DE.html"><strong>Using KOBAS on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_in_cyverse_DE.html"><strong>KOBAS on CyVerse</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_cmd.html"><strong>KOBAS on the Command Line</strong></a></li>
 </ul>
 
             
@@ -170,8 +168,27 @@
 <li>re-combines output files from all groups of 1000</li>
 <li>parses the XML output from InterProScan to generate a gene association file (GAF) (and several other files)</li>
 </ul>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">This tool accepts a peptide FASTA file. For those users with nucloetide sequences some documentation has been provided for using <strong>TransDecoder</strong> (although other tools are also acceptable).
+The <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=74828a18-f351-11e8-be2b-008cfa5ae621&amp;system-id=de">TransDecoder app</a> is available through CyVerse or as a <a class="reference external" href="https://quay.io/repository/biocontainers/transdecoder?tab=tags">BioContainer</a> for use on the command line.</p>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">As both GOanna and InterProScan provide GO annotations, their outputs are provided in GAF format. The <strong>&#8216;Combine GAFs&#8217;</strong> tool can then be used to make a single GAF of GO annotations, if desired.</p>
+</div>
+</div>
+<div class="section" id="where-to-find-interproscan">
+<h2><strong>Where to Find InterProScan</strong><a class="headerlink" href="#where-to-find-interproscan" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://hub.docker.com/r/agbase/interproscan">Docker Hub</a></p>
+<p><a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=Interproscan-5.35.74u1&amp;system-id=agave">InterProScan 5.35-74.0</a></p>
+<div class="admonition important">
+<p class="first admonition-title">Important</p>
+<p class="last">InterProScan version 5.35-74.0 does not includ the XML parser to generate GAF file and associated count files. To get these files the user must run the <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=714e28fa-6580-44fc-9756-8b019c192449&amp;system-id=de">InterProScan Results function</a> app.</p>
+</div>
+</div>
 <div class="section" id="getting-the-interproscan-data">
-<h3><strong>Getting the InterProScan Data</strong><a class="headerlink" href="#getting-the-interproscan-data" title="Permalink to this headline">¶</a></h3>
+<h2><strong>Getting the InterProScan Data</strong><a class="headerlink" href="#getting-the-interproscan-data" title="Permalink to this headline">¶</a></h2>
 <p>Partner data are available from the InterProScan FTP site. These data are available as two separate downloads and can be obtained following these instructions:</p>
 <p><strong>1. Partner Data excluding Panther</strong></p>
 <div class="highlight-none"><div class="highlight"><pre><span></span>wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz
@@ -204,7 +221,6 @@ tar -pxvzf panther-data-14.1.tar.gz
 </div>
 </div>
 </div>
-</div>
 
 
            </div>
@@ -216,7 +232,7 @@ tar -pxvzf panther-data-14.1.tar.gz
         <a href="using_iprs_in_cyverse_DE.html" class="btn btn-neutral float-right" title="&lt;no title&gt;" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
       
       
-        <a href="../goanna/using_goanna_cmd.html" class="btn btn-neutral" title="Running GOanna on the Command Line" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+        <a href="../goanna/using_goanna_cmd.html" class="btn btn-neutral" title="GOanna on the Command Line" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
       
     </div>
   
