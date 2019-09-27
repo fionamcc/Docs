@@ -88,12 +88,11 @@
 <p class="caption"><span class="caption-text">GOanna</span></p>
 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Intro</strong></a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#where-to-find-goanna"><strong>Where to Find GOanna</strong></a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#inputs"><strong>Inputs</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#determining-blast-parameters"><strong>Determining BLAST Parameters</strong></a></li>
-<li class="toctree-l3"><a class="reference internal" href="#outputs"><strong>Outputs</strong></a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="#where-to-find-goanna"><strong>Where to Find GOanna</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#help-and-usage-statement"><strong>Help and Usage Statement</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#inputs"><strong>Inputs</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#determining-blast-parameters"><strong>Determining BLAST Parameters</strong></a></li>
+<li class="toctree-l2"><a class="reference internal" href="#outputs"><strong>Outputs</strong></a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="using_goanna_in_cyverse_DE.html"><strong>GOanna on CyVerse</strong></a></li>
@@ -175,8 +174,38 @@
 <li><a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=354731ae-71ab-11e9-b82a-008cfa5ae621&amp;system-id=de">CyVerse Discovery Environment</a></li>
 <li><a class="reference external" href="https://agbase.arizona.edu/cgi-bin/tools/GOanna.cgi">AgBase</a></li>
 </ul>
+</div>
+<div class="section" id="help-and-usage-statement">
+<span id="goannausage"></span><h2><strong>Help and Usage Statement</strong><a class="headerlink" href="#help-and-usage-statement" title="Permalink to this headline">¶</a></h2>
+<div class="highlight-none"><div class="highlight"><pre><span></span>Options:
+-a BLAST database basename (&#39;arthropod&#39;, &#39;bacteria&#39;, &#39;bird&#39;, &#39;crustacean&#39;, &#39;fish&#39;, &#39;fungi&#39;, &#39;human&#39;, &#39;insecta&#39;,
+   &#39;invertebrates&#39;, &#39;mammals&#39;, &#39;nematode&#39;, &#39;plants&#39;, &#39;rodents&#39; &#39;uniprot_sprot&#39;, &#39;uniprot_trembl&#39;, &#39;vertebrates&#39;
+    or &#39;viruses&#39;)
+-c peptide fasta filename
+-o output file basename
+[-b transfer GO with experimental evidence only (&#39;yes&#39; or &#39;no&#39;). Default = &#39;yes&#39;.]
+[-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
+    to preserve the space, use quotes around your entry. Default: &#39;user_input_db&#39;]
+[-e Expect value (E) for saving hits. Default is 10.]
+[-f Number of aligned sequences to keep. Default: 3]
+[-g BLAST percent identity above which match should be kept. Default: keep all matches.]
+[-h help]
+[-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
+[-s bitscore above which match should be kept. Default: keep all matches.]
+[-k Maximum number of gap openings allowed for match to be kept.Default: 100]
+[-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
+[-q Minimum query coverage per subject for match to be kept. Default: keep all matches]
+[-t Number of threads.  Default: 8]
+[-u &#39;Assigned by&#39; field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
+    either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. &quot;firstname lastname&quot;)
+    Default: &#39;user&#39;]
+[-x Taxon ID of the query species. Default: &#39;taxon:0000&#39;]
+[-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
+</pre></div>
+</div>
+</div>
 <div class="section" id="inputs">
-<h3><strong>Inputs</strong><a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h3>
+<h2><strong>Inputs</strong><a class="headerlink" href="#inputs" title="Permalink to this headline">¶</a></h2>
 <ol class="arabic simple">
 <li>GOanna accepts a FASTA file of protein sequences. Nucleotide sequences must be translated first.</li>
 </ol>
@@ -218,7 +247,7 @@ The <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp
 </ol>
 </div>
 <div class="section" id="determining-blast-parameters">
-<h3><strong>Determining BLAST Parameters</strong><a class="headerlink" href="#determining-blast-parameters" title="Permalink to this headline">¶</a></h3>
+<h2><strong>Determining BLAST Parameters</strong><a class="headerlink" href="#determining-blast-parameters" title="Permalink to this headline">¶</a></h2>
 <ul class="simple">
 <li>BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.</li>
 <li>We recommend making a subset of 100 randomly selected sequences from your larger data set and using this as the input for GOanna to test for parameters that give good alignment.</li>
@@ -233,7 +262,7 @@ The <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp
 </ul>
 </div>
 <div class="section" id="outputs">
-<h3><strong>Outputs</strong><a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h3>
+<h2><strong>Outputs</strong><a class="headerlink" href="#outputs" title="Permalink to this headline">¶</a></h2>
 <p>GOanna generates 4 output files. Three of these are different formats of the BLASTp output and the final file is a gene association file (GAF) that contains to Gene Ontology (GO) annotations.</p>
 <ol class="arabic simple">
 <li>&lt;basename&gt;.asn</li>
@@ -241,7 +270,6 @@ The <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp
 <li>&lt;basename&gt;.tsv</li>
 <li>&lt;basename&gt;_goanna_gaf.tsv</li>
 </ol>
-</div>
 </div>
 </div>
 

@@ -19,10 +19,40 @@
 
 - `AgBase <https://agbase.arizona.edu/cgi-bin/tools/GOanna.cgi>`_
 
+.. _goannausage:
 
+**Help and Usage Statement**
+============================
+
+.. code-block:: none
+
+    Options:
+    -a BLAST database basename ('arthropod', 'bacteria', 'bird', 'crustacean', 'fish', 'fungi', 'human', 'insecta',
+       'invertebrates', 'mammals', 'nematode', 'plants', 'rodents' 'uniprot_sprot', 'uniprot_trembl', 'vertebrates'
+        or 'viruses')
+    -c peptide fasta filename
+    -o output file basename
+    [-b transfer GO with experimental evidence only ('yes' or 'no'). Default = 'yes'.]
+    [-d database of query ID. If your entry contains spaces either substitute and underscore (_) or,
+        to preserve the space, use quotes around your entry. Default: 'user_input_db']
+    [-e Expect value (E) for saving hits. Default is 10.]
+    [-f Number of aligned sequences to keep. Default: 3]
+    [-g BLAST percent identity above which match should be kept. Default: keep all matches.]
+    [-h help]
+    [-m BLAST percent positive identity above which match should be kept. Default: keep all matches.]
+    [-s bitscore above which match should be kept. Default: keep all matches.]
+    [-k Maximum number of gap openings allowed for match to be kept.Default: 100]
+    [-l Maximum number of total gaps allowed for match to be kept. Default: 1000]
+    [-q Minimum query coverage per subject for match to be kept. Default: keep all matches]
+    [-t Number of threads.  Default: 8]
+    [-u 'Assigned by' field of your GAF output file. If your entry contains spaces (eg. firstname lastname)
+        either substitute and underscore (_) or, to preserve the space, use quotes around your entry (eg. "firstname lastname")
+        Default: 'user']
+    [-x Taxon ID of the query species. Default: 'taxon:0000']
+    [-p parse_deflines. Parse query and subject bar delimited sequence identifiers]
 
 **Inputs**
-----------
+==========
 
 1. GOanna accepts a FASTA file of protein sequences. Nucleotide sequences must be translated first. 
 
@@ -63,7 +93,7 @@
 3. Output file basename. This will be the prefix of all your output files.
 
 **Determining BLAST Parameters**
---------------------------------
+================================
 
 - BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis. 
 - We recommend making a subset of 100 randomly selected sequences from your larger data set and using this as the input for GOanna to test for parameters that give good alignment. 
@@ -77,7 +107,7 @@
 
 
 **Outputs**
------------
+===========
 
 GOanna generates 4 output files. Three of these are different formats of the BLASTp output and the final file is a gene association file (GAF) that contains to Gene Ontology (GO) annotations.
 
