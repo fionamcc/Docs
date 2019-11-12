@@ -26,15 +26,7 @@
 
 `Docker Hub <https://hub.docker.com/r/agbase/interproscan>`_
 
-`InterProScan 5.35-74.0 <https://de.cyverse.org/de/?type=apps&app-id=Interproscan-5.35.74u1&system-id=agave>`_
-
-.. Important::
-
-    InterProScan version 5.35-74.0 does not include the XML parser to generate GAF file and associated count files. To get these files the user must run the `InterProScan Results function <https://de.cyverse.org/de/?type=apps&app-id=714e28fa-6580-44fc-9756-8b019c192449&system-id=de>`_ app.
-
-.. Coming Soon!::
-
-    InterProScan 5.36-75.0 will be available soon in the Discovery Environment. This app will included the XML parser and run it automatically with InterProScan. There will be no need to use the InterProScan Results Function app.
+`InterProScan 5.36-75 <https://de.cyverse.org/de/?type=apps&app-id=Interproscan-5.36.75u2&system-id=agave>`_
     
 
 **Getting the InterProScan Data** 
