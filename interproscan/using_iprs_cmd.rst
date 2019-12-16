@@ -142,7 +142,7 @@ See :ref:`iprsusage`
 
     All the options supplied after the image name are GOanna options
     
-**-i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta:** input FASTA file
+**-i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta:** local path to input FASTA file. You can also use the mounted file path: /data/pnnl_10000.fasta
 
 
 **-d outdir_10000:** output directory name
