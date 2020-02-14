@@ -167,8 +167,9 @@ See :ref:`iprsusage`
 
 **Understanding Your Results**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**InterProScan `outputs <https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats>`_**
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**InterProScan outputs:** https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 **Default**
 - <basename>.gff3
 - <basename>.tsv
@@ -381,8 +382,9 @@ See :ref:`iprsusage`
 
 **Understanding Your Results**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**InterProScan `outputs <https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats>`_**
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**InterProScan outputs:** https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 **Default**
 - <basename>.gff3
 - <basename>.tsv
