@@ -174,6 +174,7 @@ See :ref:`iprsusage`
 - <basename>.gff3
 - <basename>.tsv
 - <basename>.xml
+
 **Optional**
 - <basename>.json
 - <basename>.html.tar.gz
@@ -389,6 +390,7 @@ See :ref:`iprsusage`
 - <basename>.gff3
 - <basename>.tsv
 - <basename>.xml
+
 **Optional**
 - <basename>.json
 - <basename>.html.tar.gz
