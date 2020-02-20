@@ -29,14 +29,14 @@ To run the tool you need some public data. These files are now available as gzip
 
 .. code-block:: bash
 
-    iget /iplant/home/shared/iplantcollaborative/protein_blast_dbs/agbase_database
+    iget -rPT /iplant/home/shared/iplantcollaborative/protein_blast_dbs/agbase_database
 
 
 2) go_info: Uniprot GO annotations (this command will download the entire directory)
 
 .. code-block:: bash
 
-    iget /iplant/home/shared/iplantcollaborative/protein_blast_dbs/go_info
+    iget -rPT /iplant/home/shared/iplantcollaborative/protein_blast_dbs/go_info
 
 
 .. NOTE::

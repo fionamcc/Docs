@@ -115,7 +115,7 @@ See :ref:`iprsusage`
     sudo docker run \
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data \
-    agbase/interproscan:5.36-75.0-0 \
+    agbase/interproscan:5.36-75.0_0 \
     -i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
@@ -142,7 +142,7 @@ See :ref:`iprsusage`
 
     All the options supplied after the image name are GOanna options
     
-**-i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta:** input FASTA file
+**-i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta:** local path to input FASTA file. You can also use the mounted file path: /data/pnnl_10000.fasta
 
 
 **-d outdir_10000:** output directory name
@@ -167,12 +167,14 @@ See :ref:`iprsusage`
 
 **Understanding Your Results**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**InterProScan `outputs <https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats>`_**
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**InterProScan outputs:** https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 **Default**
 - <basename>.gff3
 - <basename>.tsv
 - <basename>.xml
+
 **Optional**
 - <basename>.json
 - <basename>.html.tar.gz
@@ -381,12 +383,14 @@ See :ref:`iprsusage`
 
 **Understanding Your Results**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-**InterProScan `outputs <https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats>`_**
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+**InterProScan outputs:** https://github.com/ebi-pf-team/interproscan/wiki/OutputFormats
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
 **Default**
 - <basename>.gff3
 - <basename>.tsv
 - <basename>.xml
+
 **Optional**
 - <basename>.json
 - <basename>.html.tar.gz
