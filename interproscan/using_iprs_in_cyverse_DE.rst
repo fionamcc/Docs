@@ -11,7 +11,7 @@
 3. If you are new to the Discovery Environment (DE) the user guide can be found `here <https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/>`_.
 
 4. Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.
-5. To access the `InterProScan Sequence Search 5.36-75.0 <https://de.cyverse.org/de/?type=apps&app-id=Interproscan-5.36.75u2&system-id=agave>`_ app click on the ‘Apps’ button at the left side of the DE. 
+5. To access the `InterProScan Sequence Search 5.36-75.0 <https://de.cyverse.org/de/?type=apps&app-id=Interproscan-5.36.75u3&system-id=agave>`_ app click on the ‘Apps’ button at the left side of the DE. 
 6. Search for 'interproscan' in the search bar at the top of the ‘apps’ window. The contents of the folder will appear in the main pane of the window. The InterProScan app is called ‘InterProScan Sequence Search 5.36-75’; click on the name to open the app.
 
 
