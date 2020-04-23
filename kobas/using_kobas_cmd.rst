@@ -103,11 +103,12 @@ KOBAS can also run both task with a single command (-j).
     -v /home/amcooksey/i5k/seq_pep:/seq_pep \
     -v /home/amcooksey/i5k/sqlite3:/sqlite3 \
     -v $(pwd):/work-dir \
+    -w /work-dir \
     agbase/kobas:3.0.3_0 \
     -a 
     -i AROS1000.fa \
     -s dme \
-    -t fasta:pro
+    -t fasta:pro \
     -o AROS1000
 
 **Command Explained**
