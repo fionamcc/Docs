@@ -119,7 +119,7 @@ KOBAS can also run both task with a single command (-j).
 
 **-v /home/amcooksey/i5k/seq_pep:/seq_pep:** tells docker to mount the 'seq_pep' directory I downloaded to the host machine to the '/seq_pep' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
 
-**-v /home/amcooksey/i5k/sqlite3:/sqlite3:** mounts 'sqlite3' directory on host machine into 'go_info' directory inside the container
+**-v /home/amcooksey/i5k/sqlite3:/sqlite3:** mounts 'sqlite3' directory on host machine into 'sqlite3' directory inside the container
 
 **-v $(pwd):/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
 
