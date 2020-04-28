@@ -114,9 +114,9 @@ See :ref:`iprsusage`
 
     sudo docker run \
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
+    -i /data/pnnl_10000.fasta \
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data \
     agbase/interproscan:5.41-78.0_0 \
-    -i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
     -g \
