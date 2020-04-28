@@ -116,7 +116,7 @@ See :ref:`iprsusage`
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data \
     agbase/interproscan:5.36-75.0_0 \
-    -i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta \
+    -i /data/pnnl_10000.fasta \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
     -g \
