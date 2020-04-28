@@ -11,10 +11,10 @@ Partner data are available from the InterProScan FTP site. These data are availa
 
 .. code-block:: none
 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz.md5 
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.41-78.0.tar.gz 
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.41-78.0.tar.gz.md5 
     md5sum -c interproscan-data-5.36-75.0.tar.gz.md
-    tar -pxvzf interproscan-data-5.36-75.0.tar.gz
+    tar -pxvzf interproscan-data-5.41-78.0.tar.gz
 
 .. admonition:: tar options
 
@@ -28,7 +28,7 @@ Partner data are available from the InterProScan FTP site. These data are availa
 
 .. code-block:: none
 
-    cd interproscan-5.36-75.0/data
+    cd interproscan-5.41-78.0/data
     wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/data/panther-data-14.1.tar.gz
     wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/data/panther-data-14.1.tar.gz.md5 
     md5sum -c panther-data-14.1.tar.gz.md5
@@ -39,7 +39,7 @@ These data will be unarchived into this directory structure. They will need to b
 
 .. code-block:: none
 
-    <current_working_directory>/interproscan-5.36-75.0/data
+    <current_working_directory>/interproscan-5.41-78.0/data
 
 
 **Container Technologies**
@@ -72,20 +72,20 @@ Docker containers can be run with either technology.
 
 **Getting the InterProScan Container**
 ---------------------------------------
-The InterProScan tool is available as a Docker container on Docker Hub: 
+The InterProScan tool is available as a Docker container on Docker Hub where you can see all the available versions: 
 `InterProScan container <https://hub.docker.com/r/agbase/interproscan>`_ 
 
-The container can be pulled with this command: 
+The latest container can be pulled with this command: 
 
 .. code-block:: bash
 
-    docker pull agbase/interproscan:5.36-75.0_0
+    docker pull agbase/interproscan:5.41-78.0_0
 
 .. admonition:: Remember
 
     You must have root permissions or use sudo, like so:
 
-    sudo docker pull agbase/interproscan:5.36-75.0_0
+    sudo docker pull agbase/interproscan:5.41-78.0_0
 
 
 
@@ -102,7 +102,7 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    sudo docker run --rm -v $(pwd):/work-dir agbase/interproscan:5.36-75.0_0 -h
+    sudo docker run --rm -v $(pwd):/work-dir agbase/interproscan:5.41-78.0_0 -h
 
 See :ref:`iprsusage`
 
@@ -114,9 +114,9 @@ See :ref:`iprsusage`
 
     sudo docker run \
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
-    -v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data \
-    agbase/interproscan:5.36-75.0_0 \
     -i /data/pnnl_10000.fasta \
+    -v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data \
+    agbase/interproscan:5.41-78.0_0 \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
     -g \
@@ -134,9 +134,9 @@ See :ref:`iprsusage`
 
 **-v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data:** mount my working directory on the host machine into the /data directory in the container. The syntax for this is <absolute path on host machine>:<absolute path in container>
 
-**-v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data:** mounts the InterProScan partner data (downloaded from FTP) on the host machine into the /opt/interproscan/data directory in the container
+**-v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data:** mounts the InterProScan partner data (downloaded from FTP) on the host machine into the /opt/interproscan/data directory in the container
 
-**agbase/interproscan:5.36-75.0-0:** the name of the Docker image to use
+**agbase/interproscan:5.41-78.0-0:** the name of the Docker image to use
 
 .. tip::
 
@@ -233,10 +233,10 @@ Partner data are available from the InterProScan FTP site. These data are availa
 
 .. code-block:: none
 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz.md5 
-    md5sum -c interproscan-data-5.36-75.0.tar.gz.md
-    tar -pxvzf interproscan-data-5.36-75.0.tar.gz
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.41-78.0/alt/interproscan-data-5.41-78.0.tar.gz 
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.41-78.0/alt/interproscan-data-5.41-78.0.tar.gz.md5 
+    md5sum -c interproscan-data-5.41-78.0.tar.gz.md
+    tar -pxvzf interproscan-data-5.41-78.0.tar.gz
 
 .. admonition:: tar options
 
@@ -250,7 +250,7 @@ Partner data are available from the InterProScan FTP site. These data are availa
 
 .. code-block:: none
 
-    cd interproscan-5.36-75.0/data
+    cd interproscan-5.41-78.0/data
     wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/data/panther-data-14.1.tar.gz
     wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/data/panther-data-14.1.tar.gz.md5 
     md5sum -c panther-data-14.1.tar.gz.md5
@@ -261,7 +261,7 @@ These data will be unarchived into this directory structure. They will need to b
 
 .. code-block:: none
 
-    <current_working_directory>/interproscan-5.36-75.0/data
+    <current_working_directory>/interproscan-5.41-78.0/data
 
 
 **Getting the InterProScan Container**
@@ -273,7 +273,7 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    singularity pull docker://agbase/interproscan:5.36-75.0_0
+    singularity pull docker://agbase/interproscan:5.41-78.0_0
 
     
 **Running InterProScan with Data**
@@ -298,10 +298,10 @@ The container can be pulled with this command:
 
     cd /rsgrps/shaneburgess/amanda/i5k/interproscan
     
-    singularity pull docker://agbase/interproscan:5.36-75.0_0
+    singularity pull docker://agbase/interproscan:5.41-78.0_0
 
     singularity run \
-    interproscan_5.36-75.0_0.sif \
+    interproscan_5.41-78.0_0.sif \
     -h
 
 See :ref:`iprsusage`
@@ -329,12 +329,12 @@ See :ref:`iprsusage`
 
     cd /rsgrps/shaneburgess/amanda/i5k/interproscan
     
-    singularity pull docker://agbase/interproscan:5.36-75.0_0
+    singularity pull docker://agbase/interproscan:5.41-78.0_0
 
     singularity run \
     -B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
-    -B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data \
-    interproscan_5.36-75.0_0.sif \
+    -B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data \
+    interproscan_5.41-78.0_0.sif \
     -i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
@@ -351,9 +351,9 @@ See :ref:`iprsusage`
 
 **-B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data:** mounts my working directory on the host machine into the /data directory in the container the syntax for this is <aboslute path on host machine>:<aboslute path in container>
 
-**-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.36-75.0/data:/opt/interproscan/data:** mounts he InterProScan data directory that was downloaded from the FTP site into the InterProScan data directory in the container
+**-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data:** mounts he InterProScan data directory that was downloaded from the FTP site into the InterProScan data directory in the container
 
-**interproscan_5.36-75.0_0.sif:** name of the image to use
+**interproscan_5.41-78.0_0.sif:** name of the image to use
 
 .. tip::
 
