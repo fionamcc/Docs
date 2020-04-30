@@ -88,9 +88,10 @@ See :ref:`kobasusage`
      - /seq_pep
      - /sqlite3
 
-KOBAS can perform two tasks:
+KOBAS can perform two tasks
 - annotate (-a)
 - identify (enrichment) (-g)
+
 KOBAS can also run both task with a single command (-j).
 
 **Annotate Example Command**
@@ -129,7 +130,7 @@ KOBAS can also run both task with a single command (-j).
 
     All the options supplied after the image name are KOBAS options
 
-**-a:** Tells KOBAS to runt he 'annotate' process.
+**-a:** Tells KOBAS to run the 'annotate' process.
 
 **-i AROS1000.fa:** input file (peptide FASTA)
 
