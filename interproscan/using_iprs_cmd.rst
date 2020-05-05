@@ -44,7 +44,7 @@ These data will be unarchived into this directory structure. They will need to b
 
 **Container Technologies**
 ==========================
-GOanna is provided as a Docker container. 
+Interproscan is provided as a Docker container. 
 
 A container is a standard unit of software that packages up code and all its dependencies so the application runs quickly and reliably from one computing environment to another.
 
@@ -140,7 +140,7 @@ See :ref:`iprsusage`
 
 .. tip::
 
-    All the options supplied after the image name are GOanna options
+    All the options supplied after the image name are Interproscan options
     
 **-i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta:** local path to input FASTA file. You can also use the mounted file path: /data/pnnl_10000.fasta
 
