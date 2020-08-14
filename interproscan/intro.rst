@@ -24,7 +24,7 @@
 **Where to Find InterProScan**
 ==============================
 
-`Docker Hub <https://hub.docker.com/r/agbase/interproscan>`_
+`Docker Hub (5.36-75, 5.41-78 and 5.45-80) <https://hub.docker.com/r/agbase/interproscan>`_
 
 `InterProScan 5.36-75 <https://de.cyverse.org/de/?type=apps&app-id=Interproscan-5.36.75u2&system-id=agave>`_
     
@@ -37,10 +37,10 @@ Partner data are available from the InterProScan FTP site. These data are availa
 
 .. code-block:: none
 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.36-75.0.tar.gz.md5 
-    md5sum -c interproscan-data-5.36-75.0.tar.gz.md
-    tar -pxvzf interproscan-data-5.36-75.0.tar.gz
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.41-78.0/alt/interproscan-data-5.41-78.0.tar.gz 
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.41-78.0/alt/interproscan-data-5.41-78.0.tar.gz.md5 
+    md5sum -c interproscan-data-5.41-78.0.tar.gz.md
+    tar -pxvzf interproscan-data-5.41-78.0.tar.gz
 
 .. admonition:: tar options
 
@@ -65,7 +65,7 @@ These data will be unarchived into this directory structure. They will need to b
 
 .. code-block:: none
 
-    <current_working_directory>/interproscan-5.36-75.0/data
+    <current_working_directory>/interproscan-5.41-78.0/data
 
 .. _iprsusage:
 
