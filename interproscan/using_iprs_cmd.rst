@@ -11,9 +11,9 @@ Partner data are available from the InterProScan FTP site. These data are availa
 
 .. code-block:: none
 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.41-78.0.tar.gz 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.36-75.0/alt/interproscan-data-5.41-78.0.tar.gz.md5 
-    md5sum -c interproscan-data-5.36-75.0.tar.gz.md
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.41-78.0/alt/interproscan-data-5.41-78.0.tar.gz 
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.41-78.0/alt/interproscan-data-5.41-78.0.tar.gz.md5 
+    md5sum -c interproscan-data-5.41-78.0.tar.gz.md
     tar -pxvzf interproscan-data-5.41-78.0.tar.gz
 
 .. admonition:: tar options
@@ -79,13 +79,13 @@ The latest container can be pulled with this command:
 
 .. code-block:: bash
 
-    docker pull agbase/interproscan:5.41-78.0_0
+    docker pull agbase/interproscan:5.41-78.0_1
 
 .. admonition:: Remember
 
     You must have root permissions or use sudo, like so:
 
-    sudo docker pull agbase/interproscan:5.41-78.0_0
+    sudo docker pull agbase/interproscan:5.41-78.0_1
 
 
 
@@ -102,7 +102,7 @@ The latest container can be pulled with this command:
 
 .. code-block:: bash
 
-    sudo docker run --rm -v $(pwd):/work-dir agbase/interproscan:5.41-78.0_0 -h
+    sudo docker run --rm -v $(pwd):/work-dir agbase/interproscan:5.41-78.0_1 -h
 
 See :ref:`iprsusage`
 
@@ -116,11 +116,12 @@ See :ref:`iprsusage`
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
     -i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta \
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data \
-    agbase/interproscan:5.41-78.0_0 \
+    agbase/interproscan:5.41-78.0_1 \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
     -g \
     -p \
+    -c \
     -n Amanda \
     -x 109069 \
     -D AgBase
@@ -136,7 +137,7 @@ See :ref:`iprsusage`
 
 **-v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data:** mounts the InterProScan partner data (downloaded from FTP) on the host machine into the /opt/interproscan/data directory in the container
 
-**agbase/interproscan:5.41-78.0-0:** the name of the Docker image to use
+**agbase/interproscan:5.41-78.0-1:** the name of the Docker image to use
 
 .. tip::
 
@@ -154,11 +155,11 @@ See :ref:`iprsusage`
 **-g:** tells the tool to perform GO annotation 
 
 
-**-p:** tells tool to perform pathway annoation
+**-p:** tells tool to perform pathway annotaion
 
+**-c:** tells tool to perform local compute and not connect to EBI. This only adds a little to the run time but removes error messages from network time out errors
 
 **-n Amanda:** name of biocurator to include in column 15 of GAF output file
-
 
 **-x 109069:** taxon ID of query species to be used in column 13 of GAF output file
 
@@ -273,7 +274,7 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    singularity pull docker://agbase/interproscan:5.41-78.0_0
+    singularity pull docker://agbase/interproscan:5.41-78.0_1
 
     
 **Running InterProScan with Data**
@@ -298,10 +299,10 @@ The container can be pulled with this command:
 
     cd /rsgrps/shaneburgess/amanda/i5k/interproscan
     
-    singularity pull docker://agbase/interproscan:5.41-78.0_0
+    singularity pull docker://agbase/interproscan:5.41-78.0_1
 
     singularity run \
-    interproscan_5.41-78.0_0.sif \
+    interproscan_5.41-78.0_1.sif \
     -h
 
 See :ref:`iprsusage`
@@ -329,17 +330,18 @@ See :ref:`iprsusage`
 
     cd /rsgrps/shaneburgess/amanda/i5k/interproscan
     
-    singularity pull docker://agbase/interproscan:5.41-78.0_0
+    singularity pull docker://agbase/interproscan:5.41-78.0_1
 
     singularity run \
     -B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
     -B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data \
-    interproscan_5.41-78.0_0.sif \
+    interproscan_5.41-78.0_1.sif \
     -i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
     -g \
     -p \
+    -c \
     -n Amanda \
     -x 109069 \
     -D AgBase
@@ -353,7 +355,7 @@ See :ref:`iprsusage`
 
 **-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.41-78.0/data:/opt/interproscan/data:** mounts he InterProScan data directory that was downloaded from the FTP site into the InterProScan data directory in the container
 
-**interproscan_5.41-78.0_0.sif:** name of the image to use
+**interproscan_5.41-78.0_1.sif:** name of the image to use
 
 .. tip::
 
@@ -369,6 +371,9 @@ See :ref:`iprsusage`
 
 
 **-g:** tells the tool to perform GO annotation 
+
+
+**-c:** tells tool to perform local compute and not connect to EBI. This only adds a little to the run time but removes error messages from network time out errors
 
 
 **-p:** tells tool to perform pathway annoation
