@@ -4,7 +4,7 @@
 
 |workflow|
 
-This functional annotation workflow imploys three annotation tools:
+This functional annotation workflow employs three annotation tools:
 
 
 1. **GOanna:** performs a BLAST search and transfers gene ontology (GO) annotations from BLAST matches to the query gene products. 
