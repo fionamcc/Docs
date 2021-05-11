@@ -5,7 +5,7 @@
 
 **Getting the databases**
 ==========================
-To run the tool you need some public data. The files can be downloaded directly from the `KOBAS homepage <kobas.cbi.pku.edu.cn>`_. These directories are also available as two tar archives in the CyVerse Data Store. The files are best downloaded with `iCommands <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html>`_. Once iCommands is `setup <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html#icommands-first-time-configuration>`_ you can use ‘iget’ to download the data.
+To run the tool you need some public data. The files can be downloaded directly from the `KOBAS homepage <http://kobas.cbi.pku.edu.cn/>`_. These directories are also available as two tar archives in the CyVerse Data Store. The files are best downloaded with `iCommands <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html>`_. Once iCommands is `setup <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html#icommands-first-time-configuration>`_ you can use ‘iget’ to download the data.
 
 
 1) seq_pep.tar: species-specific BLAST databases used by KOBAS
