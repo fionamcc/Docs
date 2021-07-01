@@ -16,6 +16,12 @@ This functional annotation workflow employs three annotation tools:
 Results and analysis from the application of this functional annotation workflow to the Official gene set v3.0 protein set from *Diaphorina citri* followed by a differential expression analysis was presented at a seminar in the University of Arizona Animal and Comparative Biomedical Sciences in Fall 2020. The `slides <https://www.slideshare.net/suryasaha/functional-annotation-of-invertebrate-genomes>`_ and `video <https://arizona.zoom.us/rec/play/tZZ-fuutrj43T9fBtASDAaR9W9S0fP6s1XQbrvQOz0e0VnYHYVL1MOMaZ-F4v45qOmXQkV1MUXQ7tufD>`_ are available online.
 
 
+**Citation**
+
+Please cite the following publication if you use annotation results from the workflow
+
+Saha, S., Cooksey, A. M., Childers, A. K., Poelchau, M. F., & Mccarthy, F. M. (2021). Workflows for rapid functional annotation of diverse arthropod genomes. BioRxiv, 2021.06.12.448177. https://doi.org/10.1101/2021.06.12.448177
+
 .. NOTE::
 
     Each of these tools accepts a peptide FASTA file. For those users with nucleotide sequences some documentation has been provided for using **TransDecoder** (although other tools are also acceptable). 
