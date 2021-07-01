@@ -18,8 +18,7 @@ Results and analysis from the application of this functional annotation workflow
 
 **Citation**
 
-Please cite the following publication if you use annotation results from the workflow
-
+Please cite the following preprint if you use annotation results from the workflow
 Saha, S., Cooksey, A. M., Childers, A. K., Poelchau, M. F., & Mccarthy, F. M. (2021). Workflows for rapid functional annotation of diverse arthropod genomes. BioRxiv, 2021.06.12.448177. https://doi.org/10.1101/2021.06.12.448177
 
 .. NOTE::
