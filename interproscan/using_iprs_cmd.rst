@@ -79,13 +79,13 @@ The latest container can be pulled with this command:
 
 .. code-block:: bash
 
-    docker pull agbase/interproscan:5.45-80.0_0
+    docker pull agbase/interproscan:5.45-80.0_1
 
 .. admonition:: Remember
 
     You must have root permissions or use sudo, like so:
 
-    sudo docker pull agbase/interproscan:5.45-80.0_0
+    sudo docker pull agbase/interproscan:5.45-80.0_1
 
 
 
@@ -102,7 +102,7 @@ The latest container can be pulled with this command:
 
 .. code-block:: bash
 
-    sudo docker run --rm -v $(pwd):/work-dir agbase/interproscan:5.45-80.0_0 -h
+    sudo docker run --rm -v $(pwd):/work-dir agbase/interproscan:5.45-80.0_1 -h
 
 See :ref:`iprsusage`
 
@@ -116,7 +116,7 @@ See :ref:`iprsusage`
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
     -i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta \
     -v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.45-80.0/data:/opt/interproscan/data \
-    agbase/interproscan:5.45-80.0_0 \
+    agbase/interproscan:5.45-80.0_1 \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
     -g \
@@ -137,7 +137,7 @@ See :ref:`iprsusage`
 
 **-v /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.45-80.0/data:/opt/interproscan/data:** mounts the InterProScan partner data (downloaded from FTP) on the host machine into the /opt/interproscan/data directory in the container
 
-**agbase/interproscan:5.45-80.0_0:** the name of the Docker image to use
+**agbase/interproscan:5.45-80.0_1:** the name of the Docker image to use
 
 .. tip::
 
@@ -274,7 +274,7 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    singularity pull docker://agbase/interproscan:5.45-80.0_0
+    singularity pull docker://agbase/interproscan:5.45-80.0_1
 
     
 **Running InterProScan with Data**
@@ -299,10 +299,10 @@ The container can be pulled with this command:
 
     cd /rsgrps/shaneburgess/amanda/i5k/interproscan
     
-    singularity pull docker://agbase/interproscan:5.45-80.0_0
+    singularity pull docker://agbase/interproscan:5.45-80.0_1
 
     singularity run \
-    interproscan_5.45-80.0_0.sif \
+    interproscan_5.45-80.0_1.sif \
     -h
 
 See :ref:`iprsusage`
@@ -335,7 +335,7 @@ See :ref:`iprsusage`
     singularity run \
     -B /rsgrps/shaneburgess/amanda/i5k/interproscan:/data \
     -B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.45-80.0/data:/opt/interproscan/data \
-    interproscan_5.45-80.0_0.sif \
+    interproscan_5.45-80.0_1.sif \
     -i /rsgrps/shaneburgess/amanda/i5k/interproscan/pnnl_10000.fasta \
     -d outdir_10000 \
     -f tsv,json,xml,html,gff3,svg \
@@ -355,7 +355,7 @@ See :ref:`iprsusage`
 
 **-B /rsgrps/shaneburgess/amanda/i5k/interproscan/interproscan-5.45-80.0/data:/opt/interproscan/data:** mounts he InterProScan data directory that was downloaded from the FTP site into the InterProScan data directory in the container
 
-**interproscan_5.45-80.0_0.sif:** name of the image to use
+**interproscan_5.45-80.0_1.sif:** name of the image to use
 
 .. tip::
 
