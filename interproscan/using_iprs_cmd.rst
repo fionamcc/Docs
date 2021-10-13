@@ -124,7 +124,8 @@ See :ref:`iprsusage`
     -c \
     -n Amanda \
     -x 109069 \
-    -D AgBase
+    -D AgBase \
+    -l
 
 **Command Explained**
 """"""""""""""""""""""""
@@ -164,6 +165,8 @@ See :ref:`iprsusage`
 **-x 109069:** taxon ID of query species to be used in column 13 of GAF output file
 
 **-D AgBase:** database of query accession to be used in column 1 of GAF output file
+
+**-l:** tells tools to include lookup of corresponding InterPro annotation in the TSV and GFF3 output formats.
 
 
 **Understanding Your Results**
@@ -344,7 +347,8 @@ See :ref:`iprsusage`
     -c \
     -n Amanda \
     -x 109069 \
-    -D AgBase
+    -D AgBase \
+    -l
     
 **Command Explained**
 """"""""""""""""""""""""
@@ -385,6 +389,8 @@ See :ref:`iprsusage`
 **-x 109069:** taxon ID of query species to be used in column 13 of GAF output file
 
 **-D AgBase:** database of query accession to be used in column 1 of GAF output file
+
+**-l:** tells tools to include lookup of corresponding InterPro annotation in the TSV and GFF3 output formats.
 
 **Understanding Your Results**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
