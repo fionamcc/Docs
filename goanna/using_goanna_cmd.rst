@@ -107,7 +107,9 @@ GOanna has three required parameters:
     -s 900 \
     -d RefSeq \
     -u "Amanda Cooksey" \
-    -x 37344
+    -x 37344 \
+    -k 9 \
+    -q 70
 
 **Command Explained**
 """"""""""""""""""""""""
@@ -145,6 +147,10 @@ GOanna has three required parameters:
 **-u "Amanda Cooksey":** name to appear in column 15 of the GAF output file
 
 **-x 37344:** NCBI taxon ID of input file species will appear in column 13 of the GAF output file
+
+**-k 9:** tells GOanna to keep only those matches with a maximum number of 9 gap openings
+
+**-q 70:** tells GOanna to keep only those matches with query coverage of 70 per subject
 
 **Understanding Your Results**
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -288,7 +294,9 @@ GOanna has three required parameters:
     -d RefSeq \
     -u "Amanda Cooksey" \
     -x 37344 \
-    -t 28
+    -t 28 \
+    -q 70 \
+    -k 9
 
 **Command Explained**
 """"""""""""""""""""""""
@@ -326,6 +334,10 @@ GOanna has three required parameters:
 **-x 37344:** NCBI taxon ID of input file species will appear in column 13 of the GAF output file
 
 **-t 28:** number of threads to use for BLAST. This was run on a node with 28 cores.
+
+**-k 9:** tells GOanna to keep only those matches with a maximum number of 9 gap openings
+
+**-q 70:** tells GOanna to keep only those matches with query coverage of 70 per subject
 
 
 **Understanding Your Results**
