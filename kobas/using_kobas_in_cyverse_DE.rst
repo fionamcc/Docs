@@ -71,7 +71,8 @@ Enabling this flag will copy all the input files into the analysis result folder
 
 .. NOTE:: 
 
-    If you don't know the code for your species it can be found here: https://www.kegg.jp/kegg/catalog/org_list.html
+    If you don't know the code for your species it can be found here: https://www.kegg.jp/kegg/catalog/org_list.html 
+    **Not all KEGG species are available through KOBAS.**
 
     If your species of interest is not available then you should choose the code for the closest-related species available
 
