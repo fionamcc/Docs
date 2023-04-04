@@ -213,7 +213,7 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    singularity pull docker://agbase/goanna:20
+    singularity pull docker://agbase/goanna:2.0
 
     
 **Running GOanna with Data**
