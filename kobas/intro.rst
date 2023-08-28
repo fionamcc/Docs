@@ -19,44 +19,51 @@ KOBAS is provided as a Docker container for use on the command line and as a gro
 
 - `Docker Hub <https://hub.docker.com/r/agbase/kobas>`_
 
-- `KOBAS annotate 3.0.3 <https://de.cyverse.org/de/?type=apps&app-id=070f519e-983f-11e9-b659-008cfa5ae621&system-id=de>`_
+- `KOBAS annotate 3.0.3 <https://de.cyverse.org/apps/de/70cdfb64-e83a-11ec-9ecf-008cfa5ae621>`_
 
-- `KOBAS identify 3.0.3 <https://de.cyverse.org/de/?type=apps&app-id=9e0a429c-dee0-11e9-948a-008cfa5ae621&system-id=de>`_
+- `KOBAS identify 3.0.3 <https://de.cyverse.org/apps/de/7c7c242c-e83a-11ec-9ecf-008cfa5ae621>`_
 
-- `KOBAS annotate and identify 3.0.3 <https://de.cyverse.org/de/?type=apps&app-id=2959dcb4-d0d0-11e9-9f25-008cfa5ae621&system-id=de>`_
+- `KOBAS annotate and identify 3.0.3 <https://de.cyverse.org/apps/de/77330af8-e83a-11ec-9ecf-008cfa5ae621>`_
+
+- `KOBAS annotate and summarize  <https://de.cyverse.org/apps/de/71cb43ba-cd8a-11ed-90f2-008cfa5ae621>`_
+
+- `KOBAS summary <https://de.cyverse.org/apps/de/2a0d0e7c-c417-11ed-b4a3-008cfa5ae621>`_
 
 .. NOTE::
 
-    Each of these tools accepts a peptide FASTA file. For those users with nucloetide sequences some documentation has been provided for using **TransDecoder** (although other tools are also acceptable). 
-    The `TransDecoder app <https://de.cyverse.org/de/?type=apps&app-id=74828a18-f351-11e8-be2b-008cfa5ae621&system-id=de>`_ is available through CyVerse or as a `BioContainer <https://quay.io/repository/biocontainers/transdecoder?tab=tags>`_ for use on the command line.
+    Each of these tools accepts a protein FASTA file. For those users with nucloetide sequences some documentation has been provided for using **TransDecoder** (although other tools are also acceptable). 
+    The `TransDecoder app <https://de.cyverse.org/apps/de/74828a18-f351-11e8-be2b-008cfa5ae621>`_ is available through CyVerse or as a `BioContainer <https://quay.io/repository/biocontainers/transdecoder?tab=tags>`_ for use on the command line.
 
 **Getting the KOBAS Databases**
 ===============================
-To run the tool you need some public data. The files can be downloaded directly from the `KOBAS homepage <kobas.cbi.pku.edu.cn>`_. These directories are also available as two tar archives in the CyVerse Data Store. The files are best downloaded with `iCommands <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html>`_. Once iCommands is `setup <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html#icommands-first-time-configuration>`_ you can use ‘iget’ to download the data.
+
+.. IMPORTANT::
+
+    **As of version 3.0.3_3 you no longer need to download the seq_pep and sqlite3 databases** before you run KOBAS on the command line.
+
+    **If you would like to download them** they are still available in the CyVerse Data Store. The CyVerse files can be downloaded with wget, curl or `iCommands <https://cyverse-data-store-guide.readthedocs-hosted.com/en/latest/step2.html>`_.
 
 
-1) seq_pep.tar: species-specific BLAST databases used by KOBAS
+    With wget (copy the **public link** from the three dots menu to the right of the file name in the Discovery Environment):
 
-.. code-block:: bash
+    .. code-block:: bash
 
-    iget /iplant/home/shared/iplantcollaborative/protein_blast_dbs/kobas/seq_pep.tar
-    
-    tar -xf seq_pep.tar
+        wget https://data.cyverse.org/dav-anon/iplant/projects/iplantcollaborative/protein_blast_dbs/kobas/sqlite3.tar
 
+    **Or** with curl (copy the **public link** from the three dots menu to the right of the file name in the Discovery Environment):
 
-2) sqlite3.tar: species-specific annotation databases used by KOBAS
+    .. code-block:: bash
 
-.. code-block:: bash
+        curl -o sqlite3.tar https://data.cyverse.org/dav-anon/iplant/projects/iplantcollaborative/protein_blast_dbs/kobas/sqlite3.tar
 
-    iget /iplant/home/shared/iplantcollaborative/protein_blast_dbs/kobas/sqlite3.tar
-    
-    tar -xf sqlite3.tar
+    **Or** with iCommnads copy the file **path** from the three dots menu to the right of then file name in the Discovery Environment
 
-.. NOTE::
+    .. code-block:: bash
 
-    The above commands should result in two directories (seq_pep and sqlite3) each containing many files. There is no need to unzip the .gz files.
+        iget /iplant/home/shared/iplantcollaborative/protein_blast_dbs/kobas/sqlite3.tar
 
-.. _kobasusage:
+    Once you have the tar files you can extract all the contents or only those you wish using tar. There is no need to unzip the .gz files before you run the tool.
+
 
 **Help and Usage Statement**
 ============================
@@ -64,7 +71,6 @@ On the command line the following help statement can be displayed with the optio
 
 .. code-block:: none
 
-    
     Options:
     [-h prints this help statement]
 
