@@ -51,13 +51,13 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    docker pull agbase/goanna:2.0
+    docker pull agbase/goanna:2.3
 
 .. admonition:: Remember
 
     You must have root permissions or use sudo, like so:
 
-    sudo docker pull agbase/goanna:2.0
+    sudo docker pull agbase/goanna:2.3
 
 
 **Running GOanna with Data**
@@ -68,7 +68,7 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    sudo docker run --rm -v $(pwd):/work-dir agbase/goanna:2.0 -h
+    sudo docker run --rm -v $(pwd):/work-dir agbase/goanna:2.3 -h
 
 See :ref:`goannausage`
 
@@ -95,10 +95,10 @@ GOanna has three required parameters:
 
     sudo docker run \
     --rm \
-    -v /home/amcooksey/i5k/agbase_database:/agbase_database \
-    -v /home/amcooksey/i5k/go_info:/go_info \
+    -v /location/of/agbase_database:/agbase_database \
+    -v /location/of/go_info:/go_info \
     -v $(pwd):/work-dir \
-    agbase/goanna:2.0 \
+    agbase/goanna:2.3 \
     -a invertebrates \
     -c AROS_10.faa \
     -o AROS_10_invert_exponly \
@@ -118,13 +118,13 @@ GOanna has three required parameters:
 
 **--rm:** removes the container when the analysis has finished. The image will remain for future use.
 
-**-v /home/amcooksey/i5k/agbase_database:/agbase_database:** tells docker to mount the 'agbase_database' directory I downloaded to the host machine to the '/agbase_database' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
+**-v /location/of/agbase_database:/agbase_database:** tells docker to mount the 'agbase_database' directory you downloaded to the host machine to the '/agbase_database' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
 
-**-v /home/amcooksey/i5k/go_info:/go_info:** mounts 'go_info' directory on host machine into 'go_info' directory inside the container
+**-v /locaiton/of/go_info:/go_info:** mounts 'go_info' directory on host machine into 'go_info' directory inside the container
 
 **-v $(pwd):/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
 
-**agbase/goanna:2.0:** the name of the Docker image to use
+**agbase/goanna:2.3:** the name of the Docker image to use
 
 .. tip::
 
@@ -213,7 +213,7 @@ The container can be pulled with this command:
 
 .. code-block:: bash
 
-    singularity pull docker://agbase/goanna:2.0
+    singularity pull docker://agbase/goanna:2.3
 
     
 **Running GOanna with Data**
@@ -235,9 +235,9 @@ The container can be pulled with this command:
     
     module load singularity
     
-    cd /rsgrps/shaneburgess/amanda/i5k/GOanna
+    cd /where/to/save/singularity/image
     
-    singularity pull docker://agbase/goanna:2.0
+    singularity pull docker://agbase/goanna:2.3
     
     singularity run \
     goanna_2.0.sif \
@@ -276,15 +276,15 @@ GOanna has three required parameters:
     
     module load singularity
     
-    cd /rsgrps/shaneburgess/amanda/i5k/GOanna
+    cd /where/to/save/singularity/image
     
-    singularity pull docker://agbase/goanna:2.0
+    singularity pull docker://agbase/goanna:2.3
     
     singularity run \
-    -B /rsgrps/shaneburgess/amanda/i5k/agbase_database:/agbase_database \
-    -B /rsgrps/shaneburgess/amanda/i5k/go_info:/go_info \
-    -B /rsgrps/shaneburgess/amanda/i5k/goanna:/work-dir \
-    goanna_2.0.sif \
+    -B /location/of/agbase_database:/agbase_database \
+    -B /location/of/go_info:/go_info \
+    -B /directory/where/you/will/work:/work-dir \
+    goanna_2.3.sif \
     -a invertebrates \
     -c AROS_10.faa \
     -o AROS_10_invert_exponly \
@@ -303,13 +303,13 @@ GOanna has three required parameters:
 
 **singularity run:** tells Singularity to run
 
-**-B /rsgrps/shaneburgess/amanda/i5k/agbase_database:/agbase_database:** tells docker to mount the 'agbase_database' directory I downloaded to the host machine to the '/agbase_database' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
+**-B /location/of/agbase_database:/agbase_database:** tells docker to mount the 'agbase_database' directory I downloaded to the host machine to the '/agbase_database' directory within the container. The syntax for this is: <absolute path on host>:<absolute path in container>
 
-**-B /rsgrps/shaneburgess/amanda/i5k/go_info:/go_info:** mounts 'go_info' directory on host machine into 'go_info' directory inside the container
+**-B /location/of/go_info:/go_info:** mounts 'go_info' directory on host machine into 'go_info' directory inside the container
 
-**-B /rsgrps/shaneburgess/amanda/i5k/goanna:/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
+**-B /directory/where/you/will/work:/work-dir:** mounts my current working directory on the host machine to '/work-dir' in the container
 
-**goanna_2.0.sif:** the name of the Singularity image file to use
+**goanna_2.3.sif:** the name of the Singularity image file to use
 
 .. tip::
 
