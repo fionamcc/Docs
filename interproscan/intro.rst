@@ -28,23 +28,21 @@ Results and analysis from the application of InterProScan annotation to the Offi
 **Where to Find InterProScan**
 ==============================
 
-`Docker Hub (5.36-75, 5.41-78 and 5.45-80) <https://hub.docker.com/r/agbase/interproscan>`_
+`Docker Hub (5.63-95) <https://hub.docker.com/r/agbase/interproscan>`_
 
-`InterProScan 5.36-75 <https://de.cyverse.org/de/?type=apps&app-id=Interproscan-5.36.75u2&system-id=agave>`_
+`CyVerse (5.36-75) <https://de.cyverse.org/de/?type=apps&app-id=Interproscan-5.36.75u2&system-id=agave>`_
     
 
 **Getting the InterProScan Data** 
 =================================
-Partner data are available from the InterProScan FTP site. These data are available as two separate downloads and can be obtained following these instructions:
+**InterProScan Data (now includes Panther)**
 
-**1. Partner Data excluding Panther**
+.. code-block:: bash
 
-.. code-block:: none
-
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.41-78.0/alt/interproscan-data-5.41-78.0.tar.gz 
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.41-78.0/alt/interproscan-data-5.41-78.0.tar.gz.md5 
-    md5sum -c interproscan-data-5.41-78.0.tar.gz.md
-    tar -pxvzf interproscan-data-5.41-78.0.tar.gz
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.63-95.0/alt/interproscan-data-5.63-95.0.tar.gz 
+    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.63-95.0/alt/interproscan-data-5.63-95.0.tar.gz.md5 
+    md5sum -c interproscan-data-5.63-95.0.tar.gz.md
+    tar -pxvzf interproscan-data-5.63-795.0.tar.gz
 
 .. admonition:: tar options
 
@@ -54,22 +52,6 @@ Partner data are available from the InterProScan FTP site. These data are availa
    - z = filter the archive through gzip
    - f = use archive file
 
-**2. Getting the Panther data**
-
-.. code-block:: none
-
-    cd interproscan-5.36-75.0/data
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/data/panther-data-14.1.tar.gz
-    wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/data/panther-data-14.1.tar.gz.md5 
-    md5sum -c panther-data-14.1.tar.gz.md5
-    tar -pxvzf panther-data-14.1.tar.gz
-
-
-These data will be unarchived into this directory structure. They will need to be mounted to the container at run time.
-
-.. code-block:: none
-
-    <current_working_directory>/interproscan-5.41-78.0/data
 
 .. _iprsusage:
 
@@ -78,7 +60,7 @@ These data will be unarchived into this directory structure. They will need to b
 
 .. _iprsusage:
 
-.. code-block:: none
+.. code-block:: bash
 
     Options:
  -a  <ANALYSES>                             Optional, comma separated list of analyses.  If this option
@@ -152,23 +134,24 @@ These data will be unarchived into this directory structure. They will need to b
 
  -R                                          Optional. Clusterrunid (crid) required when using cluster mode.
                                             -R unique_id
- Available analyses:
-                      TIGRFAM (XX.X) : TIGRFAMs are protein families based on Hidden Markov Models or HMMs
-                         SFLD (X.X) : SFLDs are protein families based on Hidden Markov Models or HMMs
-                        ProDom (XXXX.X) : ProDom is a comprehensive set of protein domain families automatically generated from the UniProt Knowledge Database.
-                        Hamap (XXXXXX.XX) : High-quality Automated and Manual Annotation of Microbial Proteomes
-                        SMART (X.X) : SMART allows the identification and analysis of domain architectures based on Hidden Markov Models or HMMs
-                          CDD (X.XX) : Prediction of CDD domains in Proteins
-              ProSiteProfiles (XX.XXX) : PROSITE consists of documentation entries describing protein domains, families and functional sites as well as associated patterns and profiles to identify them
-              ProSitePatterns (XX.XXX) : PROSITE consists of documentation entries describing protein domains, families and functional sites as well as associated patterns and profiles to identify them
-                  SUPERFAMILY (X.XX) : SUPERFAMILY is a database of structural and functional annotation for all proteins and genomes.
-                       PRINTS (XX.X) : A fingerprint is a group of conserved motifs used to characterise a protein family
-                      PANTHER (X.X) : The PANTHER (Protein ANalysis THrough Evolutionary Relationships) Classification System is a unique resource that classifies genes by their functions, using published scientific experimental evidence and evolutionary relationships to predict fu$
-                       Gene3D (X.X.X) : Structural assignment for whole genes and genomes using the CATH domain structure database
-                        PIRSF (X.XX) : The PIRSF concept is being used as a guiding principle to provide comprehensive and non-overlapping clustering of UniProtKB sequences into a hierarchical order to reflect their evolutionary relationships.
-                         Pfam (XX.X) : A large collection of protein families, each represented by multiple sequence alignments and hidden Markov models (HMMs)
-                        Coils (X.X) : Prediction of Coiled Coil Regions in Proteins
-                   MobiDBLite (X.X) : Prediction of disordered domains Regions in Proteins
+
+
+Available InterProScan analyses:
+
+- CDD
+- COILS
+- Gene3D
+- HAMAP
+- MOBIDB
+- PANTHER
+- Pfam
+- PIRSF
+- PRINTS
+- PROSITE (Profiles and Patterns)
+- SFLD
+- SMART (unlicensed components only by default - this analysis has simplified post-processing that includes an E-value filter, however you should not expect it to give the same match output as the fully licensed version of SMART)
+- SUPERFAMILY
+- NCBIFAM (includes the previous TIGRFAM analysis)
 
  OPTIONS FOR XML PARSER OUTPUTS
 
