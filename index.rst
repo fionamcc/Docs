@@ -48,7 +48,6 @@ agbase@email.arizona.edu
    goanna/intro
    goanna/using_goanna_in_cyverse_DE
    goanna/using_goanna_cmd
-   goanna/using_goanna_ceres
 
 .. toctree::
    :maxdepth: 1
@@ -57,7 +56,6 @@ agbase@email.arizona.edu
    interproscan/intro
    interproscan/using_iprs_in_cyverse_DE
    interproscan/using_iprs_cmd
-   interproscan/using_iprs_ceres
 
 .. toctree::
    :maxdepth: 1
@@ -66,7 +64,6 @@ agbase@email.arizona.edu
    combine_gafs/intro
    combine_gafs/combine_gafs_cyverse
    combine_gafs/combine_gafs_cmd
-   combine_gafs/combine_gafs_ceres
 
 .. toctree::
    :maxdepth: 1
@@ -75,4 +72,3 @@ agbase@email.arizona.edu
    kobas/intro
    kobas/using_kobas_in_cyverse_DE
    kobas/using_kobas_cmd
-   kobas/using_kobas_ceres

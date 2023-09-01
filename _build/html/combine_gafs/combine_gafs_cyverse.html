@@ -1,103 +1,70 @@
-
-
 <!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<html class="writer-html5" lang="en" >
 <head>
-  <meta charset="utf-8">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Combine GAFs on CyVerse &mdash; AgBase 1.0 documentation</title>
+      <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
   
-
-  
-  
-
-  
-
-  
-  
-    
-
-  
-
-  
-  
-    <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
-  
-
-  
-
-  
-    <link rel="top" title="AgBase 1.0 documentation" href="../index.html"/>
-        <link rel="next" title="Combine GAFs on the Command Line" href="combine_gafs_cmd.html"/>
-        <link rel="prev" title="InterProScan on the Command Line" href="../interproscan/using_iprs_cmd.html"/> 
-
-  
-  <script src="../_static/js/modernizr.min.js"></script>
-
+        <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Combine GAFs on the Command Line" href="combine_gafs_cmd.html" />
+    <link rel="prev" title="Intro" href="intro.html" /> 
 </head>
 
-<body class="wy-body-for-nav" role="document">
-
+<body class="wy-body-for-nav"> 
   <div class="wy-grid-for-nav">
-
-    
     <nav data-toggle="wy-nav-shift" class="wy-nav-side">
       <div class="wy-side-scroll">
-        <div class="wy-side-nav-search">
-          
+        <div class="wy-side-nav-search" >
 
           
-            <a href="../index.html" class="icon icon-home"> AgBase
           
-
-          
+          <a href="../index.html" class="icon icon-home">
+            AgBase
           </a>
-
-          
-            
-            
               <div class="version">
                 1.0
               </div>
-            
-          
-
-          
 <div role="search">
   <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
     <input type="hidden" name="check_keywords" value="yes" />
     <input type="hidden" name="area" value="default" />
   </form>
 </div>
-
-          
-        </div>
-
-        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-          
-            
-            
-                <p class="caption"><span class="caption-text">Agbase Home</span></p>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Agbase Home</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../agbase/workflow.html"><strong>Functional Annotation Workflow</strong></a></li>
 </ul>
-<p class="caption"><span class="caption-text">GOanna</span></p>
+<p class="caption" role="heading"><span class="caption-text">GOanna</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../goanna/intro.html"><strong>Intro</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_in_cyverse_DE.html"><strong>GOanna on CyVerse</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_cmd.html"><strong>GOanna on the Command Line</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../goanna/using_goanna_ceres.html"><strong>GOanna on the ARS Ceres HPC</strong></a></li>
 </ul>
-<p class="caption"><span class="caption-text">InterProScan</span></p>
+<p class="caption" role="heading"><span class="caption-text">InterProScan</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../interproscan/intro.html"><strong>Intro</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interproscan/using_iprs_in_cyverse_DE.html"><strong>InterProScan on CyVerse</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../interproscan/using_iprs_cmd.html"><strong>InterProScan on the Command Line</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../interproscan/using_iprs_ceres.html"><strong>InterProScan on the ARS Ceres HPC</strong></a></li>
 </ul>
-<p class="caption"><span class="caption-text">Combine GAFs</span></p>
+<p class="caption" role="heading"><span class="caption-text">Combine GAFs</span></p>
 <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="intro.html"><strong>Intro</strong></a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#"><strong>Combine GAFs on CyVerse</strong></a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#accessing-goanna-in-the-discovery-environment"><strong>Accessing GOanna in the Discovery Environment</strong></a><ul>
 <li class="toctree-l3"><a class="reference internal" href="#using-the-combine-gafs-app"><strong>Using the Combine_GAFs App</strong></a><ul>
@@ -110,174 +77,121 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="combine_gafs_cmd.html">Combine GAFs on the Command Line</a></li>
+<li class="toctree-l1"><a class="reference internal" href="combine_gafs_cmd.html"><strong>Combine GAFs on the Command Line</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="combine_gafs_ceres.html"><strong>Combine GAFs on the ARS Ceres HPC</strong></a></li>
 </ul>
-<p class="caption"><span class="caption-text">KOBAS</span></p>
+<p class="caption" role="heading"><span class="caption-text">KOBAS</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../kobas/intro.html"><strong>Intro</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_in_cyverse_DE.html"><strong>KOBAS on CyVerse</strong></a></li>
 <li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_cmd.html"><strong>KOBAS on the Command Line</strong></a></li>
+<li class="toctree-l1"><a class="reference internal" href="../kobas/using_kobas_ceres.html"><strong>KOBAS on the ARS Ceres HPC</strong></a></li>
 </ul>
 
-            
-          
         </div>
       </div>
     </nav>
 
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../index.html">AgBase</a>
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">AgBase</a>
       </nav>
 
-
-      
       <div class="wy-nav-content">
         <div class="rst-content">
-          
-
- 
-
-
-
-<div role="navigation" aria-label="breadcrumbs navigation">
+          <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../index.html">Docs</a> &raquo;</li>
-      
-    <li><strong>Combine GAFs on CyVerse</strong></li>
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active"><strong>Combine GAFs on CyVerse</strong></li>
       <li class="wy-breadcrumbs-aside">
-        
-          
-            <a href="../_sources/combine_gafs/combine_gafs_cyverse.txt" rel="nofollow"> View page source</a>
-          
-        
+            <a href="../_sources/combine_gafs/combine_gafs_cyverse.rst.txt" rel="nofollow"> View page source</a>
       </li>
   </ul>
   <hr/>
 </div>
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
            <div itemprop="articleBody">
-            
-  <div class="section" id="combine-gafs-on-cyverse">
-<h1><strong>Combine GAFs on CyVerse</strong><a class="headerlink" href="#combine-gafs-on-cyverse" title="Permalink to this headline">¶</a></h1>
-<div class="section" id="accessing-goanna-in-the-discovery-environment">
-<h2><strong>Accessing GOanna in the Discovery Environment</strong><a class="headerlink" href="#accessing-goanna-in-the-discovery-environment" title="Permalink to this headline">¶</a></h2>
+             
+  <section id="combine-gafs-on-cyverse">
+<h1><strong>Combine GAFs on CyVerse</strong><a class="headerlink" href="#combine-gafs-on-cyverse" title="Permalink to this headline"></a></h1>
+<section id="accessing-goanna-in-the-discovery-environment">
+<h2><strong>Accessing GOanna in the Discovery Environment</strong><a class="headerlink" href="#accessing-goanna-in-the-discovery-environment" title="Permalink to this headline"></a></h2>
 <ol class="arabic simple">
-<li><a class="reference external" href="user.cyverse.org">Create an account on CyVerse</a> (free)</li>
-<li>Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.</li>
-<li>If you are new to the Discovery Environment (DE) the user guide can be found <a class="reference external" href="https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/">here</a>.</li>
-<li>Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.</li>
-<li>To access the <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=d8219400-7b47-11e9-a097-008cfa5ae621&amp;system-id=de">combine_GAFs 1.0</a> app click on the ‘Apps’ button at the left side of the DE.</li>
-<li>Search for &#8216;combine&#8221; in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The combine_GAFs app is called ‘combine_GAFs 1.0’; click on the name to open the app.</li>
+<li><p><a class="reference external" href="user.cyverse.org">Create an account on CyVerse</a> (free)</p></li>
+<li><p>Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.</p></li>
+<li><p>If you are new to the Discovery Environment (DE) the user guide can be found <a class="reference external" href="https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/">here</a>.</p></li>
+<li><p>Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.</p></li>
+<li><p>To access the <a class="reference external" href="https://de.cyverse.org/de/?type=apps&amp;app-id=d8219400-7b47-11e9-a097-008cfa5ae621&amp;system-id=de">combine_GAFs 1.0</a> app click on the ‘Apps’ button at the left side of the DE.</p></li>
+<li><p>Search for ‘combine” in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The combine_GAFs app is called ‘combine_GAFs 1.0’; click on the name to open the app.</p></li>
 </ol>
 <p><a class="reference internal" href="../_images/find_combine_gafs.png"><img alt="find_combine_gafs" src="../_images/find_combine_gafs.png" style="width: 700px;" /></a></p>
 <div class="admonition-find-apps-easily-with-communities admonition">
-<p class="first admonition-title">Find Apps Easily with &#8216;Communities&#8217;</p>
-<p>The GOanna 2.0 app belongs to the &#8216;i5k&#8217; and &#8216;AgBase&#8217; communties. You can join either of these communities and they will appear in the left-hand pane of your &#8216;Apps&#8217; window (see above).</p>
-<p class="last">To join a community click on the person icon in the top-right corner of the Discovery Environment window and select &#8216;Communities&#8217;. In the &#8216;Communities&#8217; window choose &#8216;all communities&#8217; from the drop-down list. A list of communities will appear in the main pane of this window. Select the one you wish to join by clicking on it and then clicking on the &#8216;join&#8217; button.</p>
+<p class="admonition-title">Find Apps Easily with ‘Communities’</p>
+<p>The GOanna 2.0 app belongs to the ‘i5k’ and ‘AgBase’ communties. You can join either of these communities and they will appear in the left-hand pane of your ‘Apps’ window (see above).</p>
+<p>To join a community click on the person icon in the top-right corner of the Discovery Environment window and select ‘Communities’. In the ‘Communities’ window choose ‘all communities’ from the drop-down list. A list of communities will appear in the main pane of this window. Select the one you wish to join by clicking on it and then clicking on the ‘join’ button.</p>
 </div>
-<div class="section" id="using-the-combine-gafs-app">
-<h3><strong>Using the Combine_GAFs App</strong><a class="headerlink" href="#using-the-combine-gafs-app" title="Permalink to this headline">¶</a></h3>
-<div class="section" id="launching-the-app">
-<h4><strong>Launching the App</strong><a class="headerlink" href="#launching-the-app" title="Permalink to this headline">¶</a></h4>
+<section id="using-the-combine-gafs-app">
+<h3><strong>Using the Combine_GAFs App</strong><a class="headerlink" href="#using-the-combine-gafs-app" title="Permalink to this headline"></a></h3>
+<section id="launching-the-app">
+<h4><strong>Launching the App</strong><a class="headerlink" href="#launching-the-app" title="Permalink to this headline"></a></h4>
 <p><a class="reference internal" href="../_images/combine_gafs.png"><img alt="combine_gafs" src="../_images/combine_gafs.png" style="width: 700px;" /></a></p>
 <p><strong>Analysis Name: Combine_GAFs_1.0_analysis1:</strong>
 This menu is used to name the job you will run so that you can find it later.
-Analysis Name: The default name is &#8220;Combine_GAFs_1.0_analysis1&#8221;. We recommend changing the &#8216;analysis1&#8217; portion of this to reflect the data you are running.</p>
+Analysis Name: The default name is “Combine_GAFs_1.0_analysis1”. We recommend changing the ‘analysis1’ portion of this to reflect the data you are running.</p>
 <p><strong>Comments:</strong>
 (Optional) You can add additional information in the comments section to distinguish your analyses further.</p>
 <p><strong>Select output folder:</strong>
-This is where your results will be placed. The default (recommended) is your &#8216;analyses&#8217; folder.</p>
+This is where your results will be placed. The default (recommended) is your ‘analyses’ folder.</p>
 <p><strong>Retain Inputs:</strong>
 Enabling this flag will copy all the input files into the analysis result folder.</p>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last">Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
+<p class="admonition-title">Warning</p>
+<p>Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.</p>
 </div>
-</div>
-<div class="section" id="input">
-<h4><strong>Input</strong><a class="headerlink" href="#input" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="input">
+<h4><strong>Input</strong><a class="headerlink" href="#input" title="Permalink to this headline"></a></h4>
 <p><strong>GOanna GAF Output File:</strong> This is the GAF file generated by a GOanna analysis.</p>
 <p><strong>InterProScan XML Parser GAF Output File:</strong> This is the GAF output file generated by an InterProScan XML Parser analysis. InterProScan itself does not produce this file, though some IntperProScan apps include this analysis. If it is missing from your InterProScan output you can generate it using the InterProScan XML Parser app.</p>
-</div>
-<div class="section" id="output">
-<h4><strong>Output</strong><a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="output">
+<h4><strong>Output</strong><a class="headerlink" href="#output" title="Permalink to this headline"></a></h4>
 <p><strong>Output File Basename:</strong> This will be the prefix for your output file (a .tsv extension will be added).</p>
-<p>If your analysis fails please check the &#8216;condor_stderr&#8217; file in the analysis output &#8216;logs&#8217; folder. If that doesn&#8217;t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
-</div>
-</div>
-</div>
-</div>
+<p>If your analysis fails please check the ‘condor_stderr’ file in the analysis output ‘logs’ folder. If that doesn’t clarify the problem contact us at <a class="reference external" href="mailto:agbase&#37;&#52;&#48;email&#46;arizona&#46;edu">agbase<span>&#64;</span>email<span>&#46;</span>arizona<span>&#46;</span>edu</a> or <a class="reference external" href="mailto:support&#37;&#52;&#48;cyverse&#46;org">support<span>&#64;</span>cyverse<span>&#46;</span>org</a>.</p>
+</section>
+</section>
+</section>
+</section>
 
 
            </div>
           </div>
-          <footer>
-  
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="combine_gafs_cmd.html" class="btn btn-neutral float-right" title="Combine GAFs on the Command Line" accesskey="n">Next <span class="fa fa-arrow-circle-right"></span></a>
-      
-      
-        <a href="../interproscan/using_iprs_cmd.html" class="btn btn-neutral" title="InterProScan on the Command Line" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
-      
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="intro.html" class="btn btn-neutral float-left" title="Intro" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="combine_gafs_cmd.html" class="btn btn-neutral float-right" title="Combine GAFs on the Command Line" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
-  
 
   <hr/>
 
   <div role="contentinfo">
-    <p>
-        &copy; Copyright 2019, Fiona M. McCarthy.
-
-    </p>
+    <p>&#169; Copyright 2019, Fiona M. McCarthy.</p>
   </div>
-  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
 
 </footer>
-
         </div>
       </div>
-
     </section>
-
   </div>
-  
-
-
-  
-
-    <script type="text/javascript">
-        var DOCUMENTATION_OPTIONS = {
-            URL_ROOT:'../',
-            VERSION:'1.0',
-            COLLAPSE_INDEX:false,
-            FILE_SUFFIX:'.html',
-            HAS_SOURCE:  true
-        };
-    </script>
-      <script type="text/javascript" src="../_static/jquery.js"></script>
-      <script type="text/javascript" src="../_static/underscore.js"></script>
-      <script type="text/javascript" src="../_static/doctools.js"></script>
-
-  
-
-  
-  
-    <script type="text/javascript" src="../_static/js/theme.js"></script>
-  
-
-  
-  
-  <script type="text/javascript">
+  <script>
       jQuery(function () {
-          SphinxRtdTheme.StickyNav.enable();
+          SphinxRtdTheme.Navigation.enable(true);
       });
-  </script>
-   
+  </script> 
 
 </body>
 </html>
