@@ -5,21 +5,17 @@
 **Accessing GOanna in the Discovery Environment**
 =================================================
 
-1. `Create an account on CyVerse <user.cyverse.org>`_ (free)
+1. `Create an account on CyVerse <user.cyverse.org>`_ (free). The user guide can be found `here <https://learning.cyverse.org/>`_.
 2. Open the CyVerse Discovery Environment (DE) and login with your CyVerse credentials.
-3. If you are new to the Discovery Environment (DE) the user guide can be found `here <https://learning.cyverse.org/projects/discovery-environment-guide/en/latest/>`_.
+3. Click on the ‘Data’ tab at the left side of the screen to access your files/folders. Upload your data to the DE.
+4. There are several ways to access the GOanna app:
 
-4. Click on the ‘Data’ button at the left side of the screen to access your files/folders. Upload your data to the DE.
-5. To access the `GOanna 2.0 <https://de.cyverse.org/de/?type=apps&app-id=354731ae-71ab-11e9-b82a-008cfa5ae621&system-id=de>`_ app click on the ‘Apps’ button at the left side of the DE. 
-6. Search for 'GOanna" in the search bar at the top of the ‘apps’ window (see below). The contents of the folder will appear in the main pane of the window. The GOanna app is called ‘GOanna 2.0’; click on the name to open the app.
+- Use the `direct link <https://de.cyverse.org/apps/de/f707a7a4-4c3c-11ee-bba8-008cfa5ae621>`_.
+- Search for 'GOanna" in the search bar at the top of the ‘apps’ tab.
+- Follow the AgBase collection (collections tab on left side of DE)
+
 
 |find_goanna|
-
-.. admonition:: Find Apps Easily with 'Communities'
-
-    The GOanna 2.0 app belongs to the 'i5k' and 'AgBase' communties. You can join either of these communities and they will appear in the left-hand pane of your 'Apps' window (see above). 
-
-    To join a community click on the person icon in the top-right corner of the Discovery Environment window and select 'Communities'. In the 'Communities' window choose 'all communities' from the drop-down list. A list of communities will appear in the main pane of this window. Select the one you wish to join by clicking on it and then clicking on the 'join' button.
 
 **Using the GOanna App**
 ========================
@@ -28,9 +24,14 @@
 
 |goanna|
 
-**Analysis Name:GOanna_2.0_analysis1:**
+**Step 1. Analysis Info**
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+**Version:** All of the versions of the GOanna are now available in one place. Plese select the you want from the drop down box. The latest version is best unless you need reproduce a previous analysis.
+
+**Analysis Name:GOanna_analysis1:**
 This menu is used to name the job you will run so that you can find it later.
-Analysis Name: The default name is "GOanna_2.0_analysis1". We recommend changing the 'analysis1' portion of this to reflect the data you are running.
+The default name is "GOanna_analysis1". We recommend changing the 'analysis1' portion of this to reflect the data you are running.
 
 **Comments:**
 (Optional) You can add additional information in the comments section to distinguish your analyses further.
@@ -38,64 +39,64 @@ Analysis Name: The default name is "GOanna_2.0_analysis1". We recommend changing
 **Select output folder:**
 This is where your results will be placed. The default (recommended) is your 'analyses' folder.
 
-**Retain Inputs:**
-Enabling this flag will copy all the input files into the analysis result folder. 
 
-.. WARNING:: 
+**Step 2. Parameters**
+^^^^^^^^^^^^^^^^^^^^^^
 
-    Selecting this option will rapidly consume your allocated space. It is not recommended. Your inputs will always remain available in the folder in which you stored them.
-
-**Input**
-^^^^^^^^^
-
-This menu is used to select the BLAST database and your input file.
+The 'input' section is used to select the BLAST database and your input file.
 
 **BLAST database basename:** BLAST databases are created by AgBase based upon proteins that have GO available and subsetted by phyla. We recommend selecting the database most closely related to the sequence used as input.
 
-**Peptide FASTA file:** Use the Browse button on the right hand side to navigate to your Data folder and select your protein sequence file. 
+**Peptide FASTA file:** Use the Browse button on the right hand side to navigate to your Data folder and select your protein sequence file.
 
-**Parameters**
-^^^^^^^^^^^^^^
+Use the 'parameters' section to select your BLAST parameters.
 
-Use this menu to select your BLAST parameters.
+**Transfer GO with experimental evidence only:** We strongly recommend selecting the “yes” option from the dropdown menu so that only GO annotations based on experimental evidence codes will be transferred . This will ensure the best quality annotations for your data.
 
-**Transfer GO with experimental evidence only:** We strongly recommend selecting the “yes” option from the dropdown menu so that only GO annotations based experimental evidence codes will be transferred . This will ensure the best quality annotations for your data.
+The remaining parameters are standard BLAST parameters, and their defaults can be seen beneath the fields.
 
-The remaining parameters are standard BLAST parameters, and their defaults can be seen by hovering your cursor over the blue i. 
-
-
-**Determining BLAST Parameters to Use**
-"""""""""""""""""""""""""""""""""""""""
-
-BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.
 
 .. Tip::
 
-    Make a subset of 100 randomly selected sequences from your larger dataset and use this as the input for GOanna to test for parameters that give good alignments. The `Split FASTA file <https://de.cyverse.org/de/?type=apps&app-id=c7e10a48-f5e6-4db8-8169-825cf62bd09d&system-id=de>`_ app in the CyVerse Discovery Environment can be used to make a subsetted file.
+**Determining BLAST Parameters to Use**
 
-1. To test for good parameters use GOanna (either in CyVerse or online at AgBase) by selecting the same database you will use and setting relaxed parameters (e.g.,  in the CyVerse instance of GOanna, use defaults).
+    BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.
 
-2. Once you have run your subsetted file, use the html file to view alignments, select good alignments and note the parameters for these.
+    Make a subset of 100 randomly selected sequences from your larger dataset and use this as the input for GOanna to test for parameters that give good alignments.
+
+    1. To test for good parameters use GOanna by selecting the same database you will use and setting relaxed parameters.
+
+    2. Once you have run your subsetted file, use the html file to view alignments, select good alignments and note the parameters for these.
 
 
-**Parse query and subject bar delimited sequence identifiers:** This option should be selected if you are using a protein fasta file from NCBI. These fasta files have headers with pipes that will not format correctly otherwise.
+**Parse query and subject bar delimited sequence identifiers:** This option should be selected if you are using a fasta file with headers that include pipes (|). They will not format correctly otherwise.
 
-.. NOTE:: 
 
-    This tool uses stand alone BLAST and interprets FASTA deflines accordingly. NCBI ‘bar’-delimited deflines can be interpreted correctly using the ‘parse-deflines’ option. If the ‘parse-deflines’ option is not checked then BLAST will interpret the ID to be everything before the first space.
 
-**Output**
-^^^^^^^^^^
+    If the ‘parse-deflines’ option is not checked then BLAST will interpret the ID to be everything before the first space.
 
-This menu is used to format your GO annotation results into a standard gene association file format.
 
-**Output File basename:** This will be the prefix for your output files. A good name choice is to use fasta file name.
+The 'output' section is used to format your GO annotation results into a standard gene association file format.
 
-**Database of query ID:** Use the database that sequences were obtained from (Genbank), or a recognizable project name if these sequences are not in a database (e.g., i5k project or Smith Lab).The default is 'user_input_db'.
+**Output File basename:** This will be the prefix for your output files. A good name choice is to use the fasta file name (without file extension).
 
-**'Assigned by' field of your GAF output file:** Enter your name. This field is used to track who made the annotations. The default is 'user'.
+**Database of query ID:** Use the database that sequences were obtained from (e.g. Refseq), or a recognizable project name if these sequences are not in a database (e.g., i5k project or Smith Lab). The default is 'user_input_db'.
+
+**'Assigned by' field of your GAF output file:** Enter the name of the entity assigning the function (e.g. Agbase, or Smith Lab). This field is used to track who made the annotations. The default is 'user'.
 
 **Taxon ID of the query species:** Enter the NCBI taxon number for your species. This can be found by searching for your species name (common or scientific) in the `NCBI taxon database <https://www.ncbi.nlm.nih.gov/taxonomy>`_. The default is "0000".
+
+**Step3. Adavanced Settings (optional)**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This page allows you specifiy compute requirements for your analysis (e.g. more memory if your analysis is particularly large). You should be able to leave the defaults for most analyses.
+
+**Step4. Review and Launch**
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+This will display all of the parameters you have set (other than default). Missing information that is required will displayed in red. Make sure you are happy with your choices and then clicke the 'launch' button at the bottom.
+
+
 
 **Understanding Your Results**
 ==============================
@@ -127,14 +128,14 @@ If all goes well, you should get 4 output files and a ‘logs’ folder.
 
 For more information on the BLAST output parameters see the `NCBI BLAST documentation <https://www.ncbi.nlm.nih.gov/books/NBK279684/#_appendices_Options_for_the_commandline_a_.>`_.
 
-**<basename>_goanna_gaf.tsv:** This is the standard tab-separated `GO annotation file format <http://geneontology.org/docs/go-annotation-file-gaf-format-2.1>`_  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment. 
+**<basename>_goanna_gaf.tsv:** This is the standard tab-separated `GO annotation file format <https://geneontology.github.io/docs/go-annotation-file-gaf-format-2.2/>`_  that is used by the GO Consortium and by software tools that accept GO annotation files to do GO enrichment. 
 
-If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. Check the 'condor_stderr' file in the analysis output 'logs' folder. 
+If you see more files in your output folder there may have been an error in the analysis or there may have been no GO to transfer. Check the 'condor_stderr' file in the analysis output 'logs' folder.
 
 If that doesn't clarify the problem contact us at agbase@email.arizona.edu or support@cyverse.org.
 
+
 .. |find_goanna| image:: ../img/find_goanna.png
-  :width: 700
+
 
 .. |goanna| image:: ../img/goanna.png
-  :width: 700
