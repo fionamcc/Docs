@@ -15,12 +15,14 @@
 - Follow the AgBase collection (collections tab on left side of DE)
 
 
+|find_goanna|
+
 **Using the GOanna App**
 ========================
 **Launching the App**
 ---------------------
 
-
+|goanna|
 
 **Step 1. Analysis Info**
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -54,9 +56,7 @@ Use the 'parameters' section to select your BLAST parameters.
 The remaining parameters are standard BLAST parameters, and their defaults can be seen beneath the fields.
 
 
-.. Note::
-
-    **Determining BLAST Parameters to Use**
+.. admonition:: Determining BLAST Parameters to Use
 
     BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.
 
