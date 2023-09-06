@@ -59,7 +59,7 @@ This will display all of the parameters you have set (other than default). Missi
 If your analysis fails please check the 'condor_stderr' file in the analysis output 'logs' folder. If that doesn't clarify the problem contact us at agbase@email.arizona.edu or support@cyverse.org.
 
 .. |find_combine_gafs| image:: ../img/find_combine_gafs.png
-  :width: 700
+
 
 .. |combine_gafs| image:: ../img/combine_gafs.png
-  :width: 700
+
