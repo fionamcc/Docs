@@ -105,7 +105,7 @@ Combine GAFs has three parameters:
 
 .. admonition:: HPC Job Schedulers
 
-    Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a PBSPro system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.
+    Although Singularity can be installed on any computer this documentation assumes it will be run on an HPC system. The tool was tested on a SLURM system and the job submission scripts below reflect that. Submission scripts will need to be modified for use with other job scheduler systems.
 
 **Getting the Combine GAFs Container**
 --------------------------------------
