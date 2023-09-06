@@ -130,7 +130,7 @@ Combine GAFs has three parameters:
     -o output file basename
 
 **Example SLURM Script**
-^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
