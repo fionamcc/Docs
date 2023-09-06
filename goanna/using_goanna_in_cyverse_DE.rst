@@ -56,7 +56,7 @@ The remaining parameters are standard BLAST parameters, and their defaults can b
 
 .. Note::
 
-**Determining BLAST Parameters to Use**
+    **Determining BLAST Parameters to Use**
 
     BLAST parameters are contingent on the BLAST database used and the composition of the input file, and so will change for each analysis.
 
