@@ -42,7 +42,7 @@ Results and analysis from the application of InterProScan annotation to the Offi
     wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.63-95.0/alt/interproscan-data-5.63-95.0.tar.gz 
     wget ftp://ftp.ebi.ac.uk/pub/software/unix/iprscan/5/5.63-95.0/alt/interproscan-data-5.63-95.0.tar.gz.md5 
     md5sum -c interproscan-data-5.63-95.0.tar.gz.md
-    tar -pxvzf interproscan-data-5.63-795.0.tar.gz
+    tar -pxvzf interproscan-data-5.63-95.0.tar.gz
 
 .. admonition:: tar options
 
