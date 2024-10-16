@@ -226,12 +226,11 @@ The container can be pulled with this command:
 .. code-block:: bash
 
     #!/bin/bash
-    #PBS -N goanna
-    #PBS -W group_list=fionamcc
-    #PBS -l select=1:ncpus=28:mem=168gb
-    #PBS -q standard
-    #PBS -l walltime=6:0:0
-    #PBS -l cput=168:0:0
+    #SBATCH --job-name=goanna
+    #SBATCH --ntasks=8
+    #SBATCH --time=4:00:00
+    #SBATCH --partition=short
+    #SBATCH --account=nal_genomics
     
     module load singularity
     
@@ -267,12 +266,11 @@ GOanna has three required parameters:
 .. code-block:: bash
 
     #!/bin/bash
-    #PBS -N goanna
-    #PBS -W group_list=fionamcc
-    #PBS -l select=1:ncpus=28:mem=168gb
-    #PBS -q standard
-    #PBS -l walltime=6:0:0
-    #PBS -l cput=168:0:0
+    #SBATCH --job-name=goanna
+    #SBATCH --ntasks=8
+    #SBATCH --time=4:00:00
+    #SBATCH --partition=short
+    #SBATCH --account=nal_genomics
     
     module load singularity
     
