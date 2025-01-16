@@ -72,3 +72,10 @@ agbase@email.arizona.edu
    kobas/intro
    kobas/using_kobas_in_cyverse_DE
    kobas/using_kobas_cmd
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Pathannotator
+
+   pathannotator/intro_pathannotator
+   pathannotator/using_pathannotator_cmd
