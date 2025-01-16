@@ -7,7 +7,7 @@
 - If specified, the pipeline will also provide annotations to Flybase pathways.
 
 
-**Where to Find Pathannotator*
+**Where to Find Pathannotator**
 =========================================
 
 Pathannotator is provided as a Docker container for use on the command line.
