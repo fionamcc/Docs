@@ -2,7 +2,7 @@
 **About AgBase**
 ================
 
-`AgBase <https://agbase.arizona.edu/>`_ is a curated, open-source, Web-accessible resource for functional analysis of agricultural plant and animal gene products. Our long-term goal is to serve the needs of the agricultural research communities by facilitating post-genome biology for agriculture researchers and for those researchers primarily using agricultural species as biomedical models. 
+`AgBase <https://agbase.arizona.edu/>`_ is a curated, open-source, Web-accessible resource for functional analysis of agricultural plant and animal gene products. Our long-term goal is to serve the needs of the agricultural research communities by facilitating post-genome biology for agriculture researchers and for those researchers primarily using agricultural species as biomedical models . 
 
 We use controlled vocabularies developed by the `Gene Ontology (GO) Consortium <http://www.geneontology.org/>`_ to describe molecular function, biological process, and cellular component for genes and gene products in agricultural species. For more information about the AgBase database please visit our `Educational Resources <https://agbase.arizona.edu/cgi-bin/education.cgi>`_ page or refer to our `AgBase publications <https://agbase.arizona.edu/cgi-bin/cite.pl>`_ . 
 
